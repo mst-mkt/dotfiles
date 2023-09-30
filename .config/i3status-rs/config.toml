@@ -1,18 +1,30 @@
 [theme]
-theme = "ctp-mocha"
+theme = "plain"
+[theme.overrides]
+idle_bg = "#f3cf4d"
+idle_fg = "#333333"
+info_bg = "#f3cf4d"
+info_fg = "#333333"
+good_bg = "#f3cf4d"
+good_fg = "#333333"
+warning_bg = "#f3cf4d"
+warning_fg = "#333333"
+critical_bg = "#f3784d"
+critical_fg = "#eeeeee"
+separator = "\ue0b2"
+separator_bg = "auto"
+separator_fg = "auto"
 
 [icons]
-icons = "awesome6"
+icons = "material-nf"
 
 [[block]]
 block = "net"
-format = "  $icon  {$ssid   $ip}  "
+format = "  $icon {$ssid   $ip} "
 interval = 5
-
 
 [[block]]
 block = "sound"
-
 [[block.click]]
 button = "left"
 cmd = "alsamixer"
@@ -26,4 +38,4 @@ block = "time"
 interval = 1
 
 [block.format]
-full = " $icon $timestamp.datetime(f:'%Y/%m/%d %H:%M:%S(%a)') "
+full = " $icon $timestamp.datetime(f:'%Y/%m/%d %H:%M:%S(%a)')  "
