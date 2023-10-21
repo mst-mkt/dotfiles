@@ -1,0 +1,13 @@
+distro=arch
+ascii=true
+user=true
+kernel=true
+cpu=true
+gpu=true
+ram=true
+resolution=true
+shell=true
+pkgs=true
+uptime=false
+colors=true
+host=true
