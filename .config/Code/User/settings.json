@@ -38,6 +38,7 @@
   "window.titleBarStyle": "custom",
   "window.menuBarVisibility": "visible",
   "window.zoomLevel": -2,
+  "window.commandCenter": false,
 
   "breadcrumbs.enabled": true,
 
