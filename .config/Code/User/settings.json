@@ -143,6 +143,12 @@
   // Rust
   "rust-analyzer.cargo.buildScripts.overrideCommand": null,
 
+  // lua
+  "[lua]": {
+    "editor.defaultFormatter": "JohnnyMorganz.stylua",
+    "editor.formatOnSave": true
+  },
+
   // other extensions
   "github.copilot.enable": {
     "*": true,
