@@ -4,7 +4,7 @@ local function BaseName(s)
 	return string.gsub(s, "(.*[/\\])(.*)", "%2")
 end
 
-local HEADER = "    "
+local HEADER = ""
 local SYMBOL_COLOR = "#ffdc2e"
 local FONT_COLOR = { "#dddddd", "#888888" }
 local BACK_COLOR = { "#191919", "#333333" }
@@ -32,7 +32,7 @@ local config = {
 		return {
 			{ Foreground = { Color = SYMBOL_COLOR } },
 			{ Background = { Color = BACK_COLOR[index] } },
-			{ Text = HEADER },
+			{ Text = " " .. HEADER .. "   " },
 
 			{ Foreground = { Color = FONT_COLOR[index] } },
 			{ Background = { Color = BACK_COLOR[index] } },
