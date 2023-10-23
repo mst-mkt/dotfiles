@@ -55,6 +55,8 @@ alias dcup="sudo docker-compose up -d"
 alias dcps="sudo docker-compose ps"
 alias dcrm="sudo docker-compose rm"
 
+alias vi="nvim"
+alias v="nvim"
 
 alias ls="exa --icons --git"
 alias la="exa --icons --git  -a"
