@@ -21,7 +21,7 @@ local config = {
 	window_padding = {
 		left = 16,
 		right = 16,
-		top = 12,
+		top = 8,
 		bottom = 0,
 	},
 
