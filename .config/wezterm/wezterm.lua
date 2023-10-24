@@ -27,6 +27,8 @@ local config = {
 
 	use_fancy_tab_bar = true,
 
+	default_cursor_style = "SteadyBar",
+
 	wezterm.on("format-tab-title", function(tab)
 		local index = tab.is_active and 1 or 2
 		return {
