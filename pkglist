@@ -58,6 +58,7 @@ otf-ipafont
 pacman-contrib
 parcellite
 picom
+playerctl
 pyenv
 repgrep
 rofi
