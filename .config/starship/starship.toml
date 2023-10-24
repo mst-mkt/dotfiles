@@ -19,7 +19,7 @@ symbol = " "
 
 [directory]
 read_only = " 󰌾"
-format = "[ ](#cceeff)[$path]($style)[$lock_symbol]($lock_style) "
+format = "[ ](#abe4ff)[$path]($style)[$lock_symbol]($lock_style) "
 
 [docker_context]
 symbol = " "
