@@ -45,6 +45,7 @@ naumovs.color-highlight
 PKief.material-icon-theme
 Prisma.prisma
 redhat.vscode-xml
+redhat.vscode-yaml
 ritwickdey.LiveServer
 rust-lang.rust-analyzer
 serayuzgur.crates

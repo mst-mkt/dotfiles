@@ -96,6 +96,16 @@
     "editor.suggest.insertMode": "replace"
   },
 
+  // toml
+  "[toml]": {
+    "editor.defaultFormatter": "be5invis.toml"
+  },
+
+  // yaml
+  "[yaml]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+
   // JavaScript, TypeScript
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
@@ -141,12 +151,14 @@
   "notebook.formatOnCellExecution": true,
 
   // Rust
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
   "rust-analyzer.cargo.buildScripts.overrideCommand": null,
 
   // lua
   "[lua]": {
-    "editor.defaultFormatter": "JohnnyMorganz.stylua",
-    "editor.formatOnSave": true
+    "editor.defaultFormatter": "JohnnyMorganz.stylua"
   },
 
   // other extensions
