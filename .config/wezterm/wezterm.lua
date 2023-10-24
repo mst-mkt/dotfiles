@@ -29,6 +29,9 @@ local config = {
 
 	default_cursor_style = "SteadyBar",
 
+	color_scheme = "xflest",
+	color_scheme_dirs = { "~/.config/wezterm/colors/" },
+
 	wezterm.on("format-tab-title", function(tab)
 		local index = tab.is_active and 1 or 2
 		return {
