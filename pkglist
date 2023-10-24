@@ -39,9 +39,7 @@ jre-openjdk
 kpipewire
 lightdm
 lightdm-webkit2-greeter
-linux
 linux-firmware
-linux-headers
 linux-zen
 linux-zen-headers
 lsof
