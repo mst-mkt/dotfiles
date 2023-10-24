@@ -1,0 +1,93 @@
+* {
+    foreground:                  #eeeeee;
+    normal-foreground:           @foreground;
+    alternate-normal-foreground: @normal-foreground;
+    selected-normal-foreground:  @normal-foreground;
+    placeholder-foreground:      #eeeeee88;
+
+    background:                  #00000000;
+    normal-background:           @background;
+    alternate-normal-background: @normal-background;
+    selected-normal-background:  #111111cc;
+    window-background:           #202020af;
+
+    border-color:                #fae46d;
+}
+
+window {
+    background-color: @window-background;
+    border:           2px;
+    border-color:     @border-color;
+    border-radius:    8px;
+    padding:          12px;
+}
+
+mainbox {
+    padding:          0;
+    background-color: @normal-background;
+}
+
+textbox {
+    text-color:       @normal-foreground;
+    background-color: @normal-background;
+}
+
+listview {
+    border:           2px 0px 0px;
+    border-color:     @border-color;
+    spacing:          0px;
+    padding:          8px 0px 0px;
+    background-color: @normal-background;
+}
+
+element {
+    border:        0;
+    border-radius: 4px;
+    padding:       4px 8px;
+}
+
+element-text {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element-icon {
+    background-color: @normal-background;
+    margin:           0px 8px 0px 0px;
+}
+
+element.normal.normal {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+}
+
+element.selected.normal {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+element.alternate.normal {
+    background-color: @alternate-normal-background;
+    text-color:       @alternate-normal-foreground;
+}
+
+button.selected {
+    background-color: @selected-normal-background;
+    text-color:       @selected-normal-foreground;
+}
+
+inputbar {
+    spacing:          0;
+    text-color:       @normal-foreground;
+    background-color: @normal-background;
+    padding:          4px 8px;
+    children:         [ entry ];
+}
+
+entry {
+    spacing:           0;
+    text-color:        @normal-foreground;
+    background-color:  @normal-background;
+    placeholder:       "Search";
+    placeholder-color: @placeholder-foreground;
+}
