@@ -8,7 +8,7 @@
     background:                  #00000000;
     normal-background:           @background;
     alternate-normal-background: @normal-background;
-    selected-normal-background:  #111111cc;
+    selected-normal-background:  #19191959;
     window-background:           #202020af;
 
     border-color:                #fae46d;
