@@ -48,6 +48,7 @@ redhat.vscode-xml
 redhat.vscode-yaml
 ritwickdey.LiveServer
 rust-lang.rust-analyzer
+scaffdog.scaffdog-vscode
 serayuzgur.crates
 shardulm94.trailing-spaces
 streetsidesoftware.code-spell-checker
