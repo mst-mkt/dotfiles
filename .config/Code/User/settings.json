@@ -130,20 +130,14 @@
       "source.fixAll": true
     }
   },
-  "ruff.format.args": [
-    "line-length=79",
-    "indent-width=4",
-    "target-version=\"py312\"",
-    "quote-style=\"single\"",
-    "indent-style=\"space\""
-  ],
+  "python.analysis.typeCheckingMode": "strict",
   "mypy-type-checker.showNotifications": "always",
   "mypy-type-checker.args": [
     "--warn-return-any",
     "--no-implicit-optional",
     "--disallow-untyped-calls",
     "--disallow-untyped-defs",
-    "--ignore-missing-imports\t",
+    "--ignore-missing-imports",
     "--follow-imports=skip"
   ],
   "ruff.format.args": ["line-length =79", "indent-width=4"],
