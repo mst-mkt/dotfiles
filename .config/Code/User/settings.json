@@ -36,7 +36,7 @@
   "files.trimFinalNewlines": true,
 
   "window.titleBarStyle": "custom",
-  "window.menuBarVisibility": "visible",
+  "window.menuBarVisibility": "compact",
   "window.zoomLevel": -2,
   "window.commandCenter": false,
 
@@ -44,11 +44,11 @@
 
   "workbench.colorTheme": "Default Dark Modern",
   "workbench.iconTheme": "material-icon-theme",
-  "workbench.activityBar.visible": true,
   "workbench.tree.indent": 24,
   "workbench.tree.renderIndentGuides": "always",
   "workbench.reduceMotion": "off",
   "workbench.list.horizontalScrolling": true,
+  "workbench.layoutControl.enabled": false,
   "workbench.colorCustomizations": {
     "editorCursor.foreground": "#ffd900",
     "terminalCursor.foreground": "#ffd900"
