@@ -166,7 +166,6 @@
     "markdown": "true",
     "rust": false
   },
-  "slidev.enabled": true,
   "stripe.cliInstallPath": "/usr/bin/stripe",
   "trailing-spaces.trimOnSave": true,
   "liveServer.settings.useLocalIp": true,
@@ -220,5 +219,6 @@
     }
   },
   "vscode-pets.petSize": "large",
-  "vscode-pets.throwBallWithMouse": true
+  "vscode-pets.throwBallWithMouse": true,
+  "slidev.enabled": true
 }
