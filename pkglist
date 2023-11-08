@@ -86,6 +86,7 @@ wqy-zenhei
 xclip
 xf86-video-intel
 xorg-server
+xorg-xbacklight
 xorg-xrandr
 zoxide
 zsh
