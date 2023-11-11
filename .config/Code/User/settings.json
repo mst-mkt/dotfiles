@@ -145,6 +145,7 @@
 
   // jupyter
   "jupyter.askForKernelRestart": false,
+  "jupyter.interactiveWindow.textEditor.magicCommandsAsComments": true,
   "notebook.formatOnSave.enabled": true,
   "notebook.formatOnCellExecution": true,
 
