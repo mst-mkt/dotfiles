@@ -178,7 +178,11 @@
     "mypy", // python type checker
     "rgba", // color format
     "slidev", // markdown presentation tool
-    "stylelint" // css linter
+    "stylelint", // css linter
+    "stylua", // lua formatter
+    "JohnnyMorganz", // publisher of stylua
+    "charliermarsh", // publisher of ruff
+    "be5invis" // publisher of toml formatter
   ],
   "cSpell.language": "en, ja",
   "commentAnchors.tags.anchors": {
