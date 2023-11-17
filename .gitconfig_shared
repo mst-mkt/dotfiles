@@ -30,7 +30,11 @@
 [delta]
 	diff-so-fancy = true
 	keep-plus-minus-markers = true
-	plus-style = "syntax #012800"
-	minus-style = "syntax #340001"
+	plus-style = "syntax #3b3100"
+	plus-emph-style = "#333 #ffd700"
+	minus-style = "syntax #00263b"
+	minus-emph-style = "#333 #00aaff"
+	line-numbers-plus-style = "#ffde2e"
+	line-numbers-minus-style = "#2ebdff"
 	hunk-header-style = "omit"
 	line-numbers = true
