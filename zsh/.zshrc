@@ -51,6 +51,7 @@ alias dcup="sudo docker-compose up -d"
 alias dcps="sudo docker-compose ps"
 alias dcrm="sudo docker-compose rm"
 
+alias vim="nvim"
 alias vi="nvim"
 alias v="nvim"
 
