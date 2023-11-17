@@ -12,3 +12,6 @@
 
 [pull]
 	rebase = false
+
+[ghq]
+	root = ~/_
