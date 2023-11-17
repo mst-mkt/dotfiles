@@ -1,0 +1,6 @@
+# input method
+export XMODIFIERS=@im=fcitx
+export QT_IM_MODULE=fcitx
+export DefaultIMModule=fcitx
+export GTK_IM_MODULE=fcitx
+fcitx5 
