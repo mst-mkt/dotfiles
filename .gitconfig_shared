@@ -5,10 +5,10 @@
 	defaultBranch = main
 
 [log]
-    date = iso-local
+	date = iso-local
 
 [diff]
-    algorithm = histogram
+	algorithm = histogram
 
 [pull]
 	rebase = false
