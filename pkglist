@@ -33,6 +33,7 @@ intel-ucode
 iw
 iwd
 jq
+less
 lightdm
 linux-firmware
 linux-zen
