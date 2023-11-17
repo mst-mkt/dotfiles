@@ -1,0 +1,6 @@
+[user]
+	email = s1f102303057@iniad.org
+	name = mst-mkt
+
+[include]
+	path = ~/.gitconfig_shared
