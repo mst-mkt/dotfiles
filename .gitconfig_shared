@@ -1,8 +1,13 @@
 [core]
 	editor = nvim
+	quotepath = false
+	pager = delta
 
 [init]
 	defaultBranch = main
+
+[interactive]
+	diffFilter = delta --color-only
 
 [log]
 	date = iso-local
@@ -13,5 +18,19 @@
 [pull]
 	rebase = false
 
+[pager]
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
+
 [ghq]
 	root = ~/_
+
+[delta]
+	diff-so-fancy = true
+	keep-plus-minus-markers = true
+	plus-style = "syntax #012800"
+	minus-style = "syntax #340001"
+	hunk-header-style = "omit"
+	line-numbers = true
