@@ -1,5 +1,5 @@
 configuration {
-    modes: [ drun ];
+    modes: [ drun, filebrowser, calc ];
     font: "HackGen35 Console NF 10";
     show-icons: true;
 }
