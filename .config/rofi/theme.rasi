@@ -1,4 +1,6 @@
 * {
+    accent-color:                #fae46d;
+
     foreground:                  #eeeeee;
     normal-foreground:           @foreground;
     alternate-normal-foreground: @normal-foreground;
@@ -11,7 +13,7 @@
     selected-normal-background:  #19191959;
     window-background:           #202020af;
 
-    border-color:                #fae46d;
+    border-color:                @accent-color;
 }
 
 window {
@@ -71,11 +73,6 @@ element.alternate.normal {
     text-color:       @alternate-normal-foreground;
 }
 
-button.selected {
-    background-color: @selected-normal-background;
-    text-color:       @selected-normal-foreground;
-}
-
 inputbar {
     spacing:          0;
     text-color:       @normal-foreground;
@@ -90,4 +87,22 @@ entry {
     background-color:  @normal-background;
     placeholder:       "Search";
     placeholder-color: @placeholder-foreground;
+}
+
+mode-switcher {
+    background-color: @normal-background;
+    text-color:       @normal-foreground;
+    padding:          4px 8px;
+}
+
+button {
+    background-color: @normal-background;
+    text-color:       @accent-color;
+    border-radius:    4px;
+    padding:          4px 0px;
+}
+
+button.selected {
+    background-color: @accent-color;
+    text-color:       @window-background;
 }
