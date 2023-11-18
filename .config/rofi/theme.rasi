@@ -106,3 +106,8 @@ button.selected {
     background-color: @accent-color;
     text-color:       @window-background;
 }
+
+message {
+    background-color: @normal-background;
+    padding:          4px 8px;
+}
