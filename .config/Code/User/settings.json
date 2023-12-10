@@ -160,6 +160,16 @@
   "ruff.format.args": ["line-length =79", "indent-width=4"],
   "ruff.lint.args": ["line-length =79", "indent-width=4"],
 
+  // Django
+  "[django-html]": {
+    "editor.defaultFormatter": "monosans.djlint",
+    "djlint.enableLinting": true,
+    "djlint.profile": "django"
+  },
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  },
+
   // jupyter
   "jupyter.askForKernelRestart": false,
   "jupyter.interactiveWindow.textEditor.magicCommandsAsComments": true,
@@ -217,5 +227,20 @@
   },
   "vscode-pets.petSize": "large",
   "vscode-pets.throwBallWithMouse": true,
-  "slidev.enabled": true
+  "slidev.enabled": true,
+  "auto-close-tag.activationOnLanguage": [
+    "xml",
+    "php",
+    "ejs",
+    "jinja",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "markdown",
+    "vue",
+    "HTML (EEx)",
+    "HTML (Eex)",
+    "django-html"
+  ]
 }
