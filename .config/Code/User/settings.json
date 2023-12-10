@@ -167,52 +167,26 @@
     "markdown": "true",
     "rust": false
   },
-  "stripe.cliInstallPath": "/usr/bin/stripe",
   "trailing-spaces.trimOnSave": true,
   "liveServer.settings.useLocalIp": true,
   "liveServer.settings.donotShowInfoMsg": true,
   "liveServer.settings.donotVerifyTags": true,
   "cSpell.userWords": [
-    "donot", // do not
-    "esbenp", // publisher of prettier
-    "isort", // python import sort utility
-    "mypy", // python type checker
-    "rgba", // color format
-    "slidev", // markdown presentation tool
-    "stylelint", // css linter
-    "stylua", // lua formatter
-    "JohnnyMorganz", // publisher of stylua
-    "charliermarsh", // publisher of ruff
-    "be5invis" // publisher of toml formatter
+    "be5invis",
+    "charliermarsh",
+    "djlint",
+    "donot",
+    "esbenp",
+    "isort",
+    "JohnnyMorganz",
+    "mypy",
+    "rgba",
+    "slidev",
+    "stylelint",
+    "stylua"
   ],
   "cSpell.language": "en, ja",
-  "commentAnchors.tags.anchors": {
-    "TODO": {
-      "iconColor": "blue",
-      "highlightColor": "#3ea8ff",
-      "scope": "workspace"
-    },
-    "FIXME": {
-      "iconColor": "red",
-      "highlightColor": "#F44336",
-      "scope": "workspace"
-    },
-    "NOTE": {
-      "iconColor": "orange",
-      "highlightColor": "#FFB300",
-      "scope": "file"
-    }
-  },
   "auto-close-tag.disableOnLanguage": ["ts"],
-  "gitlens.showWelcomeOnInstall": false,
-  "gitlens.showWhatsNewAfterUpgrades": false,
-  "indentColorizer.colors": [
-    "rgba(255,255,64,0.2)",
-    "rgba(127,255,127,0.2)",
-    "rgba(255,127,255,0.2)",
-    "rgba(79,236,236,0.2)"
-  ],
-  "mdx.experimentalLanguageServer": true,
   "stylelint.config": {
     "extends": [
       "stylelint-config-standard",
