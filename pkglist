@@ -77,6 +77,3 @@ xorg-server
 xorg-xbacklight
 zoxide
 zsh
-zsh-autosuggestions
-zsh-completions
-zsh-syntax-highlighting
