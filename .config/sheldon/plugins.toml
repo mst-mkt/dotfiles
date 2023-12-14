@@ -40,5 +40,10 @@ inline = 'autoload -Uz compinit && compinit'
 [plugins.compinit.hooks]
 pre = "zstyle :compinstall filename '$HOME/.zshrc'"
 
+[plugins.local-defer]
+apply = ['defer']
+local = '~/.config/zsh/defer'
+use = ['*.zsh']
+
 [templates]
 defer = "{{ hooks | get: \"pre\" | nl }}{% for file in files %}zsh-defer source \"{{ file }}\"\n{% endfor %}{{ hooks | get: \"post\" | nl }}"
