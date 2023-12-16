@@ -6,7 +6,7 @@ export GTK_IM_MODULE=fcitx
 fcitx5 &
 
 # screen layout
-sh ~/scripts/screen.sh
+sh ~/bin/screen
 
 # load xresources
 xrdb ~/.Xresources
