@@ -5,6 +5,9 @@ aria2
 base
 base-devel
 bat
+blueman
+bluez
+bluez-utils
 bottom
 cloudflared
 deno
