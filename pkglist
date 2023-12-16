@@ -56,6 +56,8 @@ obsidian
 openssh
 pacman-contrib
 picom
+pipewire-alsa
+pipewire-pulse
 playerctl
 pyenv
 repgrep
