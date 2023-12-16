@@ -1,0 +1,18 @@
+# zsh
+zcompdump
+**/zcompdump
+zcompdump.zwc
+**/zcompdump.zwc
+.zcompdump
+**/.zcompdump
+.zcompdump.zwc
+**/.zcompdump.zwc
+
+# vim
+*~
+**/*~
+*.swp
+**/*.swp
+
+# ssh
+.ssh
