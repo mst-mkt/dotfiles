@@ -1,5 +1,7 @@
 1YiB.rust-bundle
+adpyke.vscode-sql-formatter
 alefragnani.project-manager
+alexcvzz.vscode-sqlite
 antfu.slidev
 batisteo.vscode-django
 be5invis.toml
@@ -37,6 +39,7 @@ natqe.reload
 naumovs.color-highlight
 PKief.material-icon-theme
 Prisma.prisma
+qwtel.sqlite-viewer
 redhat.vscode-xml
 redhat.vscode-yaml
 ritwickdey.LiveServer
