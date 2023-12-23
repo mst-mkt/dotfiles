@@ -7,6 +7,8 @@ zcompdump.zwc
 **/.zcompdump
 .zcompdump.zwc
 **/.zcompdump.zwc
+.zsh_history
+**/.zsh_history
 
 # vim
 *~
