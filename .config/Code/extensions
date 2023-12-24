@@ -23,6 +23,7 @@ JohnnyMorganz.stylua
 KevinRose.vsc-python-indent
 mhutchie.git-graph
 mikestead.dotenv
+mkhl.shfmt
 monosans.djlint
 mosapride.zenkaku
 ms-azuretools.vscode-docker
@@ -49,6 +50,7 @@ shardulm94.trailing-spaces
 streetsidesoftware.code-spell-checker
 stylelint.vscode-stylelint
 sumneko.lua
+timonwong.shellcheck
 tonybaloney.vscode-pets
 unifiedjs.vscode-mdx
 usernamehw.errorlens

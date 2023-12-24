@@ -114,6 +114,17 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
 
+  // sh
+  "[shellscript]": {
+    "editor.defaultFormatter": "mkhl.shfmt",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.shellcheck": true
+    }
+  },
+  "shellcheck.enable": true,
+  "shellcheck.enableQuickFix": true,
+  "shellcheck.run": "onSave",
+
   // JavaScript, TypeScript
   "[javascript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode",
