@@ -198,6 +198,11 @@
     "editor.defaultFormatter": "JohnnyMorganz.stylua"
   },
 
+  // sql
+  "[sql]": {
+    "editor.defaultFormatter": "adpyke.vscode-sql-formatter"
+  },
+
   // other extensions
   "github.copilot.enable": {
     "*": true,
