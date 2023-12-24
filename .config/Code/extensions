@@ -10,6 +10,7 @@ biomejs.biome
 charliermarsh.ruff
 dbaeumer.vscode-eslint
 dustypomerleau.rust-syntax
+EditorConfig.EditorConfig
 esbenp.prettier-vscode
 formulahendry.auto-close-tag
 formulahendry.auto-rename-tag
