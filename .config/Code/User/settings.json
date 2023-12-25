@@ -246,17 +246,12 @@
   "slidev.enabled": true,
   "auto-close-tag.activationOnLanguage": [
     "xml",
-    "php",
-    "ejs",
-    "jinja",
     "javascript",
     "javascriptreact",
     "typescript",
     "typescriptreact",
     "markdown",
     "vue",
-    "HTML (EEx)",
-    "HTML (Eex)",
     "django-html"
   ]
 }
