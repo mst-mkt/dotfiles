@@ -6,6 +6,7 @@ aria2
 base
 base-devel
 bat
+bitwarden-cli
 blueman
 bluez
 bluez-utils
