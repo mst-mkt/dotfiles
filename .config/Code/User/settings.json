@@ -37,7 +37,6 @@
 
   "window.titleBarStyle": "custom",
   "window.menuBarVisibility": "compact",
-  "window.zoomLevel": -2,
   "window.commandCenter": false,
 
   "breadcrumbs.enabled": true,
@@ -118,7 +117,7 @@
   "[shellscript]": {
     "editor.defaultFormatter": "mkhl.shfmt",
     "editor.codeActionsOnSave": {
-      "source.fixAll.shellcheck": true
+      "source.fixAll.shellcheck": "explicit"
     }
   },
   "shellcheck.enable": true,
@@ -253,5 +252,16 @@
     "markdown",
     "vue",
     "django-html"
-  ]
+  ],
+  "[css][scss]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll.stylelint": "explicit"
+    }
+  },
+  "[javascript][typescript][typescriptreact]": {
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  }
 }
