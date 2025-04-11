@@ -1,8 +1,0 @@
-configuration {
-    modes: [ drun, filebrowser, calc ];
-    font: "HackGen35 Console NF 10";
-    show-icons: true;
-}
-
-
-@theme "./theme.rasi"

@@ -1,8 +1,0 @@
-set $mod Mod4
-font pango:monospace 8
-floating_modifier $mod
-
-include ~/.config/i3/startup.conf
-include ~/.config/i3/bar.conf
-include ~/.config/i3/keybinds/keybind.conf
-include ~/.config/i3/appearance.conf
