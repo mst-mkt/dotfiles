@@ -4,6 +4,7 @@
   imports = [
     ../../configs/home-manager/agents
     ../../configs/home-manager/cli-utilities
+    ../../configs/home-manager/cursor
     ../../configs/home-manager/desktop-apps
     ../../configs/home-manager/gh
     ../../configs/home-manager/git
