@@ -9,6 +9,7 @@
 
   programs.vscode = {
     enable = true;
+    mutableExtensionsDir = false;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
     ];
