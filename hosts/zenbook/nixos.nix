@@ -17,6 +17,7 @@
     ../../configs/nixos/desktop/fonts.nix
     ../../configs/nixos/desktop/niri.nix
     ../../configs/nixos/desktop/sound.nix
+    ../../configs/nixos/desktop/steam.nix
 
     ../../configs/nixos/hardware/laptop.nix
   ];

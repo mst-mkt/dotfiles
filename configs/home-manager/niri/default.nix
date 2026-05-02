@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, lib, ... }:
 
 {
   imports = [
@@ -33,6 +33,8 @@
         ];
       }
     ];
+
+    xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite-unstable;
 
     screenshot-path = "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png";
   };
