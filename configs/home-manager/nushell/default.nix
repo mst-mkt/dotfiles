@@ -38,6 +38,7 @@
       map builtins.readFile [
         ./autopair.nu
         ./prompt.nu
+        ./functions.nu
       ]
     );
 
