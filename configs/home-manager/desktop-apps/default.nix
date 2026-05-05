@@ -12,6 +12,7 @@
     mutableExtensionsDir = false;
     profiles.default.extensions = with pkgs.vscode-extensions; [
       jnoortheen.nix-ide
+      thenuprojectcontributors.vscode-nushell-lang
     ];
   };
 }
