@@ -7,6 +7,7 @@
     ../../configs/home-manager/cursor
     ../../configs/home-manager/desktop-apps
     ../../configs/home-manager/gh
+    ../../configs/home-manager/ghq
     ../../configs/home-manager/git
     ../../configs/home-manager/niri
     ../../configs/home-manager/nushell
