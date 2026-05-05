@@ -18,6 +18,12 @@
     enableNushellIntegration = true;
   };
 
+  programs.carapace = {
+    enable = true;
+    enableNushellIntegration = true;
+    ignoreCase = true;
+  };
+
   programs.direnv = {
     enable = true;
     nix-direnv.enable = true;
