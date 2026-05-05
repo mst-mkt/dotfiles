@@ -1,7 +1,16 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
-  imports = [ ./alias.nix ];
+  imports = [
+    ./alias.nix
+  ];
 
-  programs.nushell.enable = true;
+  programs.nushell = {
+    enable = true;
+    plugins = with pkgs.nushellPlugins; [
+      gstat
+      query
+      skim
+    ];
+  };
 }
