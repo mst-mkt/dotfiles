@@ -37,6 +37,7 @@
     extraConfig = builtins.concatStringsSep "\n\n" (
       map builtins.readFile [
         ./autopair.nu
+        ./prompt.nu
       ]
     );
 
