@@ -10,9 +10,16 @@
   programs.vscode = {
     enable = true;
     mutableExtensionsDir = false;
-    profiles.default.extensions = with pkgs.vscode-extensions; [
-      jnoortheen.nix-ide
-      thenuprojectcontributors.vscode-nushell-lang
-    ];
+    profiles.default.extensions =
+      (with pkgs.vscode-extensions; [
+        github.copilot-chat
+        jnoortheen.nix-ide
+        streetsidesoftware.code-spell-checker
+        thenuprojectcontributors.vscode-nushell-lang
+        vitest.explorer
+      ])
+      ++ [
+        pkgs.vscode-marketplace-release-universal.oxc.oxc-vscode
+      ];
   };
 }
