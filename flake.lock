@@ -243,6 +243,26 @@
         "type": "github"
       }
     },
+    "nix-vite-plus": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1778158037,
+        "narHash": "sha256-4kcVu/+XKA8RB2gtIpINwM7/jRyCyzpednhrsvch5N8=",
+        "owner": "mst-mkt",
+        "repo": "nix-vite-plus",
+        "rev": "6fbd7e3a8d74a2f072aa0fd39241aedd858858a2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mst-mkt",
+        "repo": "nix-vite-plus",
+        "type": "github"
+      }
+    },
     "nixos-hardware": {
       "locked": {
         "lastModified": 1776983936,
@@ -313,6 +333,7 @@
         "niri-flake": "niri-flake",
         "nix-hazkey": "nix-hazkey",
         "nix-index-database": "nix-index-database",
+        "nix-vite-plus": "nix-vite-plus",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_2",
         "treefmt-nix": "treefmt-nix_2"

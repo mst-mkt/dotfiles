@@ -5,6 +5,7 @@ let
   defaultOverlays = [
     inputs.llm-agents.overlays.default
     inputs.niri-flake.overlays.niri
+    inputs.nix-vite-plus.overlays.default
   ];
 in
 {

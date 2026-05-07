@@ -21,6 +21,9 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
+    nix-vite-plus.url = "github:mst-mkt/nix-vite-plus";
+    nix-vite-plus.inputs.nixpkgs.follows = "nixpkgs";
+
     llm-agents.url = "github:numtide/llm-agents.nix";
   };
 
