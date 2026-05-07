@@ -6,6 +6,7 @@ let
     inputs.llm-agents.overlays.default
     inputs.niri-flake.overlays.niri
     inputs.nix-vite-plus.overlays.default
+    inputs.nix-vscode-extensions.overlays.default
   ];
 in
 {
