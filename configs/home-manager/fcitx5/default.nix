@@ -13,6 +13,10 @@
     fcitx5 = {
       waylandFrontend = true;
       settings = {
+        globalOptions = {
+          "Hotkey/ActivateKeys"."0" = "Muhenkan";
+          "Hotkey/DeactivateKeys"."0" = "Henkan_Mode";
+        };
         inputMethod = {
           GroupOrder."0" = "Default";
           "Groups/0" = {
