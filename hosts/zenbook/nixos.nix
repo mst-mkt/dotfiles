@@ -13,7 +13,6 @@
     ../../configs/nixos/core/users.nix
 
     ../../configs/nixos/desktop/display.nix
-    ../../configs/nixos/desktop/fcitx5.nix
     ../../configs/nixos/desktop/fonts.nix
     ../../configs/nixos/desktop/niri.nix
     ../../configs/nixos/desktop/sound.nix
