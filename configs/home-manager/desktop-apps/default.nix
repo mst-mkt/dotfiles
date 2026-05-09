@@ -5,6 +5,8 @@
     vivaldi
     waybar
     fuzzel
+    mattermost-desktop
+    slack
   ];
 
   programs.vscode = {
