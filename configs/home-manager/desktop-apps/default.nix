@@ -19,6 +19,7 @@
         jnoortheen.nix-ide
         ms-python.python
         ms-toolsai.jupyter
+        nefrob.vscode-just-syntax
         streetsidesoftware.code-spell-checker
         thenuprojectcontributors.vscode-nushell-lang
         vitest.explorer
