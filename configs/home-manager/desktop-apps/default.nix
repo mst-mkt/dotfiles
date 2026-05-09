@@ -22,6 +22,7 @@
         ms-toolsai.jupyter
         nefrob.vscode-just-syntax
         streetsidesoftware.code-spell-checker
+        tamasfe.even-better-toml
         thenuprojectcontributors.vscode-nushell-lang
         vitest.explorer
       ])
