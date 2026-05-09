@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports = [
@@ -9,4 +9,7 @@
   services.fstrim.enable = true;
   services.tlp.enable = true;
   services.angrr.enable = true;
+
+  environment.systemPackages = [ pkgs.brightnessctl ];
+  services.udev.packages = [ pkgs.brightnessctl ];
 }
