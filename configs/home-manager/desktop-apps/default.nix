@@ -14,8 +14,11 @@
     mutableExtensionsDir = false;
     profiles.default.extensions =
       (with pkgs.vscode-extensions; [
+        charliermarsh.ruff
         github.copilot-chat
         jnoortheen.nix-ide
+        ms-python.python
+        ms-toolsai.jupyter
         streetsidesoftware.code-spell-checker
         thenuprojectcontributors.vscode-nushell-lang
         vitest.explorer
