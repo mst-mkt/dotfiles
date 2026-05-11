@@ -8,6 +8,8 @@
   ];
 
   programs.niri.settings = {
+    prefer-no-csd = true;
+
     input = {
       keyboard = {
         xkb.layout = "jp";
