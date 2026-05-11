@@ -9,6 +9,7 @@
     fuzzel
     mattermost-desktop
     slack
+    discord
   ];
 
   programs.vscode = {
