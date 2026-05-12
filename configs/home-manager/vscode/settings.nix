@@ -77,6 +77,10 @@
     "workbench.commandPalette.history" = 256;
     "workbench.commandPalette.experimental.suggestCommands" = true;
 
+    # chat.*
+    "chat.commandCenter.enabled" = false;
+    "chat.experimental.offerSetup" = false;
+
     # github.copilot.*
     "github.copilot.enable" = {
       "*" = true;
