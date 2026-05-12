@@ -36,6 +36,12 @@
     "editor.copyWithSyntaxHighlighting" = false;
     "editor.wordSeparators" = "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?_（）。、「」・　";
 
+    # files.*
+    "files.eol" = "\n";
+    "files.trimTrailingWhitespace" = true;
+    "files.trimFinalNewlines" = true;
+    "files.insertFinalNewline" = true;
+
     # workbench.*
     "workbench.startupEditor" = "none";
     "workbench.colorTheme" = "Default Dark Modern";
