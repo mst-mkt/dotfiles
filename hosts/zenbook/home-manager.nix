@@ -13,6 +13,7 @@
     ../../configs/home-manager/git
     ../../configs/home-manager/niri
     ../../configs/home-manager/nushell
+    ../../configs/home-manager/vscode
     ../../configs/home-manager/wezterm
     ../../configs/home-manager/xdg
   ];
