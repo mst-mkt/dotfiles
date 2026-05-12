@@ -14,6 +14,7 @@
     ../../configs/home-manager/niri
     ../../configs/home-manager/nushell
     ../../configs/home-manager/wezterm
+    ../../configs/home-manager/xdg
   ];
 
   home.username = username;
