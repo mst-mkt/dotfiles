@@ -15,7 +15,8 @@
       thenuprojectcontributors.vscode-nushell-lang
       vitest.explorer
     ])
-    ++ [
-      pkgs.vscode-marketplace-release-universal.oxc.oxc-vscode
-    ];
+    ++ (with pkgs.vscode-marketplace-release-universal; [
+      oxc.oxc-vscode
+      thang-nm.flow-icons
+    ]);
 }
