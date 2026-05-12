@@ -63,6 +63,11 @@
     "window.zoomPerWindow" = false;
     "window.dialogStyle" = "custom";
 
+    # extensions.*
+    "extensions.autoUpdate" = false;
+    "extensions.ignoreRecommendations" = true;
+    "extensions.closeExtensionDetailsOnViewChange" = true;
+
     # explorer.*
     "explorer.compactFolders" = false;
     "explorer.confirmDelete" = false;
