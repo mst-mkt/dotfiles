@@ -120,6 +120,10 @@
     "terminal.integrated.cursorBlinking" = true;
     "terminal.integrated.copyOnSelection" = true;
 
+    # update.*
+    "update.mode" = "none";
+    "update.showReleaseNotes" = false;
+
     # git.*
     "git.openRepositoryInParentFolders" = "always";
     "git.openDiffOnClick" = false;
