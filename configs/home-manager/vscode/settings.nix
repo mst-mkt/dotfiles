@@ -103,6 +103,12 @@
     # problems.*
     "problems.defaultViewMode" = "table";
 
+    # search.*
+    "search.smartCase" = true;
+    "search.showLineNumbers" = true;
+    "search.defaultViewMode" = "tree";
+    "search.quickOpen.includeSymbols" = true;
+
     # scm.*
     "scm.showActionButton" = false;
 
