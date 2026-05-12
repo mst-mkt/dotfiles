@@ -100,6 +100,9 @@
     "chat.commandCenter.enabled" = false;
     "chat.experimental.offerSetup" = false;
 
+    # problems.*
+    "problems.defaultViewMode" = "table";
+
     # git.*
     "git.openRepositoryInParentFolders" = "always";
     "git.openDiffOnClick" = false;
