@@ -19,6 +19,7 @@
     "editor.guides.bracketPairsHorizontal" = true;
     "editor.bracketPairColorization.independentColorPoolPerBracketType" = true;
     "editor.renderLineHighlight" = "gutter";
+    "editor.glyphMargin" = false;
     "editor.cursorBlinking" = "phase";
     "editor.cursorStyle" = "line";
     "editor.cursorWidth" = 3;
