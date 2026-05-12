@@ -176,5 +176,50 @@
       "error"
       "warning"
     ];
+
+    # multiCommand.*
+    "multiCommand.commands" = [
+      {
+        command = "multiCommand.restartTsServer";
+        label = "TypeScript: Restart Server";
+        sequence = [ "typescript.restartTsServer" ];
+      }
+      {
+        command = "multiCommand.restartOxlint";
+        label = "Oxc: Restart Oxlint Server";
+        sequence = [ "oxc.restartServer" ];
+      }
+      {
+        command = "multiCommand.restartOxfmt";
+        label = "Oxc: Restart Oxfmt Server";
+        sequence = [ "oxc.restartServerFormatter" ];
+      }
+      {
+        command = "multiCommand.restartRuff";
+        label = "Ruff: Restart Server";
+        sequence = [ "ruff.restart" ];
+      }
+      {
+        command = "multiCommand.restartPython";
+        label = "Python: Restart Language Server";
+        sequence = [ "python.analysis.restartLanguageServer" ];
+      }
+      {
+        command = "multiCommand.restartNixIde";
+        label = "Nix IDE: Restart Language Server";
+        sequence = [ "nix-ide.restartLanguageServer" ];
+      }
+      {
+        command = "multiCommand.restartCspell";
+        label = "CSpell: Restart";
+        sequence = [ "cSpell.restart" ];
+      }
+      {
+        command = "multiCommand.restartExtensionHost";
+        label = "Restart Extension Host";
+        description = "Restart all extensions";
+        sequence = [ "workbench.action.restartExtensionHost" ];
+      }
+    ];
   };
 }
