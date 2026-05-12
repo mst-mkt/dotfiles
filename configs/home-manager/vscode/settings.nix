@@ -72,10 +72,6 @@
     "notebook.formatOnSave.enabled" = true;
     "notebook.formatOnCellExecution" = true;
 
-    # jupyter.*
-    "jupyter.askForKernelRestart" = false;
-    "jupyter.interactiveWindow.textEditor.magicCommandsAsComments" = true;
-
     # [files, vcs]
     # files.*
     "files.eol" = "\n";
@@ -89,10 +85,6 @@
 
     # github.*
     "github.gitProtocol" = "ssh";
-    "github.copilot.enable" = {
-      "*" = true;
-    };
-    "github.copilot.nextEditSuggestions.enabled" = true;
 
     # [ui]
     # window.*
@@ -134,10 +126,6 @@
     "explorer.confirmPasteNative" = false;
     "explorer.autoReveal" = false;
 
-    # chat.*
-    "chat.commandCenter.enabled" = false;
-    "chat.experimental.offerSetup" = false;
-
     # problems.*
     "problems.defaultViewMode" = "table";
 
@@ -167,5 +155,26 @@
     "extensions.autoUpdate" = false;
     "extensions.ignoreRecommendations" = true;
     "extensions.closeExtensionDetailsOnViewChange" = true;
+
+    # [extensions]
+    # chat.*
+    "chat.commandCenter.enabled" = false;
+    "chat.experimental.offerSetup" = false;
+
+    # github.copilot.*
+    "github.copilot.enable" = {
+      "*" = true;
+    };
+    "github.copilot.nextEditSuggestions.enabled" = true;
+
+    # jupyter.*
+    "jupyter.askForKernelRestart" = false;
+    "jupyter.interactiveWindow.textEditor.magicCommandsAsComments" = true;
+
+    # errorLens.*
+    "errorLens.enabledDiagnosticLevels" = [
+      "error"
+      "warning"
+    ];
   };
 }
