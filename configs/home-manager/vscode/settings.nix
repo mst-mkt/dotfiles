@@ -100,6 +100,13 @@
     "chat.commandCenter.enabled" = false;
     "chat.experimental.offerSetup" = false;
 
+    # git.*
+    "git.openRepositoryInParentFolders" = "always";
+    "git.openDiffOnClick" = false;
+
+    # github.*
+    "github.gitProtocol" = "ssh";
+
     # github.copilot.*
     "github.copilot.enable" = {
       "*" = true;
