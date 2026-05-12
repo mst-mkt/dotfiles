@@ -103,6 +103,9 @@
     # problems.*
     "problems.defaultViewMode" = "table";
 
+    # scm.*
+    "scm.showActionButton" = false;
+
     # git.*
     "git.openRepositoryInParentFolders" = "always";
     "git.openDiffOnClick" = false;
