@@ -42,6 +42,12 @@
     "breadcrumbs.icons" = false;
     "breadcrumbs.showFiles" = false;
 
+    # diffEditor.*
+    "diffEditor.renderSideBySide" = false;
+    "diffEditor.experimental.showMoves" = true;
+    "diffEditor.experimental.useTrueInlineView" = true;
+    "diffEditor.wordWrap" = "on";
+
     # files.*
     "files.eol" = "\n";
     "files.trimTrailingWhitespace" = true;
