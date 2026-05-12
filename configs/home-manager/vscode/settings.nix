@@ -63,6 +63,13 @@
     "window.zoomPerWindow" = false;
     "window.dialogStyle" = "custom";
 
+    # explorer.*
+    "explorer.compactFolders" = false;
+    "explorer.confirmDelete" = false;
+    "explorer.confirmDragAndDrop" = false;
+    "explorer.confirmPasteNative" = false;
+    "explorer.autoReveal" = false;
+
     # workbench.*
     "workbench.colorTheme" = "Default Dark Modern";
     "workbench.iconTheme" = "flow-deep";
