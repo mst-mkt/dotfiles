@@ -112,6 +112,14 @@
     # scm.*
     "scm.showActionButton" = false;
 
+    # terminal.*
+    "terminal.integrated.fontSize" = 12;
+    "terminal.integrated.fontLigatures.enabled" = true;
+    "terminal.integrated.cursorStyle" = "line";
+    "terminal.integrated.cursorStyleInactive" = "line";
+    "terminal.integrated.cursorBlinking" = true;
+    "terminal.integrated.copyOnSelection" = true;
+
     # git.*
     "git.openRepositoryInParentFolders" = "always";
     "git.openDiffOnClick" = false;
