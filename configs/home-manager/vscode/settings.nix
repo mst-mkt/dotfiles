@@ -36,6 +36,11 @@
     "editor.copyWithSyntaxHighlighting" = false;
     "editor.wordSeparators" = "`~!@#$%^&*()-=+[{]}\\|;:'\",.<>/?_（）。、「」・　";
 
+    # breadcrumbs.*
+    "breadcrumbs.symbolPath" = "off";
+    "breadcrumbs.icons" = false;
+    "breadcrumbs.showFiles" = false;
+
     # files.*
     "files.eol" = "\n";
     "files.trimTrailingWhitespace" = true;
