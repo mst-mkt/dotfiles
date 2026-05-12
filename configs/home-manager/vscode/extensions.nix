@@ -21,6 +21,7 @@
     ++ (with pkgs.vscode-marketplace-release-universal; [
       ionutvmi.path-autocomplete
       oxc.oxc-vscode
+      ryuta46.multi-command
       thang-nm.flow-icons
     ]);
 }
