@@ -125,6 +125,33 @@
     "update.mode" = "none";
     "update.showReleaseNotes" = false;
 
+    # emmet.*
+    "emmet.variables" = {
+      lang = "ja";
+    };
+    "emmet.useInlineCompletions" = true;
+
+    # typescript.*
+    "typescript.updateImportsOnFileMove.enabled" = "always";
+    "typescript.preferences.importModuleSpecifier" = "relative";
+    "typescript.preferences.quoteStyle" = "single";
+    "typescript.inlayHints.parameterNames.enabled" = "literals";
+    "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName" = true;
+    "typescript.inlayHints.parameterTypes.enabled" = true;
+    "typescript.inlayHints.variableTypes.enabled" = true;
+    "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName" = true;
+    "typescript.inlayHints.propertyDeclarationTypes.enabled" = true;
+    "typescript.inlayHints.functionLikeReturnTypes.enabled" = true;
+    "typescript.inlayHints.enumMemberValues.enabled" = true;
+
+    # notebook.*
+    "notebook.formatOnSave.enabled" = true;
+    "notebook.formatOnCellExecution" = true;
+
+    # jupyter.*
+    "jupyter.askForKernelRestart" = false;
+    "jupyter.interactiveWindow.textEditor.magicCommandsAsComments" = true;
+
     # git.*
     "git.openRepositoryInParentFolders" = "always";
     "git.openDiffOnClick" = false;
