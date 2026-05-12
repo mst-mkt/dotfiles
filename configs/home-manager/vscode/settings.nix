@@ -42,11 +42,19 @@
     "files.trimFinalNewlines" = true;
     "files.insertFinalNewline" = true;
 
+    # window.*
+    "window.titleBarStyle" = "custom";
+    "window.customTitleBarVisibility" = "never";
+    "window.menuBarVisibility" = "compact";
+    "window.commandCenter" = false;
+    "window.zoomLevel" = -1;
+    "window.zoomPerWindow" = false;
+    "window.dialogStyle" = "custom";
+
     # workbench.*
     "workbench.startupEditor" = "none";
     "workbench.colorTheme" = "Default Dark Modern";
     "workbench.iconTheme" = "flow-deep";
-
 
     # github.copilot.*
     "github.copilot.enable" = {
