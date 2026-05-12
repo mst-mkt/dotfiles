@@ -170,6 +170,7 @@
     "Mod+W".action.toggle-column-tabbed-display = [ ];
 
     "Print".action.screenshot-screen = [ ];
+    "Mod+Shift+S".action.screenshot = [ ];
 
     "Mod+Escape" = {
       action.toggle-keyboard-shortcuts-inhibit = [ ];
