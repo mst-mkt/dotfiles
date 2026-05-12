@@ -131,10 +131,9 @@
 
     # github.*
     "github.gitProtocol" = "ssh";
-
-    # github.copilot.*
     "github.copilot.enable" = {
       "*" = true;
     };
+    "github.copilot.nextEditSuggestions.enabled" = true;
   };
 }
