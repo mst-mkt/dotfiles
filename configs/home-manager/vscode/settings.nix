@@ -1,5 +1,6 @@
 {
   programs.vscode.profiles.default.userSettings = {
+    # [editor]
     # editor.*
     "editor.fontFamily" = "'UDEV Gothic NF', monospace";
     "editor.fontSize" = 12;
@@ -48,83 +49,6 @@
     "diffEditor.experimental.useTrueInlineView" = true;
     "diffEditor.wordWrap" = "on";
 
-    # files.*
-    "files.eol" = "\n";
-    "files.trimTrailingWhitespace" = true;
-    "files.trimFinalNewlines" = true;
-    "files.insertFinalNewline" = true;
-
-    # window.*
-    "window.titleBarStyle" = "custom";
-    "window.customTitleBarVisibility" = "never";
-    "window.menuBarVisibility" = "compact";
-    "window.commandCenter" = false;
-    "window.zoomLevel" = -1;
-    "window.zoomPerWindow" = false;
-    "window.dialogStyle" = "custom";
-
-    # extensions.*
-    "extensions.autoUpdate" = false;
-    "extensions.ignoreRecommendations" = true;
-    "extensions.closeExtensionDetailsOnViewChange" = true;
-
-    # explorer.*
-    "explorer.compactFolders" = false;
-    "explorer.confirmDelete" = false;
-    "explorer.confirmDragAndDrop" = false;
-    "explorer.confirmPasteNative" = false;
-    "explorer.autoReveal" = false;
-
-    # workbench.*
-    "workbench.colorTheme" = "Default Dark Modern";
-    "workbench.iconTheme" = "flow-deep";
-    "workbench.startupEditor" = "none";
-    "workbench.tips.enabled" = false;
-    "workbench.editor.wrapTabs" = true;
-    "workbench.editor.enablePreview" = false;
-    "workbench.editor.highlightModifiedTabs" = true;
-    "workbench.editor.closeOnFileDelete" = true;
-    "workbench.editor.revealIfOpen" = true;
-    "workbench.editor.empty.hint" = "hidden";
-    "workbench.activityBar.location" = "top";
-    "workbench.activityBar.iconClickBehavior" = "focus";
-    "workbench.panel.opensMaximized" = "never";
-    "workbench.panel.showLabels" = false;
-    "workbench.layoutControl.enabled" = false;
-    "workbench.browser.showInTitleBar" = false;
-    "workbench.tree.indent" = 16;
-    "workbench.tree.renderIndentGuides" = "always";
-    "workbench.commandPalette.history" = 256;
-    "workbench.commandPalette.experimental.suggestCommands" = true;
-
-    # chat.*
-    "chat.commandCenter.enabled" = false;
-    "chat.experimental.offerSetup" = false;
-
-    # problems.*
-    "problems.defaultViewMode" = "table";
-
-    # search.*
-    "search.smartCase" = true;
-    "search.showLineNumbers" = true;
-    "search.defaultViewMode" = "tree";
-    "search.quickOpen.includeSymbols" = true;
-
-    # scm.*
-    "scm.showActionButton" = false;
-
-    # terminal.*
-    "terminal.integrated.fontSize" = 12;
-    "terminal.integrated.fontLigatures.enabled" = true;
-    "terminal.integrated.cursorStyle" = "line";
-    "terminal.integrated.cursorStyleInactive" = "line";
-    "terminal.integrated.cursorBlinking" = true;
-    "terminal.integrated.copyOnSelection" = true;
-
-    # update.*
-    "update.mode" = "none";
-    "update.showReleaseNotes" = false;
-
     # emmet.*
     "emmet.variables" = {
       lang = "ja";
@@ -152,6 +76,13 @@
     "jupyter.askForKernelRestart" = false;
     "jupyter.interactiveWindow.textEditor.magicCommandsAsComments" = true;
 
+    # [files, vcs]
+    # files.*
+    "files.eol" = "\n";
+    "files.trimTrailingWhitespace" = true;
+    "files.trimFinalNewlines" = true;
+    "files.insertFinalNewline" = true;
+
     # git.*
     "git.openRepositoryInParentFolders" = "always";
     "git.openDiffOnClick" = false;
@@ -162,5 +93,79 @@
       "*" = true;
     };
     "github.copilot.nextEditSuggestions.enabled" = true;
+
+    # [ui]
+    # window.*
+    "window.titleBarStyle" = "custom";
+    "window.customTitleBarVisibility" = "never";
+    "window.menuBarVisibility" = "compact";
+    "window.commandCenter" = false;
+    "window.zoomLevel" = -1;
+    "window.zoomPerWindow" = false;
+    "window.dialogStyle" = "custom";
+
+    # workbench.*
+    "workbench.colorTheme" = "Default Dark Modern";
+    "workbench.iconTheme" = "flow-deep";
+    "workbench.startupEditor" = "none";
+    "workbench.tips.enabled" = false;
+    "workbench.editor.wrapTabs" = true;
+    "workbench.editor.enablePreview" = false;
+    "workbench.editor.highlightModifiedTabs" = true;
+    "workbench.editor.closeOnFileDelete" = true;
+    "workbench.editor.revealIfOpen" = true;
+    "workbench.editor.empty.hint" = "hidden";
+    "workbench.activityBar.location" = "top";
+    "workbench.activityBar.iconClickBehavior" = "focus";
+    "workbench.panel.opensMaximized" = "never";
+    "workbench.panel.showLabels" = false;
+    "workbench.layoutControl.enabled" = false;
+    "workbench.browser.showInTitleBar" = false;
+    "workbench.tree.indent" = 16;
+    "workbench.tree.renderIndentGuides" = "always";
+    "workbench.commandPalette.history" = 256;
+    "workbench.commandPalette.experimental.suggestCommands" = true;
+
+    # [panels]
+    # explorer.*
+    "explorer.compactFolders" = false;
+    "explorer.confirmDelete" = false;
+    "explorer.confirmDragAndDrop" = false;
+    "explorer.confirmPasteNative" = false;
+    "explorer.autoReveal" = false;
+
+    # chat.*
+    "chat.commandCenter.enabled" = false;
+    "chat.experimental.offerSetup" = false;
+
+    # problems.*
+    "problems.defaultViewMode" = "table";
+
+    # search.*
+    "search.smartCase" = true;
+    "search.showLineNumbers" = true;
+    "search.defaultViewMode" = "tree";
+    "search.quickOpen.includeSymbols" = true;
+
+    # scm.*
+    "scm.showActionButton" = false;
+
+    # terminal.*
+    "terminal.integrated.fontSize" = 12;
+    "terminal.integrated.fontLigatures.enabled" = true;
+    "terminal.integrated.cursorStyle" = "line";
+    "terminal.integrated.cursorStyleInactive" = "line";
+    "terminal.integrated.cursorBlinking" = true;
+    "terminal.integrated.copyOnSelection" = true;
+
+    # [system]
+    # update.*
+    "update.mode" = "none";
+    "update.showReleaseNotes" = false;
+
+    # extensions.*
+    "extensions.autoUpdate" = false;
+    "extensions.ignoreRecommendations" = true;
+    "extensions.closeExtensionDetailsOnViewChange" = true;
   };
 }
