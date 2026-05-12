@@ -52,9 +52,25 @@
     "window.dialogStyle" = "custom";
 
     # workbench.*
-    "workbench.startupEditor" = "none";
     "workbench.colorTheme" = "Default Dark Modern";
     "workbench.iconTheme" = "flow-deep";
+    "workbench.startupEditor" = "none";
+    "workbench.tips.enabled" = false;
+    "workbench.editor.wrapTabs" = true;
+    "workbench.editor.enablePreview" = false;
+    "workbench.editor.highlightModifiedTabs" = true;
+    "workbench.editor.closeOnFileDelete" = true;
+    "workbench.editor.revealIfOpen" = true;
+    "workbench.editor.empty.hint" = "hidden";
+    "workbench.activityBar.location" = "top";
+    "workbench.activityBar.iconClickBehavior" = "focus";
+    "workbench.panel.opensMaximized" = "never";
+    "workbench.panel.showLabels" = false;
+    "workbench.layoutControl.enabled" = false;
+    "workbench.tree.indent" = 16;
+    "workbench.tree.renderIndentGuides" = "always";
+    "workbench.commandPalette.history" = 256;
+    "workbench.commandPalette.experimental.suggestCommands" = true;
 
     # github.copilot.*
     "github.copilot.enable" = {
