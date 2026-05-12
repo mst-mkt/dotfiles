@@ -97,7 +97,7 @@
     "window.dialogStyle" = "custom";
 
     # workbench.*
-    "workbench.colorTheme" = "Default Dark Modern";
+    "workbench.colorTheme" = "Dark Modern";
     "workbench.iconTheme" = "flow-deep";
     "workbench.startupEditor" = "none";
     "workbench.tips.enabled" = false;
