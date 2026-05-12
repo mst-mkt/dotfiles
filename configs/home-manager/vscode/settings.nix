@@ -91,6 +91,7 @@
     "workbench.panel.opensMaximized" = "never";
     "workbench.panel.showLabels" = false;
     "workbench.layoutControl.enabled" = false;
+    "workbench.browser.showInTitleBar" = false;
     "workbench.tree.indent" = 16;
     "workbench.tree.renderIndentGuides" = "always";
     "workbench.commandPalette.history" = 256;
