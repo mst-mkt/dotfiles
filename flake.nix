@@ -1,11 +1,15 @@
 {
-  description = "mst-mkt's NixOS & home-manager configurations";
+  description = "mst-mkt's NixOS & home-manager configurations (denix-powered)";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
     home-manager.url = "github:nix-community/home-manager";
     home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+    denix.url = "github:yunfachi/denix";
+    denix.inputs.nixpkgs.follows = "nixpkgs";
+    denix.inputs.home-manager.follows = "home-manager";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
@@ -34,24 +38,64 @@
   };
 
   outputs =
-    inputs@{ self, nixpkgs, ... }:
+    inputs@{
+      self,
+      nixpkgs,
+      denix,
+      ...
+    }:
     let
-      lib = import ./lib inputs;
       forAllSystems = nixpkgs.lib.genAttrs [
         "x86_64-linux"
         "aarch64-linux"
       ];
+
       treefmtEval = forAllSystems (
         system: inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} ./treefmt.nix
       );
     in
     {
-      nixosConfigurations.zenbook = lib.mkSystem {
-        system = "x86_64-linux";
-        hostname = "zenbook";
-        username = "mst-mkt";
-        modules = [ ./hosts/zenbook/nixos.nix ];
-        homeModules = [ ./hosts/zenbook/home-manager.nix ];
+      nixosConfigurations = denix.lib.configurations {
+        moduleSystem = "nixos";
+        homeManagerUser = "mst-mkt";
+        paths = [
+          ./hosts
+          ./modules
+        ];
+        specialArgs = { inherit inputs; };
+        extensions = with denix.lib.extensions; [
+          args
+          (base.withConfig {
+            args.enable = true;
+            hosts.type.types = [
+              "laptop"
+              "server"
+            ];
+            hosts.features = {
+              features = [
+                "cli"
+                "gui"
+                "dev"
+                "gaming"
+                "agents"
+              ];
+              defaultByHostType = {
+                laptop = [
+                  "cli"
+                  "gui"
+                  "dev"
+                  "gaming"
+                  "agents"
+                ];
+                server = [
+                  "cli"
+                  "agents"
+                ];
+              };
+            };
+          })
+          overlays
+        ];
       };
 
       devShells = forAllSystems (
