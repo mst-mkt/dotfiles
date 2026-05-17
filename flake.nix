@@ -35,6 +35,9 @@
     nur.inputs.nixpkgs.follows = "nixpkgs";
 
     llm-agents.url = "github:numtide/llm-agents.nix";
+
+    tnix.url = "github:ubugeeei/tnix";
+    tnix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =

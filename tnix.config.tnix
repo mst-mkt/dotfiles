@@ -1,0 +1,16 @@
+{
+  name = "dotfiles";
+  sourceDir = ./.;
+  entry = ./main.tnix;
+  declarationDir = ./types;
+  declarationPacks = [];
+  buildDir = ./dist;
+  generatedDeclarationDir = ./dist/types;
+  entries = [];
+  include = [];
+  exclude = [
+    ./dist
+    ./types
+  ];
+  builtins = true;
+}
