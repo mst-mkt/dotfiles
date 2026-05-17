@@ -7,6 +7,7 @@ let
     inputs.niri-flake.overlays.niri
     inputs.nix-vite-plus.overlays.default
     inputs.nix-vscode-extensions.overlays.default
+    inputs.nur.overlays.default
   ];
 in
 {

@@ -1,0 +1,30 @@
+{ pkgs, ... }:
+
+let
+  firefox-addons = pkgs.nur.repos.rycee.firefox-addons;
+  inherit (firefox-addons) buildFirefoxXpiAddon;
+in
+{
+  programs.floorp.profiles.default.extensions.packages = with firefox-addons; [
+    bitwarden
+    wappalyzer
+
+    (buildFirefoxXpiAddon {
+      pname = "deepl-translate";
+      version = "1.85.0";
+      addonId = "firefox-extension@deepl.com";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4792203/deepl_translate-1.85.0.xpi";
+      sha256 = "1l5g9c8bl8i76r1r0rbjim2zwn39bmzh7cqny54c0qbac8ddr9mj";
+      meta = { };
+    })
+
+    (buildFirefoxXpiAddon {
+      pname = "material-icons-for-github";
+      version = "1.14.1";
+      addonId = "{eac6e624-97fa-4f28-9d24-c06c9b8aa713}";
+      url = "https://addons.mozilla.org/firefox/downloads/file/4781117/material_icons_for_github-1.14.1.xpi";
+      sha256 = "13k1smjhxm6xgzb108rvwzf59pa5qzx5g2r1inkaqj0fzdn8rhdj";
+      meta = { };
+    })
+  ];
+}

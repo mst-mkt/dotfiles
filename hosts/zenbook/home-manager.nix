@@ -8,6 +8,7 @@
     ../../configs/home-manager/desktop-apps
     ../../configs/home-manager/dev-tools
     ../../configs/home-manager/fcitx5
+    ../../configs/home-manager/floorp
     ../../configs/home-manager/gh
     ../../configs/home-manager/ghq
     ../../configs/home-manager/git
