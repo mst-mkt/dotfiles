@@ -37,6 +37,7 @@ delib.module {
         ])
         ++ (with pkgs.vscode-marketplace-release-universal; [
           ionutvmi.path-autocomplete
+          moonbit.moonbit-lang
           oxc.oxc-vscode
           ryuta46.multi-command
           thang-nm.flow-icons

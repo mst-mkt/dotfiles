@@ -221,6 +221,11 @@ delib.module {
             sequence = [ "nix-ide.restartLanguageServer" ];
           }
           {
+            command = "multiCommand.restartMoonBit";
+            label = "MoonBit: Restart Language Server";
+            sequence = [ "moonbit.restart" ];
+          }
+          {
             command = "multiCommand.restartCspell";
             label = "CSpell: Restart";
             sequence = [ "cSpell.restart" ];
