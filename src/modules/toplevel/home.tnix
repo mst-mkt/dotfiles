@@ -1,0 +1,23 @@
+{ delib, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+in
+_delib.module {
+  name = "toplevel.home";
+  options = _delib.singleEnableOption true;
+  home = {
+    ifEnabled = { myconfig, ... }:
+      let
+        _myconfig :: MyConfig; _myconfig = myconfig;
+      in {
+        home = {
+          username = _myconfig.constants.username;
+          homeDirectory = "/home/${_myconfig.constants.username}";
+          stateVersion = _myconfig.constants.stateVersion;
+        };
+        programs = {
+          home-manager = { enable = true; };
+        };
+      };
+  };
+}

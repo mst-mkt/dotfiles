@@ -1,0 +1,25 @@
+{ delib, host, pkgs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+  _pkgs :: Pkgs; _pkgs = pkgs;
+  enabled = if _host.guiFeatured then _host.gamingFeatured else false;
+in
+_delib.module {
+  name = "programs.steam";
+  options = _delib.singleEnableOption enabled;
+  nixos = {
+    ifEnabled = {
+      programs = {
+        steam = {
+          enable = true;
+          remotePlay = { openFirewall = true; };
+          localNetworkGameTransfers = { openFirewall = true; };
+          extraCompatPackages = [ _pkgs.proton-ge-bin ];
+          protontricks = { enable = true; };
+        };
+        gamemode = { enable = true; };
+      };
+    };
+  };
+}

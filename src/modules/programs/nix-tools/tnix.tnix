@@ -1,0 +1,23 @@
+{ delib, host, pkgs, ... }:
+let
+  _delib :: ProjectDelib;
+  _delib = delib;
+  _host :: Host;
+  _host = host;
+  _pkgs :: Pkgs;
+  _pkgs = pkgs;
+in
+_delib.module {
+  name = "programs.nix-tools.tnix";
+  options = _delib.singleEnableOption _host.devFeatured;
+  home = {
+    ifEnabled = {
+      home = {
+        packages = [
+          _pkgs.tnix
+          _pkgs.tnix-lsp
+        ];
+      };
+    };
+  };
+}

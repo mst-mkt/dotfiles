@@ -1,0 +1,26 @@
+{ delib, pkgs, lib, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _pkgs :: Pkgs; _pkgs = pkgs;
+  _lib :: Lib; _lib = lib;
+in
+_delib.module {
+  name = "programs.niri";
+  home = {
+    ifEnabled = {
+      programs = {
+        niri = {
+          settings = {
+            xwayland-satellite = {
+              path = _lib.getExe _pkgs.xwayland-satellite-unstable;
+            };
+            spawn-at-startup = [
+              { command = [ "waybar" ]; }
+              { command = [ "fcitx5" "-d" "-r" ]; }
+            ];
+          };
+        };
+      };
+    };
+  };
+}

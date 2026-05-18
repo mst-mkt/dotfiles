@@ -1,0 +1,23 @@
+{ delib, host, pkgs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+  _pkgs :: Pkgs; _pkgs = pkgs;
+in
+_delib.module {
+  name = "toplevel.cursor";
+  options = _delib.singleEnableOption _host.guiFeatured;
+  home = {
+    ifEnabled = {
+      home = {
+        pointerCursor = {
+          name = "Breeze_Light";
+          package = _pkgs.kdePackages.breeze;
+          size = 24;
+          gtk = { enable = true; };
+          x11 = { enable = true; };
+        };
+      };
+    };
+  };
+}

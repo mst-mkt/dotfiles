@@ -1,0 +1,14 @@
+{ delib, inputs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _inputs :: Inputs; _inputs = inputs;
+in
+_delib.overlayModule {
+  name = "tnix";
+  overlay = (final :: dynamic): (prev :: dynamic): {
+    tnix = _inputs.tnix.packages.${prev.system}.tnix;
+    tnix-lsp = _inputs.tnix.packages.${prev.system}.tnix-lsp;
+  };
+  targets = [ "nixos" ];
+  enabled = true;
+}

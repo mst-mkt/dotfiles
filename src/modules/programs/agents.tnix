@@ -1,0 +1,22 @@
+{ delib, host, pkgs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+  _pkgs :: Pkgs; _pkgs = pkgs;
+in
+_delib.module {
+  name = "programs.agents";
+  options = _delib.singleEnableOption _host.agentsFeatured;
+  home = {
+    ifEnabled = {
+      home = {
+        packages = [
+          _pkgs.llm-agents.claude-code
+          _pkgs.llm-agents.codex
+          _pkgs.llm-agents.copilot-cli
+          _pkgs.llm-agents.ccusage
+        ];
+      };
+    };
+  };
+}

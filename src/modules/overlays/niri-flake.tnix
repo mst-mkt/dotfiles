@@ -1,0 +1,11 @@
+{ delib, inputs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _inputs :: Inputs; _inputs = inputs;
+in
+_delib.overlayModule {
+  name = "niri-flake";
+  overlay = _inputs.niri-flake.overlays.niri;
+  targets = [ "nixos" ];
+  enabled = true;
+}

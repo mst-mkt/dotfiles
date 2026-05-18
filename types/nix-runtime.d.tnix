@@ -1,0 +1,104 @@
+# Slim local type surfaces for the `pkgs`, `lib`, and flake `inputs` actually
+# referenced by this dotfiles. Not a general nixpkgs typing — typo detection
+# only covers what this project uses.
+
+type NixpkgsDerivation = {
+  name :: String;
+  pname :: String | Null;
+  version :: String | Null;
+  drvPath :: String | Path;
+  outPath :: String | Path;
+  meta :: dynamic;
+  passthru :: dynamic;
+};
+
+type LlmAgents = {
+  claude-code :: NixpkgsDerivation;
+  codex :: NixpkgsDerivation;
+  copilot-cli :: NixpkgsDerivation;
+  ccusage :: NixpkgsDerivation;
+};
+
+type NushellPlugins = {
+  gstat :: NixpkgsDerivation;
+  query :: NixpkgsDerivation;
+  skim :: NixpkgsDerivation;
+};
+
+type Pkgs = {
+  brightnessctl :: NixpkgsDerivation;
+  discord :: NixpkgsDerivation;
+  fuzzel :: NixpkgsDerivation;
+  ghq :: NixpkgsDerivation;
+  mattermost-desktop :: NixpkgsDerivation;
+  niri-unstable :: NixpkgsDerivation;
+  nixd :: NixpkgsDerivation;
+  noto-fonts :: NixpkgsDerivation;
+  noto-fonts-cjk-sans :: NixpkgsDerivation;
+  noto-fonts-cjk-serif :: NixpkgsDerivation;
+  noto-fonts-color-emoji :: NixpkgsDerivation;
+  nushell :: NixpkgsDerivation;
+  proton-ge-bin :: NixpkgsDerivation;
+  slack :: NixpkgsDerivation;
+  tnix :: NixpkgsDerivation;
+  tnix-lsp :: NixpkgsDerivation;
+  udev-gothic-nf :: NixpkgsDerivation;
+  vite-plus :: NixpkgsDerivation;
+  vivaldi :: NixpkgsDerivation;
+  waybar :: NixpkgsDerivation;
+  wezterm :: NixpkgsDerivation;
+  xwayland-satellite-unstable :: NixpkgsDerivation;
+
+  fetchurl :: dynamic -> NixpkgsDerivation;
+
+  llm-agents :: LlmAgents;
+  nushellPlugins :: NushellPlugins;
+
+  # Nested sub-trees that this dotfiles only touches as `pkgs.X.Y.Z`. Wide
+  # enough that listing every entry is noise — leave as dynamic.
+  kdePackages :: dynamic;
+  nur :: dynamic;
+  vscode-extensions :: dynamic;
+  vscode-marketplace-release-universal :: dynamic;
+  vscode-utils :: dynamic;
+};
+
+type Lib = {
+  getExe :: NixpkgsDerivation -> String;
+  mkDefault :: forall a. a -> a;
+};
+
+type Inputs = {
+  llm-agents :: {
+    overlays :: { default :: dynamic; };
+  };
+  niri-flake :: {
+    nixosModules :: { niri :: dynamic; };
+    overlays :: { niri :: dynamic; };
+  };
+  nix-hazkey :: {
+    homeModules :: { hazkey :: dynamic; };
+  };
+  nix-index-database :: {
+    homeModules :: { nix-index :: dynamic; };
+  };
+  nixos-hardware :: {
+    nixosModules :: {
+      common-cpu-intel :: dynamic;
+      common-pc-laptop :: dynamic;
+      common-pc-laptop-ssd :: dynamic;
+    };
+  };
+  nix-vite-plus :: {
+    overlays :: { default :: dynamic; };
+  };
+  nix-vscode-extensions :: {
+    overlays :: { default :: dynamic; };
+  };
+  nur :: {
+    overlays :: { default :: dynamic; };
+  };
+  tnix :: {
+    packages :: dynamic;
+  };
+};

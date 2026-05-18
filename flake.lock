@@ -597,11 +597,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779034502,
-        "narHash": "sha256-IbvJkA9a7yXrt3Z1fas0tDJmj7imo7h7ckBSmCg4OqI=",
+        "lastModified": 1779085504,
+        "narHash": "sha256-RtScUBNhIExAZe6Sppp5oioVoXYn4nRo9W6JmalptQA=",
         "owner": "ubugeeei",
         "repo": "tnix",
-        "rev": "3af4dfb5ba00aafbe8eb7f32d46331c36a75da0c",
+        "rev": "593f2d7640762b51f6d8f371a206795506ed2f01",
         "type": "github"
       },
       "original": {

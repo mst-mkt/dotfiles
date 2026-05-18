@@ -1,0 +1,51 @@
+# Types for denix's official extensions: `overlays` and `base` (host generators).
+# `GenericHost feat ht` is parametrised so projects can specialise it with
+# their own feature/hostType enums.
+
+type NixpkgsOverlay = dynamic -> dynamic -> dynamic;
+
+type OverlayTarget = "nixos" | "home" | "darwin";
+
+type DelibOverlayModuleInput = {
+  name :: String;
+};
+
+type DelibGenerateHostTypeInput = {};
+type DelibGenerateHostFeaturesInput = {};
+type DelibGenerateHostDisplaysInput = {};
+type DelibGenerateHostSystemInput = {};
+
+type HostDisplay = {
+  enable :: Bool;
+  name :: String;
+  primary :: Bool;
+  touchscreen :: Bool;
+  refreshRate :: Int;
+  width :: Int;
+  height :: Int;
+  x :: Int;
+  y :: Int;
+};
+
+type GenericHost feat ht = {
+  name :: String;
+  useHomeManagerModule :: Bool;
+  homeManagerUser :: String;
+  homeManagerSystem :: String;
+  myconfig :: dynamic;
+  nixos :: dynamic;
+  home :: dynamic;
+  darwin :: dynamic;
+  shared :: {
+    myconfig :: dynamic;
+    nixos :: dynamic;
+    home :: dynamic;
+    darwin :: dynamic;
+  };
+  rice :: String | Null;
+  type :: ht;
+  features :: List feat;
+  defaultFeatures :: List feat;
+  system :: String | Null;
+  displays :: List HostDisplay;
+};

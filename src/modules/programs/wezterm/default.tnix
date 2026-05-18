@@ -1,0 +1,24 @@
+{ delib, host, pkgs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+  _pkgs :: Pkgs; _pkgs = pkgs;
+in
+_delib.module {
+  name = "programs.wezterm";
+  options = _delib.singleEnableOption _host.guiFeatured;
+  home = {
+    ifEnabled = {
+      home = {
+        packages = [ _pkgs.wezterm ];
+      };
+      xdg = {
+        configFile = {
+          "wezterm/wezterm.lua" = {
+            source = ../../../../src/modules/programs/wezterm/wezterm.lua;
+          };
+        };
+      };
+    };
+  };
+}

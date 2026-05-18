@@ -1,0 +1,17 @@
+{ delib, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+in
+_delib.module {
+  name = "toplevel.home-manager";
+  options = _delib.singleEnableOption true;
+  nixos = {
+    ifEnabled = {
+      home-manager = {
+        useGlobalPkgs = true;
+        useUserPackages = true;
+        backupFileExtension = "hm-bak";
+      };
+    };
+  };
+}

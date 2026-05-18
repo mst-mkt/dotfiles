@@ -1,0 +1,27 @@
+{ delib, host, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+in
+_delib.module {
+  name = "programs.floorp";
+  options = _delib.singleEnableOption _host.guiFeatured;
+  home = {
+    ifEnabled = {
+      programs = {
+        floorp = {
+          enable = true;
+          profiles = {
+            default = {
+              isDefault = true;
+              settings = {
+                "extensions.autoDisableScopes" = 0;
+                "extensions.enabledScopes" = 15;
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+}

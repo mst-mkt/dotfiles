@@ -1,0 +1,26 @@
+{ delib, host, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+in
+_delib.module {
+  name = "services.pipewire";
+  options = _delib.singleEnableOption _host.guiFeatured;
+  nixos = {
+    ifEnabled = {
+      security = {
+        rtkit = { enable = true; };
+      };
+      services = {
+        pipewire = {
+          enable = true;
+          pulse = { enable = true; };
+          alsa = {
+            enable = true;
+            support32Bit = true;
+          };
+        };
+      };
+    };
+  };
+}

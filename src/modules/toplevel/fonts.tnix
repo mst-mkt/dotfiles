@@ -1,0 +1,31 @@
+{ delib, host, pkgs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+  _pkgs :: Pkgs; _pkgs = pkgs;
+in
+_delib.module {
+  name = "toplevel.fonts";
+  options = _delib.singleEnableOption _host.guiFeatured;
+  nixos = {
+    ifEnabled = {
+      fonts = {
+        packages = [
+          _pkgs.noto-fonts
+          _pkgs.noto-fonts-cjk-sans
+          _pkgs.noto-fonts-cjk-serif
+          _pkgs.noto-fonts-color-emoji
+          _pkgs.udev-gothic-nf
+        ];
+        fontconfig = {
+          defaultFonts = {
+            serif = [ "Noto Serif CJK JP" "Noto Color Emoji" ];
+            sansSerif = [ "Noto Sans CJK JP" "Noto Color Emoji" ];
+            monospace = [ "UDEV Gothic NF" "Noto Sans Mono CJK JP" "Noto Color Emoji" ];
+            emoji = [ "Noto Color Emoji" ];
+          };
+        };
+      };
+    };
+  };
+}

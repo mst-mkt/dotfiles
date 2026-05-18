@@ -62,8 +62,8 @@
         moduleSystem = "nixos";
         homeManagerUser = "mst-mkt";
         paths = [
-          ./hosts
-          ./modules
+          ./dist/hosts
+          ./dist/modules
         ];
         specialArgs = { inherit inputs; };
         extensions = with denix.lib.extensions; [

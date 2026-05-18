@@ -1,0 +1,16 @@
+{ delib, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+in
+_delib.module {
+  name = "config.constants";
+  options = {
+    constants = {
+      username = _delib.readOnly (_delib.strOption "mst-mkt");
+      useremail = _delib.readOnly (_delib.strOption "mail@keito.dev");
+      hostname = _delib.readOnly (_delib.strOption "zenbook");
+      system = _delib.readOnly (_delib.strOption "x86_64-linux");
+      stateVersion = _delib.readOnly (_delib.strOption "25.11");
+    };
+  };
+}

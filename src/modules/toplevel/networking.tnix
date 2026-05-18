@@ -1,0 +1,20 @@
+{ delib, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+in
+_delib.module {
+  name = "toplevel.networking";
+  options = _delib.singleEnableOption true;
+  nixos = {
+    ifEnabled = { myconfig, ... }:
+      let
+        _myconfig :: MyConfig; _myconfig = myconfig;
+      in {
+        networking = {
+          hostName = _myconfig.constants.hostname;
+          networkmanager = { enable = true; };
+          firewall = { enable = true; };
+        };
+      };
+  };
+}

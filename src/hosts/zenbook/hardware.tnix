@@ -1,0 +1,71 @@
+{ delib, inputs, config, lib, modulesPath, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _inputs :: Inputs; _inputs = inputs;
+  _config :: dynamic; _config = config;
+  _lib :: Lib; _lib = lib;
+  _modulesPath :: dynamic; _modulesPath = modulesPath;
+  notDetected = _modulesPath + "/installer/scan/not-detected.nix";
+  intelNpu = _modulesPath + "/hardware/cpu/intel-npu.nix";
+in
+_delib.host {
+  name = "zenbook";
+  nixos = {
+    imports = [
+      notDetected
+      intelNpu
+      _inputs.nixos-hardware.nixosModules.common-cpu-intel
+    ];
+    boot = {
+      initrd = {
+        availableKernelModules = [
+          "xhci_pci"
+          "thunderbolt"
+          "vmd"
+          "nvme"
+          "usb_storage"
+          "sd_mod"
+        ];
+        kernelModules = [ ];
+      };
+      kernelModules = [ "kvm-intel" ];
+      extraModulePackages = [ ];
+    };
+    fileSystems = {
+      "/" = {
+        device = "/dev/disk/by-uuid/cb99d20f-fa03-48d4-a33f-3e9f3dd086b1";
+        fsType = "btrfs";
+        options = [ "subvol=root" "compress=zstd" "noatime" ];
+      };
+      "/home" = {
+        device = "/dev/disk/by-uuid/cb99d20f-fa03-48d4-a33f-3e9f3dd086b1";
+        fsType = "btrfs";
+        options = [ "subvol=home" "compress=zstd" "noatime" ];
+      };
+      "/nix" = {
+        device = "/dev/disk/by-uuid/cb99d20f-fa03-48d4-a33f-3e9f3dd086b1";
+        fsType = "btrfs";
+        options = [ "subvol=nix" "compress=zstd" "noatime" ];
+      };
+      "/boot" = {
+        device = "/dev/disk/by-uuid/C06A-F5AE";
+        fsType = "vfat";
+        options = [ "fmask=0077" "dmask=0077" ];
+      };
+    };
+    swapDevices = [
+      { device = "/dev/disk/by-uuid/d645ba93-d03d-4c2a-8e61-5bade7d63a53"; }
+    ];
+    nixpkgs = {
+      hostPlatform = _lib.mkDefault "x86_64-linux";
+    };
+    hardware = {
+      cpu = {
+        intel = {
+          updateMicrocode = _lib.mkDefault _config.hardware.enableRedistributableFirmware;
+          npu = { enable = true; };
+        };
+      };
+    };
+  };
+}

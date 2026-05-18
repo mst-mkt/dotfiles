@@ -1,0 +1,85 @@
+# Project-specific `myconfig` schema.
+# `Feature` and `HostType` mirror flake.nix `hosts.features.features` and
+# `hosts.type.types` — update both sides together.
+# `Host` is an inlined `GenericHost Feature HostType` plus the auto-generated
+# `is${Type}` / `${feature}Featured` flags (tnix has no mapped-type / intersection).
+
+type HostType = "laptop" | "server";
+
+type Feature = "cli" | "gui" | "dev" | "gaming" | "agents";
+
+type Host = {
+  name :: String;
+  useHomeManagerModule :: Bool;
+  homeManagerUser :: String;
+  homeManagerSystem :: String;
+  myconfig :: dynamic;
+  nixos :: dynamic;
+  home :: dynamic;
+  darwin :: dynamic;
+  shared :: {
+    myconfig :: dynamic;
+    nixos :: dynamic;
+    home :: dynamic;
+    darwin :: dynamic;
+  };
+  rice :: String | Null;
+  type :: HostType;
+  features :: List Feature;
+  defaultFeatures :: List Feature;
+  system :: String | Null;
+  displays :: List HostDisplay;
+
+  isLaptop :: Bool;
+  isServer :: Bool;
+  isPC :: Bool;
+
+  cliFeatured :: Bool;
+  guiFeatured :: Bool;
+  devFeatured :: Bool;
+  gamingFeatured :: Bool;
+  agentsFeatured :: Bool;
+};
+
+type MyConfigConstants = {
+  username :: String;
+  useremail :: String;
+  hostname :: String;
+  system :: String;
+  stateVersion :: String;
+};
+
+type MyConfig = {
+  constants :: MyConfigConstants;
+  host :: Host;
+  hosts :: dynamic;
+  rice :: dynamic;
+  rices :: dynamic;
+  programs :: dynamic;
+  services :: dynamic;
+  toplevel :: dynamic;
+  overlays :: dynamic;
+  config :: dynamic;
+};
+
+type ProjectDelib = Delib MyConfig;
+type ProjectModuleArgs = DelibModuleArgs MyConfig;
+type ProjectHostArgs = DelibHostArgs MyConfig;
+type ProjectRiceArgs = DelibRiceArgs MyConfig;
+
+type ProjectArgs = {
+  delib :: ProjectDelib;
+  host :: Host;
+  pkgs :: Pkgs;
+  inputs :: Inputs;
+  lib :: Lib;
+  config :: dynamic;
+};
+
+# Note: `Host` inlines `GenericHost Feature HostType` instead of composing it.
+# tnix v0.3.1 is missing the features needed to deduplicate:
+#   - intersection (`&`)        → cannot merge two record types
+#   - record spread / extends   → cannot pull fields from another type
+#   - mapped types              → cannot generate `${feature}Featured :: Bool` fields
+#   - row polymorphism          → future work in tnix
+# Revisit once any of these land upstream.

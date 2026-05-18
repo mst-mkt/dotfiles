@@ -1,6 +1,0 @@
-declare "builtins" {
-  head :: forall a. List a -> a;
-  import :: Path -> dynamic;
-  length :: forall a. List a -> Int;
-  map :: forall a b. (a -> b) -> List a -> List b;
-};

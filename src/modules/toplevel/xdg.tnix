@@ -1,0 +1,19 @@
+{ delib, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+in
+_delib.module {
+  name = "toplevel.xdg";
+  options = _delib.singleEnableOption true;
+  home = {
+    ifEnabled = {
+      xdg = {
+        userDirs = {
+          enable = true;
+          createDirectories = true;
+          setSessionVariables = false;
+        };
+      };
+    };
+  };
+}

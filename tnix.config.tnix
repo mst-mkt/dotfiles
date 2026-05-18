@@ -1,16 +1,13 @@
 {
   name = "dotfiles";
-  sourceDir = ./.;
-  entry = ./main.tnix;
+  sourceDir = ./src;
+  entry = ./src/modules/programs/nix-tools/tnix.tnix;
   declarationDir = ./types;
   declarationPacks = [];
   buildDir = ./dist;
   generatedDeclarationDir = ./dist/types;
   entries = [];
   include = [];
-  exclude = [
-    ./dist
-    ./types
-  ];
+  exclude = [];
   builtins = true;
 }

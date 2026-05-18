@@ -1,0 +1,31 @@
+{ delib, pkgs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _pkgs :: Pkgs; _pkgs = pkgs;
+in
+_delib.module {
+  name = "toplevel.user";
+  options = _delib.singleEnableOption true;
+  nixos = {
+    ifEnabled = { myconfig, ... }:
+      let
+        _myconfig :: MyConfig; _myconfig = myconfig;
+      in {
+        environment = {
+          shells = [ _pkgs.nushell ];
+        };
+        users = {
+          users = builtins.listToAttrs [
+            {
+              name = _myconfig.constants.username;
+              value = {
+                isNormalUser = true;
+                extraGroups = [ "wheel" "networkmanager" "video" ];
+                shell = _pkgs.nushell;
+              };
+            }
+          ];
+        };
+      };
+  };
+}

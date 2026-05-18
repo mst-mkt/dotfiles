@@ -1,4 +1,0 @@
-let
-  greeting :: String;
-  greeting = "Hello from dotfiles";
-in greeting

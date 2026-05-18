@@ -1,0 +1,46 @@
+{ delib, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+in
+_delib.module {
+  name = "programs.niri";
+  home = {
+    ifEnabled = {
+      programs = {
+        niri = {
+          settings = {
+            layout = {
+              gaps = 16;
+              center-focused-column = "never";
+              empty-workspace-above-first = true;
+              default-column-width = { proportion = 1.0; };
+              preset-column-widths = [
+                { proportion = 0.3333333333333333; }
+                { proportion = 0.5; }
+                { proportion = 0.6666666666666666; }
+              ];
+              focus-ring = {
+                width = 4;
+                active = { color = "#7fc8ff"; };
+                inactive = { color = "#505050"; };
+              };
+              border = {
+                enable = false;
+                width = 4;
+                active = { color = "#ffc87f"; };
+                inactive = { color = "#505050"; };
+                urgent = { color = "#9b0000"; };
+              };
+              shadow = {
+                softness = 30;
+                spread = 5;
+                offset = { x = 0; y = 5; };
+                color = "#0007";
+              };
+            };
+          };
+        };
+      };
+    };
+  };
+}

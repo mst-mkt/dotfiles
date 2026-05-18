@@ -1,0 +1,17 @@
+{ delib, host, pkgs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+  _pkgs :: Pkgs; _pkgs = pkgs;
+in
+_delib.module {
+  name = "programs.waybar";
+  options = _delib.singleEnableOption _host.guiFeatured;
+  home = {
+    ifEnabled = {
+      home = {
+        packages = [ _pkgs.waybar ];
+      };
+    };
+  };
+}

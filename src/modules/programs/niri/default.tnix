@@ -1,0 +1,42 @@
+{ delib, host, inputs, pkgs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+  _inputs :: Inputs; _inputs = inputs;
+  _pkgs :: Pkgs; _pkgs = pkgs;
+in
+_delib.module {
+  name = "programs.niri";
+  options = _delib.singleEnableOption _host.guiFeatured;
+  nixos = {
+    always = {
+      imports = [ _inputs.niri-flake.nixosModules.niri ];
+    };
+    ifEnabled = {
+      programs = {
+        niri = {
+          enable = true;
+          package = _pkgs.niri-unstable;
+        };
+      };
+      environment = {
+        sessionVariables = {
+          NIXOS_OZONE_WL = "1";
+        };
+      };
+    };
+  };
+  home = {
+    ifEnabled = {
+      programs = {
+        niri = {
+          settings = {
+            prefer-no-csd = true;
+            hotkey-overlay = { skip-at-startup = true; };
+            screenshot-path = "~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png";
+          };
+        };
+      };
+    };
+  };
+}

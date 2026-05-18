@@ -1,0 +1,22 @@
+{ delib, host, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+in
+_delib.module {
+  name = "programs.nix-tools.nh";
+  options = _delib.singleEnableOption _host.cliFeatured;
+  home = {
+    ifEnabled = { myconfig, ... }:
+      let
+        _myconfig :: MyConfig; _myconfig = myconfig;
+      in {
+        programs = {
+          nh = {
+            enable = true;
+            osFlake = "path:/home/${_myconfig.constants.username}/dotfiles";
+          };
+        };
+      };
+  };
+}

@@ -1,0 +1,298 @@
+# denix (github:yunfachi/denix) `delib` API surface.
+# Covers: module/host/rice builders, configurations, extension API,
+# option helpers, attrset utilities, fixed-points, umport, maintainers.
+#
+# `Delib`, `DelibOptionHelpers` and the `DelibXxxArgs` records are parametrised
+# over the user's myconfig type (`my`). Projects specialise via `Delib MyConfig`.
+# Inputs with many optional fields (e.g. `delib.module {...}`) require only `name`;
+# the rest is accepted structurally as extra fields (tnix has no optional-field syntax).
+
+type DelibModuleArgs my = {
+  name :: String;
+  cfg :: NixConfig;
+  parent :: NixConfig;
+  myconfig :: my;
+};
+
+type DelibHostArgs my = {
+  name :: String;
+  cfg :: NixConfig;
+  myconfig :: my;
+};
+
+type DelibRiceArgs my = {
+  name :: String;
+  cfg :: NixConfig;
+  myconfig :: my;
+};
+
+type DelibSectionBody a = NixOptionsTree | (a -> NixOptionsTree);
+
+type DelibStageRecord a = {
+  ifEnabled :: DelibSectionBody a;
+  ifDisabled :: DelibSectionBody a;
+  always :: DelibSectionBody a;
+};
+type DelibStage a = DelibSectionBody a | DelibStageRecord a;
+
+type DelibModuleSystem = "nixos" | "home" | "darwin";
+
+type DelibModuleSystemLoose =
+  "nixos"
+  | "home"
+  | "darwin"
+  | "home-manager"
+  | "nix-darwin"
+  | "myconfig";
+
+type DelibMaintainer = {
+  name :: String;
+  email :: String | Null;
+  github :: String | Null;
+  githubId :: Int | Null;
+  telegram :: String | Null;
+  telegramId :: Int | Null;
+};
+
+type DelibMaintainers = {
+  yunfachi :: DelibMaintainer;
+  zonni :: DelibMaintainer;
+};
+
+type DelibAttrset = {
+  splitStrPath :: String -> List String;
+  getAttrByStrPath :: forall a. String -> dynamic -> a -> a | dynamic;
+  setAttrByStrPath :: String -> dynamic -> dynamic;
+  hasAttrs :: List String -> dynamic -> Bool;
+};
+
+type DelibUmportInput = {
+  path :: Path | Null;
+  paths :: List Path;
+  include :: List Path;
+  exclude :: List Path;
+  recursive :: Bool;
+};
+
+type DelibExtension = {
+  name :: String;
+  description :: String | Null;
+  maintainers :: List DelibMaintainer;
+  initialConfig :: dynamic | Null;
+  configOrder :: Int;
+  libExtensionOrder :: Int;
+  libExtension :: dynamic;
+  modules :: List dynamic;
+  config :: dynamic;
+  withConfig :: dynamic -> DelibExtension;
+  __unfix__ :: dynamic;
+  __unfixConfig__ :: dynamic;
+};
+
+type DelibExtensionInput = {
+  name :: String;
+};
+
+type DelibCallExtensionsInput = {
+  paths :: List Path;
+};
+
+type DelibConfigurationsInput = {
+  paths :: List Path;
+};
+
+type DelibConfigurationsResult = dynamic;
+
+type DelibModuleInput = {
+  name :: String;
+};
+
+type DelibHostInput = {
+  name :: String;
+};
+
+type DelibRiceInput = {
+  name :: String;
+};
+
+type DelibOptionHelpers my = {
+  anything :: NixOptionType;
+  attrsOf :: NixOptionType -> NixOptionType;
+  bool :: NixOptionType;
+  coercedTo :: NixOptionType -> dynamic -> NixOptionType -> NixOptionType;
+  enum :: List String -> NixOptionType;
+  float :: NixOptionType;
+  int :: NixOptionType;
+  listOf :: NixOptionType -> NixOptionType;
+  number :: NixOptionType;
+  package :: NixOptionType;
+  path :: NixOptionType;
+  port :: NixOptionType;
+  singleLineStr :: NixOptionType;
+  str :: NixOptionType;
+  submodule :: dynamic -> NixOptionType;
+  attrs :: NixOptionType;
+  attrsLegacy :: NixOptionType;
+  lambda :: NixOptionType;
+  lambdaTo :: NixOptionType -> NixOptionType;
+  list :: NixOptionType;
+
+  anythingOption :: dynamic -> NixOption;
+  attrsLegacyOption :: dynamic -> NixOption;
+  attrsOfOption :: NixOptionType -> dynamic -> NixOption;
+  attrsOption :: dynamic -> NixOption;
+  boolOption :: Bool -> NixOption;
+  coercedToOption :: NixOptionType -> dynamic -> NixOptionType -> dynamic -> NixOption;
+  enumOption :: List String -> dynamic -> NixOption;
+  floatOption :: Float | Null -> NixOption;
+  intOption :: Int | Null -> NixOption;
+  lambdaOption :: dynamic -> NixOption;
+  lambdaToOption :: NixOptionType -> dynamic -> NixOption;
+  listOfOption :: NixOptionType -> List dynamic -> NixOption;
+  listOption :: List dynamic -> NixOption;
+  numberOption :: Number | Null -> NixOption;
+  packageOption :: dynamic -> NixOption;
+  pathOption :: Path | Null -> NixOption;
+  portOption :: Int | Null -> NixOption;
+  singleLineStrOption :: String | Null -> NixOption;
+  strOption :: String | Null -> NixOption;
+  submoduleOption :: dynamic -> dynamic -> NixOption;
+
+  allowAnything :: NixOption -> NixOption;
+  allowAttrs :: NixOption -> NixOption;
+  allowAttrsLegacy :: NixOption -> NixOption;
+  allowAttrsOf :: NixOptionType -> NixOption -> NixOption;
+  allowBool :: NixOption -> NixOption;
+  allowCoercedToOption :: NixOptionType -> dynamic -> NixOptionType -> NixOption -> NixOption;
+  allowEnum :: List String -> NixOption -> NixOption;
+  allowFloat :: NixOption -> NixOption;
+  allowInt :: NixOption -> NixOption;
+  allowLambda :: NixOption -> NixOption;
+  allowLambdaTo :: NixOptionType -> NixOption -> NixOption;
+  allowList :: NixOption -> NixOption;
+  allowListOf :: NixOptionType -> NixOption -> NixOption;
+  allowNull :: NixOption -> NixOption;
+  allowNumber :: NixOption -> NixOption;
+  allowPackage :: NixOption -> NixOption;
+  allowPath :: NixOption -> NixOption;
+  allowPortOption :: NixOption -> NixOption;
+  allowSingleLineStrOption :: NixOption -> NixOption;
+  allowStr :: NixOption -> NixOption;
+
+  noDefault :: NixOption -> NixOption;
+  noNullDefault :: NixOption -> NixOption;
+  readOnly :: NixOption -> NixOption;
+  apply :: NixOption -> dynamic -> NixOption;
+  description :: NixOption -> String -> NixOption;
+
+  singleEnableOption :: Bool -> DelibModuleArgs my -> NixOptionsTree;
+  singleCascadeEnableOption :: DelibModuleArgs my -> NixOptionsTree;
+  moduleOptions :: dynamic -> DelibModuleArgs my -> NixOptionsTree;
+};
+
+type Delib my = {
+  module :: DelibModuleInput -> NixModule;
+  host :: DelibHostInput -> NixModule;
+  rice :: DelibRiceInput -> NixModule;
+  configurations :: DelibConfigurationsInput -> DelibConfigurationsResult;
+  extension :: DelibExtensionInput -> DelibExtension;
+  overlayModule :: DelibOverlayModuleInput -> NixModule;
+
+  extensions :: dynamic;
+  callExtension :: Path -> DelibExtension;
+  callExtensions :: DelibCallExtensionsInput -> dynamic;
+  withExtensions :: List DelibExtension -> Delib my;
+  mergeExtensions :: String -> List DelibExtension -> DelibExtension;
+
+  attrset :: DelibAttrset;
+  getAttrByStrPath :: forall a. String -> dynamic -> a -> a | dynamic;
+  setAttrByStrPath :: String -> dynamic -> dynamic;
+  hasAttrs :: List String -> dynamic -> Bool;
+
+  fix :: forall a. (a -> a) -> a;
+  fixWithUnfix :: forall a. (a -> a) -> a;
+  recursivelyExtends :: dynamic -> dynamic -> dynamic;
+  recursivelyComposeExtensions :: dynamic -> dynamic -> dynamic;
+  recursivelyComposeManyExtensions :: List dynamic -> dynamic;
+  makeRecursivelyExtensible :: dynamic -> Delib my;
+  makeRecursivelyExtensibleWithCustomName :: String -> dynamic -> Delib my;
+  recursivelyExtend :: dynamic -> Delib my;
+
+  umport :: DelibUmportInput -> List Path;
+
+  maintainers :: DelibMaintainers;
+
+  options :: DelibOptionHelpers my;
+
+  anything :: NixOptionType;
+  attrsOf :: NixOptionType -> NixOptionType;
+  bool :: NixOptionType;
+  coercedTo :: NixOptionType -> dynamic -> NixOptionType -> NixOptionType;
+  enum :: List String -> NixOptionType;
+  float :: NixOptionType;
+  int :: NixOptionType;
+  listOf :: NixOptionType -> NixOptionType;
+  number :: NixOptionType;
+  package :: NixOptionType;
+  path :: NixOptionType;
+  port :: NixOptionType;
+  singleLineStr :: NixOptionType;
+  str :: NixOptionType;
+  submodule :: dynamic -> NixOptionType;
+  attrs :: NixOptionType;
+  attrsLegacy :: NixOptionType;
+  lambda :: NixOptionType;
+  lambdaTo :: NixOptionType -> NixOptionType;
+  list :: NixOptionType;
+  anythingOption :: dynamic -> NixOption;
+  attrsLegacyOption :: dynamic -> NixOption;
+  attrsOfOption :: NixOptionType -> dynamic -> NixOption;
+  attrsOption :: dynamic -> NixOption;
+  boolOption :: Bool -> NixOption;
+  coercedToOption :: NixOptionType -> dynamic -> NixOptionType -> dynamic -> NixOption;
+  enumOption :: List String -> dynamic -> NixOption;
+  floatOption :: Float | Null -> NixOption;
+  intOption :: Int | Null -> NixOption;
+  lambdaOption :: dynamic -> NixOption;
+  lambdaToOption :: NixOptionType -> dynamic -> NixOption;
+  listOfOption :: NixOptionType -> List dynamic -> NixOption;
+  listOption :: List dynamic -> NixOption;
+  numberOption :: Number | Null -> NixOption;
+  packageOption :: dynamic -> NixOption;
+  pathOption :: Path | Null -> NixOption;
+  portOption :: Int | Null -> NixOption;
+  singleLineStrOption :: String | Null -> NixOption;
+  strOption :: String | Null -> NixOption;
+  submoduleOption :: dynamic -> dynamic -> NixOption;
+  allowAnything :: NixOption -> NixOption;
+  allowAttrs :: NixOption -> NixOption;
+  allowAttrsLegacy :: NixOption -> NixOption;
+  allowAttrsOf :: NixOptionType -> NixOption -> NixOption;
+  allowBool :: NixOption -> NixOption;
+  allowCoercedToOption :: NixOptionType -> dynamic -> NixOptionType -> NixOption -> NixOption;
+  allowEnum :: List String -> NixOption -> NixOption;
+  allowFloat :: NixOption -> NixOption;
+  allowInt :: NixOption -> NixOption;
+  allowLambda :: NixOption -> NixOption;
+  allowLambdaTo :: NixOptionType -> NixOption -> NixOption;
+  allowList :: NixOption -> NixOption;
+  allowListOf :: NixOptionType -> NixOption -> NixOption;
+  allowNull :: NixOption -> NixOption;
+  allowNumber :: NixOption -> NixOption;
+  allowPackage :: NixOption -> NixOption;
+  allowPath :: NixOption -> NixOption;
+  allowPortOption :: NixOption -> NixOption;
+  allowSingleLineStrOption :: NixOption -> NixOption;
+  allowStr :: NixOption -> NixOption;
+  noDefault :: NixOption -> NixOption;
+  noNullDefault :: NixOption -> NixOption;
+  readOnly :: NixOption -> NixOption;
+  apply :: NixOption -> dynamic -> NixOption;
+  description :: NixOption -> String -> NixOption;
+  singleEnableOption :: Bool -> DelibModuleArgs my -> NixOptionsTree;
+  singleCascadeEnableOption :: DelibModuleArgs my -> NixOptionsTree;
+  moduleOptions :: dynamic -> DelibModuleArgs my -> NixOptionsTree;
+
+  _callLib :: Path -> dynamic;
+  _callLibArgs :: dynamic;
+};

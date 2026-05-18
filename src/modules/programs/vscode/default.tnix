@@ -1,0 +1,20 @@
+{ delib, host, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+  enabled = if _host.devFeatured then _host.guiFeatured else false;
+in
+_delib.module {
+  name = "programs.vscode";
+  options = _delib.singleEnableOption enabled;
+  home = {
+    ifEnabled = {
+      programs = {
+        vscode = {
+          enable = true;
+          mutableExtensionsDir = false;
+        };
+      };
+    };
+  };
+}

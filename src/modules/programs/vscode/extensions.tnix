@@ -1,0 +1,55 @@
+{ delib, pkgs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _pkgs :: Pkgs; _pkgs = pkgs;
+in
+_delib.module {
+  name = "programs.vscode";
+  home = {
+    ifEnabled =
+      let
+        tnix = _pkgs.vscode-utils.buildVscodeMarketplaceExtension {
+          mktplcRef = {
+            publisher = "ubugeeei";
+            name = "tnix";
+            version = "0.3.1";
+          };
+          vsix = _pkgs.fetchurl {
+            url = "https://github.com/ubugeeei/tnix/releases/download/v0.3.1/tnix-vscode-v0.3.1.vsix";
+            hash = "sha256-wobox639FzHcWhYCNEBZR4ojCXs7wEpXbd95ux0CJN8=";
+          };
+        };
+      in
+      {
+        programs = {
+          vscode = {
+            profiles = {
+              default = {
+                extensions = [
+                  _pkgs.vscode-extensions.charliermarsh.ruff
+                  _pkgs.vscode-extensions.github.copilot-chat
+                  _pkgs.vscode-extensions.ibm.output-colorizer
+                  _pkgs.vscode-extensions.jnoortheen.nix-ide
+                  _pkgs.vscode-extensions.mkhl.direnv
+                  _pkgs.vscode-extensions.ms-python.python
+                  _pkgs.vscode-extensions.ms-toolsai.jupyter
+                  _pkgs.vscode-extensions.nefrob.vscode-just-syntax
+                  _pkgs.vscode-extensions.streetsidesoftware.code-spell-checker
+                  _pkgs.vscode-extensions.tamasfe.even-better-toml
+                  _pkgs.vscode-extensions.thenuprojectcontributors.vscode-nushell-lang
+                  _pkgs.vscode-extensions.usernamehw.errorlens
+                  _pkgs.vscode-extensions.vitest.explorer
+                  _pkgs.vscode-extensions.yoavbls.pretty-ts-errors
+                  _pkgs.vscode-marketplace-release-universal.ionutvmi.path-autocomplete
+                  _pkgs.vscode-marketplace-release-universal.oxc.oxc-vscode
+                  _pkgs.vscode-marketplace-release-universal.ryuta46.multi-command
+                  _pkgs.vscode-marketplace-release-universal.thang-nm.flow-icons
+                  tnix
+                ];
+              };
+            };
+          };
+        };
+      };
+  };
+}

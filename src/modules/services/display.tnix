@@ -1,0 +1,19 @@
+{ delib, host, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+in
+_delib.module {
+  name = "services.display";
+  options = _delib.singleEnableOption _host.guiFeatured;
+  nixos = {
+    ifEnabled = {
+      services = {
+        libinput = { enable = true; };
+        displayManager = {
+          ly = { enable = true; };
+        };
+      };
+    };
+  };
+}

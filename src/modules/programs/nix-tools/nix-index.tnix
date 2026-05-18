@@ -1,0 +1,27 @@
+{ delib, host, inputs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+  _inputs :: Inputs; _inputs = inputs;
+in
+_delib.module {
+  name = "programs.nix-tools.nix-index";
+  options = _delib.singleEnableOption _host.cliFeatured;
+  home = {
+    always = {
+      imports = [ _inputs.nix-index-database.homeModules.nix-index ];
+    };
+    ifEnabled = {
+      programs = {
+        nix-index = {
+          enable = true;
+        };
+        nix-index-database = {
+          comma = {
+            enable = true;
+          };
+        };
+      };
+    };
+  };
+}

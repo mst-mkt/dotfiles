@@ -1,0 +1,23 @@
+{ delib, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+in
+_delib.module {
+  name = "toplevel.boot";
+  options = _delib.singleEnableOption true;
+  nixos = {
+    ifEnabled = {
+      boot = {
+        loader = {
+          systemd-boot = {
+            enable = true;
+            configurationLimit = 20;
+          };
+          efi = {
+            canTouchEfiVariables = true;
+          };
+        };
+      };
+    };
+  };
+}

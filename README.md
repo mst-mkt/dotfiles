@@ -1,6 +1,10 @@
 # dotfiles
 
 ```sh
-nh os switch    # apply
-nix fmt         # format
+tnix build .   # compile src/**/*.tnix -> dist/
+nh os switch   # apply
+```
+
+```sh
+nix fmt        # format
 ```

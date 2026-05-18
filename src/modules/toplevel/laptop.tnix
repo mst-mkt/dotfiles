@@ -1,0 +1,29 @@
+{ delib, host, inputs, pkgs, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+  _inputs :: Inputs; _inputs = inputs;
+  _pkgs :: Pkgs; _pkgs = pkgs;
+in
+_delib.module {
+  name = "toplevel.laptop";
+  options = _delib.singleEnableOption _host.isLaptop;
+  nixos = {
+    always = {
+      imports = [
+        _inputs.nixos-hardware.nixosModules.common-pc-laptop
+        _inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+      ];
+    };
+    ifEnabled = {
+      services = {
+        fstrim = { enable = true; };
+        angrr = { enable = true; };
+        udev = { packages = [ _pkgs.brightnessctl ]; };
+      };
+      environment = {
+        systemPackages = [ _pkgs.brightnessctl ];
+      };
+    };
+  };
+}

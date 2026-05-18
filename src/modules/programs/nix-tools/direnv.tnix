@@ -1,0 +1,27 @@
+{ delib, host, ... }:
+let
+  _delib :: ProjectDelib; _delib = delib;
+  _host :: Host; _host = host;
+in
+_delib.module {
+  name = "programs.nix-tools.direnv";
+  options = _delib.singleEnableOption _host.cliFeatured;
+  home = {
+    ifEnabled = {
+      programs = {
+        direnv = {
+          enable = true;
+          nix-direnv = {
+            enable = true;
+          };
+          enableNushellIntegration = true;
+          config = {
+            global = {
+              hide_env_diff = true;
+            };
+          };
+        };
+      };
+    };
+  };
+}

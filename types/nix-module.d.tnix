@@ -1,0 +1,22 @@
+# Permissive types for the NixOS / home-manager / nix-darwin module system surface.
+# `NixOption` has a real shape (lib.mkOption result). The other type names below
+# are intentional `= dynamic` aliases used as documentation in signatures —
+# they give the checker no extra safety but communicate intent. Tighten them
+# once tnix supports the relevant surface.
+
+type NixOption = {
+  type :: dynamic;
+  default :: dynamic | Null;
+  example :: dynamic | Null;
+  description :: String | Null;
+  readOnly :: Bool | Null;
+  apply :: dynamic | Null;
+  visible :: Bool | "shallow" | Null;
+  internal :: Bool | Null;
+};
+
+type NixModule = dynamic;
+type NixOptionsTree = dynamic;
+type NixOptionType = dynamic;
+type NixConfig = dynamic;
+type NixModuleItem = dynamic;
