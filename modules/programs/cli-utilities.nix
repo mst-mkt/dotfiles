@@ -14,6 +14,7 @@ delib.module {
     home.packages = [
       pkgs.cf-open
       pkgs.gengo
+      pkgs.git-wt
       pkgs.jnv
       pkgs.mmv-go
       pkgs.mo
