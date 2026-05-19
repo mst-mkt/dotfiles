@@ -8,7 +8,7 @@
 }:
 
 delib.host {
-  name = "zenbook";
+  name = "dirtmouth";
 
   nixos = {
     imports = [

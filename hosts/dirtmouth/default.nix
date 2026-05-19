@@ -1,7 +1,7 @@
 { delib, ... }:
 
 delib.host {
-  name = "zenbook";
+  name = "dirtmouth";
   type = "laptop";
 
   nixos.system.stateVersion = "25.11";

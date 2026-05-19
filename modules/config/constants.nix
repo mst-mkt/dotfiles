@@ -6,7 +6,7 @@ delib.module {
   options.constants = with delib; {
     username = readOnly (strOption "mst-mkt");
     useremail = readOnly (strOption "mail@keito.dev");
-    hostname = readOnly (strOption "zenbook");
+    hostname = readOnly (strOption "dirtmouth");
     system = readOnly (strOption "x86_64-linux");
     stateVersion = readOnly (strOption "25.11");
   };
