@@ -11,7 +11,7 @@ def --env ghcd [] {
 
 # ghget: GitHub 上のリポジトリを sk で選択して ghq get -p
 # deps: ghq, gh cli, nu_plugin_skim
-def ghget [] {
+def --env ghget [] {
   let existing = ghq list
     | lines
     | where { |it| $it | str starts-with "github.com/" }
@@ -37,6 +37,9 @@ def ghget [] {
     | sk
 
   if ($selected | is-not-empty) {
-    ghq get -p $selected
+    let repo = ($selected | to text | str trim)
+    ghq get -p $repo
+    let dest = (^ghq root | str trim | path join "github.com" $repo)
+    cd $dest
   }
 }
