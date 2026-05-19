@@ -28,6 +28,9 @@
     nix-vite-plus.url = "github:mst-mkt/nix-vite-plus";
     nix-vite-plus.inputs.nixpkgs.follows = "nixpkgs";
 
+    cf-open.url = "github:mst-mkt/cf-open";
+    cf-open.inputs.nixpkgs.follows = "nixpkgs";
+
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
 

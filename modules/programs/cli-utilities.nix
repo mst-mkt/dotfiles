@@ -1,4 +1,9 @@
-{ delib, host, ... }:
+{
+  delib,
+  host,
+  pkgs,
+  ...
+}:
 
 delib.module {
   name = "programs.cli-utilities";
@@ -6,6 +11,14 @@ delib.module {
   options = delib.singleEnableOption host.cliFeatured;
 
   home.ifEnabled = {
+    home.packages = [
+      pkgs.cf-open
+      pkgs.gengo
+      pkgs.jnv
+      pkgs.mmv-go
+      pkgs.mo
+    ];
+
     programs.bat.enable = true;
 
     programs.eza = {

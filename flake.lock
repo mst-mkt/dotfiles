@@ -59,6 +59,26 @@
         "type": "github"
       }
     },
+    "cf-open": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1779207188,
+        "narHash": "sha256-9VFtg7TCgMZiKcmQT8R38791RcaV7LmtnQq3vR7HSnE=",
+        "owner": "mst-mkt",
+        "repo": "cf-open",
+        "rev": "e0b6c736b5f02273718c8c4d8f7d9a3af551549d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mst-mkt",
+        "repo": "cf-open",
+        "type": "github"
+      }
+    },
     "denix": {
       "inputs": {
         "home-manager": [
@@ -526,6 +546,7 @@
     },
     "root": {
       "inputs": {
+        "cf-open": "cf-open",
         "denix": "denix",
         "home-manager": "home-manager",
         "llm-agents": "llm-agents",
