@@ -43,3 +43,13 @@ def --env ghget [] {
     cd $dest
   }
 }
+
+# ghsw: ローカルブランチを sk で選択して switch
+# deps: git, nu_plugin_skim
+def ghsw [] {
+  let selected = (^git branch --format='%(refname:short)' | lines | sk)
+  if ($selected | is-not-empty) {
+    let branch = ($selected | to text | str trim)
+    ^git switch $branch
+  }
+}
