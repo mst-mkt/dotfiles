@@ -1,4 +1,9 @@
-{ delib, host, ... }:
+{
+  delib,
+  host,
+  pkgs,
+  ...
+}:
 
 delib.module {
   name = "programs.gh";
@@ -8,5 +13,10 @@ delib.module {
   home.ifEnabled.programs.gh = {
     enable = true;
     settings.git_protocol = "ssh";
+    extensions = [
+      pkgs.gh-markdown-preview
+      pkgs.gh-poi
+      pkgs.gh-pr-reviews
+    ];
   };
 }
