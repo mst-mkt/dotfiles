@@ -23,7 +23,7 @@ $env.PROMPT_COMMAND = {||
       ($stat.idx_modified_staged? | default 0) +
       ($stat.idx_deleted_staged? | default 0) +
       ($stat.idx_renamed? | default 0) +
-      ($stat.idx_type_change? | default 0)
+      ($stat.idx_type_changed? | default 0)
     )
     let modified = ($stat.wt_modified? | default 0)
     let deleted = ($stat.wt_deleted? | default 0)
