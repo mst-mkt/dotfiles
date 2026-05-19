@@ -22,6 +22,7 @@ delib.module {
         (with pkgs.vscode-extensions; [
           charliermarsh.ruff
           github.copilot-chat
+          golang.go
           ibm.output-colorizer
           jnoortheen.nix-ide
           mkhl.direnv
