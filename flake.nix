@@ -101,6 +101,27 @@
         ];
       };
 
+      packages = forAllSystems (
+        system:
+        let
+          pkgs = nixpkgs.legacyPackages.${system};
+          wezterm-types = pkgs.fetchFromGitHub {
+            owner = "DrKJeff16";
+            repo = "wezterm-types";
+            rev = "d3505f689e53d8fda536d265d870a1fee937e69f"; # v4.2.0-1
+            hash = "sha256-4phaLDVFjH83D54lEMHin3b4ycgKUzdryjdv8u7tvNo=";
+          };
+        in
+        {
+          luarc = pkgs.writeText "luarc.json" (builtins.toJSON {
+            "runtime.version" = "Lua 5.4";
+            "workspace.library" = [ "${wezterm-types}/lua" ];
+            "workspace.checkThirdParty" = false;
+            "diagnostics.globals" = [ "wezterm" ];
+          });
+        }
+      );
+
       devShells = forAllSystems (
         system:
         let
@@ -112,6 +133,9 @@
               pkgs.nil
               treefmtEval.${system}.config.build.wrapper
             ];
+            shellHook = ''
+              ln -sfn ${self.packages.${system}.luarc} .luarc.json
+            '';
           };
         }
       );
