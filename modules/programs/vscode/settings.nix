@@ -226,6 +226,14 @@ delib.module {
             sequence = [ "moonbit.restart" ];
           }
           {
+            command = "multiCommand.restartLua";
+            label = "Lua: Restart Language Server";
+            sequence = [
+              "lua.stopServer"
+              "lua.startServer"
+            ];
+          }
+          {
             command = "multiCommand.restartCspell";
             label = "CSpell: Restart";
             sequence = [ "cSpell.restart" ];
