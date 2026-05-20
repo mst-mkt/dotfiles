@@ -6,7 +6,6 @@ delib.module {
   home.ifEnabled.programs.niri.settings.layout = {
     gaps = 16;
     center-focused-column = "never";
-    empty-workspace-above-first = true;
 
     default-column-width.proportion = 1.0;
     preset-column-widths = [
