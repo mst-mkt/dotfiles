@@ -6,6 +6,7 @@ delib.module {
   home.ifEnabled.programs.niri.settings.layout = {
     gaps = 16;
     center-focused-column = "never";
+    background-color = "#f8c706";
 
     default-column-width.proportion = 1.0;
     preset-column-widths = [
@@ -16,7 +17,7 @@ delib.module {
 
     focus-ring = {
       width = 4;
-      active.color = "#7fc8ff";
+      active.color = "#daa520";
       inactive.color = "#505050";
     };
 
@@ -26,16 +27,6 @@ delib.module {
       active.color = "#ffc87f";
       inactive.color = "#505050";
       urgent.color = "#9b0000";
-    };
-
-    shadow = {
-      softness = 30;
-      spread = 5;
-      offset = {
-        x = 0;
-        y = 5;
-      };
-      color = "#0007";
     };
   };
 }
