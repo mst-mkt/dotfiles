@@ -2,6 +2,7 @@
   delib,
   host,
   inputs,
+  lib,
   pkgs,
   ...
 }:
@@ -25,5 +26,7 @@ delib.module {
     prefer-no-csd = true;
     hotkey-overlay.skip-at-startup = true;
     screenshot-path = "~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png";
+    xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+    includes = [ ./effects.kdl ];
   };
 }
