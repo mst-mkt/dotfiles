@@ -10,5 +10,6 @@ delib.module {
 
   options = delib.singleEnableOption host.devFeatured;
 
-  home.ifEnabled.home.packages = [ pkgs.vite-plus ];
+  # disabled: upstream pnpmDeps hash broken (ryoppippi/nix-vite-plus#4)
+  # home.ifEnabled.home.packages = [ pkgs.vite-plus ];
 }
