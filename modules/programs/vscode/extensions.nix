@@ -39,6 +39,7 @@ delib.module {
         ])
         ++ (with pkgs.vscode-marketplace-release-universal; [
           ionutvmi.path-autocomplete
+          kdl-org.kdl
           moonbit.moonbit-lang
           oxc.oxc-vscode
           ryuta46.multi-command
