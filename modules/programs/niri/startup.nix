@@ -9,7 +9,7 @@ delib.module {
   name = "programs.niri";
 
   home.ifEnabled.programs.niri.settings = {
-    xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite-unstable;
+    xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
     spawn-at-startup = [
       { command = [ "waybar" ]; }

@@ -16,7 +16,7 @@
     nix-hazkey.url = "github:aster-void/nix-hazkey";
     nix-hazkey.inputs.nixpkgs.follows = "nixpkgs";
 
-    niri-flake.url = "github:sodiboo/niri-flake";
+    niri-flake.url = "github:sodiboo/niri-flake/very-refactor";
     niri-flake.inputs.nixpkgs.follows = "nixpkgs";
 
     treefmt-nix.url = "github:numtide/treefmt-nix";
