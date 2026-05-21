@@ -113,12 +113,14 @@
           };
         in
         {
-          luarc = pkgs.writeText "luarc.json" (builtins.toJSON {
-            "runtime.version" = "Lua 5.4";
-            "workspace.library" = [ "${wezterm-types}/lua" ];
-            "workspace.checkThirdParty" = false;
-            "diagnostics.globals" = [ "wezterm" ];
-          });
+          luarc = pkgs.writeText "luarc.json" (
+            builtins.toJSON {
+              "runtime.version" = "Lua 5.4";
+              "workspace.library" = [ "${wezterm-types}/lua" ];
+              "workspace.checkThirdParty" = false;
+              "diagnostics.globals" = [ "wezterm" ];
+            }
+          );
         }
       );
 
