@@ -376,15 +376,15 @@
         ]
       },
       "locked": {
-        "lastModified": 1778158037,
-        "narHash": "sha256-4kcVu/+XKA8RB2gtIpINwM7/jRyCyzpednhrsvch5N8=",
-        "owner": "mst-mkt",
+        "lastModified": 1779305694,
+        "narHash": "sha256-H33Un8olWep0bXUbsv6m4dkBmagTTXStWdb35vQejzM=",
+        "owner": "ryoppippi",
         "repo": "nix-vite-plus",
-        "rev": "6fbd7e3a8d74a2f072aa0fd39241aedd858858a2",
+        "rev": "6de01d4dd8e32bbcf6f267acccd5c547453e5f6f",
         "type": "github"
       },
       "original": {
-        "owner": "mst-mkt",
+        "owner": "ryoppippi",
         "repo": "nix-vite-plus",
         "type": "github"
       }

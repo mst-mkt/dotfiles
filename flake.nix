@@ -25,7 +25,7 @@
     nix-index-database.url = "github:nix-community/nix-index-database";
     nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
 
-    nix-vite-plus.url = "github:mst-mkt/nix-vite-plus";
+    nix-vite-plus.url = "github:ryoppippi/nix-vite-plus";
     nix-vite-plus.inputs.nixpkgs.follows = "nixpkgs";
 
     cf-open.url = "github:mst-mkt/cf-open";
