@@ -13,7 +13,7 @@
 
     nixos-hardware.url = "github:NixOS/nixos-hardware";
 
-    nix-hazkey.url = "github:aster-void/nix-hazkey";
+    nix-hazkey.url = "github:aster-void/nix-hazkey/4f791a241963f6804420d69613c25c6d25610e73";
     nix-hazkey.inputs.nixpkgs.follows = "nixpkgs";
 
     niri-flake.url = "github:sodiboo/niri-flake/very-refactor";
