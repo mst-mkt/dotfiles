@@ -12,4 +12,6 @@ config.font_size = 12.0
 config.enable_wayland = true
 config.use_ime = true
 
+config.window_close_confirmation = "NeverPrompt"
+
 return config
