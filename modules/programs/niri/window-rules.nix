@@ -16,11 +16,11 @@ delib.module {
     }
     {
       matches = [ { is-focused = true; } ];
-      opacity = 0.9;
+      opacity = 0.8;
     }
     {
       matches = [ { is-focused = false; } ];
-      opacity = 0.8;
+      opacity = 0.7;
     }
     {
       matches = [ { app-id = "^vivaldi-stable$"; } ];
