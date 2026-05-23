@@ -4,7 +4,7 @@ delib.module {
   name = "programs.niri";
 
   home.ifEnabled.programs.niri.settings.overview = {
-    backdrop-color = "#fff1ca";
+    backdrop-color = "#ffd200";
     zoom = 0.7;
     workspace-shadow = {
       softness = 60;
