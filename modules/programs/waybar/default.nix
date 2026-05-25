@@ -10,5 +10,8 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  home.ifEnabled.home.packages = [ pkgs.waybar ];
+  home.ifEnabled = {
+    home.packages = [ pkgs.waybar ];
+    xdg.configFile."waybar/style.css".source = ./style.css;
+  };
 }
