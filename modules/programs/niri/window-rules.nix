@@ -27,6 +27,15 @@ delib.module {
       opacity = 1.0;
     }
     {
+      matches = [
+        {
+          app-id = "^vivaldi-.*-Default$";
+          title = "Twitch";
+        }
+      ];
+      opacity = 1.0;
+    }
+    {
       matches = [ { app-id = ''^org\.wezfurlong\.wezterm$''; } ];
       default-column-width.proportion = 0.5;
     }
