@@ -9,11 +9,11 @@ delib.module {
         mktplcRef = {
           publisher = "ubugeeei";
           name = "tnix";
-          version = "0.3.1";
+          version = "0.5.0";
         };
         vsix = pkgs.fetchurl {
-          url = "https://github.com/ubugeeei/tnix/releases/download/v0.3.1/tnix-vscode-v0.3.1.vsix";
-          hash = "sha256-wobox639FzHcWhYCNEBZR4ojCXs7wEpXbd95ux0CJN8=";
+          url = "https://github.com/ubugeeei/tnix/releases/download/v0.5.0/tnix-vscode-v0.5.0.vsix";
+          hash = "sha256-bXIGClx5CN5SLciZ+Dk7CqLN6zPSwxYgq3zrsCIIHzA=";
         };
       };
     in
