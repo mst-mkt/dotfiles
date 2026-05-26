@@ -11,6 +11,7 @@ delib.module {
 
   home.ifEnabled.programs.yazi = {
     enable = true;
+    shellWrapperName = "y";
     enableNushellIntegration = true;
   };
 }
