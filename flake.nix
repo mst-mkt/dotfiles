@@ -31,6 +31,8 @@
     cf-open.url = "github:mst-mkt/cf-open";
     cf-open.inputs.nixpkgs.follows = "nixpkgs";
 
+    moocs-collect-nix.url = "github:mst-mkt/moocs-collect-nix";
+
     nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
     nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
 
