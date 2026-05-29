@@ -1,6 +1,7 @@
 {
   delib,
   host,
+  lib,
   constants,
   ...
 }:
@@ -15,7 +16,10 @@ delib.module {
   options = delib.singleEnableOption host.isServer;
 
   nixos.ifEnabled = {
-    services.openssh.enable = true;
+    services.openssh = {
+      enable = true;
+      openFirewall = lib.mkDefault false;
+    };
 
     users.users.${constants.username}.openssh.authorizedKeys.keys = keys.users.${constants.username};
   };
