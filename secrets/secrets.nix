@@ -5,4 +5,5 @@ let
 in
 {
   "cloudflared-credentials.json.age".publicKeys = users ++ [ hosts.crossroads ];
+  "misskey-sentry-dsn.age".publicKeys = users ++ [ hosts.crossroads ];
 }
