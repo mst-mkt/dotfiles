@@ -1,4 +1,4 @@
-{ delib, ... }:
+{ delib, host, ... }:
 
 delib.module {
   name = "programs.vscode";
@@ -7,7 +7,7 @@ delib.module {
     { myconfig, ... }:
     let
       flakePath = "/home/${myconfig.constants.username}/dotfiles";
-      hostname = myconfig.constants.hostname;
+      hostname = host.name;
     in
     {
       programs.vscode.profiles.default.userSettings = {

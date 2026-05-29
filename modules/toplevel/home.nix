@@ -10,7 +10,6 @@ delib.module {
     {
       home.username = myconfig.constants.username;
       home.homeDirectory = "/home/${myconfig.constants.username}";
-      home.stateVersion = myconfig.constants.stateVersion;
 
       programs.home-manager.enable = true;
     };
