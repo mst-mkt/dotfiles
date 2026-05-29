@@ -12,8 +12,11 @@ delib.module {
 
   home.ifEnabled = {
     home.packages = [
+      pkgs.bottom
       pkgs.jnv
       pkgs.mmv-go
+      pkgs.tree
+      pkgs.wget
     ];
 
     programs.bat.enable = true;
