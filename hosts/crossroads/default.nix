@@ -4,7 +4,10 @@ delib.host {
   name = "crossroads";
   type = "server";
   system = "x86_64-linux";
-  features = [ "dev" ];
+  features = [
+    "dev"
+    "misskey"
+  ];
 
   nixos = {
     system.stateVersion = "25.05";
