@@ -1,12 +1,16 @@
-{ delib, host, ... }:
+{
+  delib,
+  host,
+  constants,
+  ...
+}:
 
 delib.module {
   name = "programs.vscode";
 
   home.ifEnabled =
-    { myconfig, ... }:
     let
-      flakePath = "/home/${myconfig.constants.username}/dotfiles";
+      flakePath = "/home/${constants.username}/dotfiles";
       hostname = host.name;
     in
     {

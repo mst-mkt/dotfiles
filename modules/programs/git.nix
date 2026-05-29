@@ -1,19 +1,20 @@
-{ delib, host, ... }:
+{
+  delib,
+  host,
+  constants,
+  ...
+}:
 
 delib.module {
   name = "programs.git";
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.ifEnabled =
-    { myconfig, ... }:
-    {
-      programs.git = {
-        enable = true;
-        settings.user = {
-          name = myconfig.constants.username;
-          email = myconfig.constants.useremail;
-        };
-      };
+  home.ifEnabled.programs.git = {
+    enable = true;
+    settings.user = {
+      name = constants.username;
+      email = constants.useremail;
     };
+  };
 }

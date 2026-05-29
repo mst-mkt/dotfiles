@@ -1,16 +1,14 @@
-{ delib, ... }:
+{ delib, constants, ... }:
 
 delib.module {
   name = "toplevel.home";
 
   options = delib.singleEnableOption true;
 
-  home.ifEnabled =
-    { myconfig, ... }:
-    {
-      home.username = myconfig.constants.username;
-      home.homeDirectory = "/home/${myconfig.constants.username}";
+  home.ifEnabled = {
+    home.username = constants.username;
+    home.homeDirectory = "/home/${constants.username}";
 
-      programs.home-manager.enable = true;
-    };
+    programs.home-manager.enable = true;
+  };
 }

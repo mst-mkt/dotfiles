@@ -1,5 +1,6 @@
 {
   delib,
+  constants,
   host,
   inputs,
   pkgs,
@@ -16,9 +17,8 @@ delib.module {
   options = delib.singleEnableOption host.cliFeatured;
 
   home.ifEnabled =
-    { myconfig, ... }:
     let
-      downloadPath = "/home/${myconfig.constants.username}/Documents/moocs-collect";
+      downloadPath = "/home/${constants.username}/Documents/moocs-collect";
 
       collect-cli = pkgs.symlinkJoin {
         inherit (packages.collect-cli) pname version meta;

@@ -7,4 +7,10 @@ delib.module {
     username = readOnly (strOption "mst-mkt");
     useremail = readOnly (strOption "mail@keito.dev");
   };
+
+  myconfig.always =
+    { myconfig, ... }:
+    {
+      args.shared.constants = myconfig.constants;
+    };
 }
