@@ -4,5 +4,5 @@ let
   users = builtins.concatLists (builtins.attrValues keys.users);
 in
 {
-  # "<name>.age".publicKeys = users ++ [ hosts.crossroads ];
+  "cloudflared-credentials.json.age".publicKeys = users ++ [ hosts.crossroads ];
 }
