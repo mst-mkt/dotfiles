@@ -6,7 +6,7 @@
 }:
 
 delib.module {
-  name = "toplevel.user";
+  name = "core.user";
 
   options = delib.singleEnableOption true;
 

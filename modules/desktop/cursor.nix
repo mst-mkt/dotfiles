@@ -6,7 +6,7 @@
 }:
 
 delib.module {
-  name = "toplevel.cursor";
+  name = "desktop.cursor";
 
   options = delib.singleEnableOption host.guiFeatured;
 

@@ -1,7 +1,7 @@
 { delib, ... }:
 
 delib.module {
-  name = "toplevel.nix";
+  name = "core.nix";
 
   options = delib.singleEnableOption true;
 

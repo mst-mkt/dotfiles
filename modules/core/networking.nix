@@ -1,7 +1,7 @@
 { delib, host, ... }:
 
 delib.module {
-  name = "toplevel.networking";
+  name = "core.networking";
 
   options = delib.singleEnableOption true;
 

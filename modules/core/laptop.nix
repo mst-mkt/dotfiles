@@ -7,7 +7,7 @@
 }:
 
 delib.module {
-  name = "toplevel.laptop";
+  name = "core.laptop";
 
   options = delib.singleEnableOption host.isLaptop;
 

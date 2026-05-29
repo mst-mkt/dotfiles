@@ -1,7 +1,7 @@
 { delib, ... }:
 
 delib.module {
-  name = "toplevel.home-manager";
+  name = "core.home-manager";
 
   options = delib.singleEnableOption true;
 

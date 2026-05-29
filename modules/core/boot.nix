@@ -1,7 +1,7 @@
 { delib, ... }:
 
 delib.module {
-  name = "toplevel.boot";
+  name = "core.boot";
 
   options = delib.singleEnableOption true;
 

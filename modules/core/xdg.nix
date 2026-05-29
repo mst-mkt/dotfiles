@@ -1,7 +1,7 @@
 { delib, ... }:
 
 delib.module {
-  name = "toplevel.xdg";
+  name = "core.xdg";
 
   options = delib.singleEnableOption true;
 

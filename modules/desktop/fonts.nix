@@ -6,7 +6,7 @@
 }:
 
 delib.module {
-  name = "toplevel.fonts";
+  name = "desktop.fonts";
 
   options = delib.singleEnableOption host.guiFeatured;
 

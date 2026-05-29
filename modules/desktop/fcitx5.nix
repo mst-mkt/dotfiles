@@ -6,7 +6,7 @@
 }:
 
 delib.module {
-  name = "programs.fcitx5";
+  name = "desktop.fcitx5";
 
   options = delib.singleEnableOption host.guiFeatured;
 

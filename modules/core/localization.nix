@@ -1,7 +1,7 @@
 { delib, ... }:
 
 delib.module {
-  name = "toplevel.localization";
+  name = "core.localization";
 
   options = delib.singleEnableOption true;
 

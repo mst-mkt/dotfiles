@@ -1,7 +1,7 @@
 { delib, constants, ... }:
 
 delib.module {
-  name = "toplevel.home";
+  name = "core.home";
 
   options = delib.singleEnableOption true;
 
