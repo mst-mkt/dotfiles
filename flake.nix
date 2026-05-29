@@ -43,6 +43,9 @@
     nur.inputs.nixpkgs.follows = "nixpkgs";
 
     llm-agents.url = "github:numtide/llm-agents.nix";
+
+    ragenix.url = "github:yaxitech/ragenix";
+    ragenix.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
