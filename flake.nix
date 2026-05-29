@@ -98,6 +98,26 @@
                 ];
               };
             };
+            hosts.extraSubmodules = [
+              (
+                { lib, ... }:
+                {
+                  options.ssh = {
+                    hostname = lib.mkOption {
+                      type = lib.types.nullOr lib.types.str;
+                      default = null;
+                    };
+                    via = lib.mkOption {
+                      type = lib.types.enum [
+                        "direct"
+                        "cloudflared"
+                      ];
+                      default = "direct";
+                    };
+                  };
+                }
+              )
+            ];
           })
           overlays
         ];

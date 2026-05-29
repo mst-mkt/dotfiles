@@ -8,6 +8,10 @@ delib.host {
     "dev"
     "misskey"
   ];
+  ssh = {
+    hostname = "crossroads.fle.st";
+    via = "cloudflared";
+  };
 
   nixos = {
     system.stateVersion = "25.05";
