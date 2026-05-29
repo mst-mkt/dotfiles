@@ -8,7 +8,7 @@
 delib.module {
   name = "programs.ghq";
 
-  options = delib.singleEnableOption host.cliFeatured;
+  options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
   home.ifEnabled = {
     home.packages = [ pkgs.ghq ];

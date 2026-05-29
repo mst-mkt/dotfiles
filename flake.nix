@@ -84,20 +84,16 @@
                 "cli"
                 "gui"
                 "dev"
-                "gaming"
-                "agents"
+                "game"
+                "iniad"
               ];
               defaultByHostType = {
                 laptop = [
                   "cli"
                   "gui"
-                  "dev"
-                  "gaming"
-                  "agents"
                 ];
                 server = [
                   "cli"
-                  "agents"
                 ];
               };
             };

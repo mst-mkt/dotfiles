@@ -8,7 +8,7 @@
 delib.module {
   name = "programs.gh";
 
-  options = delib.singleEnableOption host.cliFeatured;
+  options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
   home.ifEnabled.programs.gh = {
     enable = true;

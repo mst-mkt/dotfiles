@@ -14,7 +14,7 @@ in
 delib.module {
   name = "programs.moocs-collect";
 
-  options = delib.singleEnableOption host.cliFeatured;
+  options = delib.singleEnableOption (host.cliFeatured && host.iniadFeatured);
 
   home.ifEnabled =
     let

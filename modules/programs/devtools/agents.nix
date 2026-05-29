@@ -6,9 +6,9 @@
 }:
 
 delib.module {
-  name = "programs.agents";
+  name = "programs.devtools.agents";
 
-  options = delib.singleEnableOption host.agentsFeatured;
+  options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
   home.ifEnabled.home.packages = with pkgs.llm-agents; [
     # agents

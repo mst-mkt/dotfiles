@@ -1,6 +1,7 @@
 {
   delib,
   host,
+  lib,
   pkgs,
   ...
 }:
@@ -10,10 +11,12 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  home.ifEnabled.home.packages = with pkgs; [
-    vivaldi
-    mattermost-desktop
-    slack
-    discord
-  ];
+  home.ifEnabled.home.packages =
+    with pkgs;
+    [
+      vivaldi
+      slack
+      discord
+    ]
+    ++ lib.optional host.iniadFeatured mattermost-desktop;
 }

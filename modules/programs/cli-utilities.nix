@@ -12,12 +12,8 @@ delib.module {
 
   home.ifEnabled = {
     home.packages = [
-      pkgs.cf-open
-      pkgs.gengo
-      pkgs.git-wt
       pkgs.jnv
       pkgs.mmv-go
-      pkgs.mo
     ];
 
     programs.bat.enable = true;
