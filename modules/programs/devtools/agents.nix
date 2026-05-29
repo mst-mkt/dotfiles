@@ -13,7 +13,6 @@ delib.module {
   home.ifEnabled.home.packages = with pkgs.llm-agents; [
     # agents
     claude-code
-    codex
     copilot-cli
 
     # utilities
