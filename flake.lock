@@ -884,6 +884,26 @@
         "type": "github"
       }
     },
+    "pgbackup": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1780128640,
+        "narHash": "sha256-09GG04fTDNGEfTs48u3ZNnSkfqB2xnZTi6pgMlqdzr0=",
+        "owner": "flestudio",
+        "repo": "pgbackup",
+        "rev": "f5a66f89fc3a18756d30f3f00d6f8a4f26825177",
+        "type": "github"
+      },
+      "original": {
+        "owner": "flestudio",
+        "repo": "pgbackup",
+        "type": "github"
+      }
+    },
     "pre-commit-hooks": {
       "inputs": {
         "flake-compat": "flake-compat",
@@ -944,6 +964,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_6",
         "nur": "nur",
+        "pgbackup": "pgbackup",
         "ragenix": "ragenix",
         "treefmt-nix": "treefmt-nix_3"
       }

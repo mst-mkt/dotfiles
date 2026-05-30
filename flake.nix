@@ -46,6 +46,9 @@
 
     ragenix.url = "github:yaxitech/ragenix";
     ragenix.inputs.nixpkgs.follows = "nixpkgs";
+
+    pgbackup.url = "github:flestudio/pgbackup";
+    pgbackup.inputs.nixpkgs.follows = "nixpkgs";
   };
 
   outputs =
