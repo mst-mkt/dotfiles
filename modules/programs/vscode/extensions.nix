@@ -38,6 +38,7 @@ delib.module {
           yoavbls.pretty-ts-errors
         ])
         ++ (with pkgs.vscode-marketplace-release-universal; [
+          antfu.unocss
           ionutvmi.path-autocomplete
           kdl-org.kdl
           moonbit.moonbit-lang
