@@ -77,6 +77,15 @@ delib.module {
       action.toggle-overview = [ ];
       repeat = false;
     };
+    "Mod+N" = {
+      action.spawn = [
+        "widgets"
+        "toggle"
+        "notification"
+      ];
+      hotkey-overlay.title = "Toggle Notification Panel: widgets";
+      repeat = false;
+    };
     "Mod+Shift+Q" = {
       action.close-window = [ ];
       repeat = false;
@@ -175,8 +184,11 @@ delib.module {
     "Mod+Shift+S".action.screenshot = [ ];
 
     "Mod+Escape" = {
-      action.toggle-keyboard-shortcuts-inhibit = [ ];
-      allow-inhibiting = false;
+      action.spawn = [
+        "widgets"
+        "close"
+      ];
+      repeat = false;
     };
     "Ctrl+Alt+Delete".action.quit = [ ];
     "Mod+Shift+P".action.power-off-monitors = [ ];

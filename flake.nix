@@ -31,6 +31,9 @@
     cf-open.url = "github:mst-mkt/cf-open";
     cf-open.inputs.nixpkgs.follows = "nixpkgs";
 
+    widgets.url = "github:mst-mkt/widgets";
+    widgets.inputs.nixpkgs.follows = "nixpkgs";
+
     moocs-collect-nix.url = "github:mst-mkt/moocs-collect-nix";
 
     cbhook.url = "git+ssh://git@github.com/mst-mkt/cbhook";
