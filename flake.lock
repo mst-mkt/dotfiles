@@ -1166,11 +1166,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780425169,
-        "narHash": "sha256-0SNIneH36qG3iR5cYKPgJtJScJcfjqgE6lcPBxa9DyQ=",
+        "lastModified": 1780581519,
+        "narHash": "sha256-EMkOsONDWDae4glH7MR78j9Upr7H36JctVRZk5bUrz0=",
         "owner": "mst-mkt",
         "repo": "widgets",
-        "rev": "efdd9eccbdb870bbf49fa6c887e05108b2d20452",
+        "rev": "6f93260b8ee2432255b649cf8e94fafb64af539c",
         "type": "github"
       },
       "original": {
