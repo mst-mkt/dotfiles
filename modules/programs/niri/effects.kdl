@@ -4,3 +4,11 @@ window-rule {
         xray false
     }
 }
+
+layer-rule {
+    match namespace="^widgets:"
+    background-effect {
+        blur true
+        xray false
+    }
+}
