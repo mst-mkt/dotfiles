@@ -10,6 +10,15 @@ delib.module {
       action.spawn = "wezterm";
       hotkey-overlay.title = "Open a Terminal: wezterm";
     };
+    "Mod+D" = {
+      action.spawn = [
+        "widgets"
+        "open"
+        "launcher"
+      ];
+      hotkey-overlay.title = "Run an Application: widgets";
+      repeat = false;
+    };
 
     "XF86AudioRaiseVolume" = {
       action.spawn = [
