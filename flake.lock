@@ -1221,11 +1221,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780581519,
-        "narHash": "sha256-EMkOsONDWDae4glH7MR78j9Upr7H36JctVRZk5bUrz0=",
+        "lastModified": 1780685816,
+        "narHash": "sha256-RI4g9a13AJ2Ueh8oLBAhVBqZOxWiyZ/bRsyFlRjDIV8=",
         "owner": "mst-mkt",
         "repo": "widgets",
-        "rev": "6f93260b8ee2432255b649cf8e94fafb64af539c",
+        "rev": "2fc1b42a7e74c03003374cbc5eb40dddc08dd36f",
         "type": "github"
       },
       "original": {
