@@ -34,6 +34,9 @@
     widgets.url = "github:mst-mkt/widgets";
     widgets.inputs.nixpkgs.follows = "nixpkgs";
 
+    googleworkspace-cli.url = "github:googleworkspace/cli";
+    googleworkspace-cli.inputs.nixpkgs.follows = "nixpkgs";
+
     moocs-collect-nix.url = "github:mst-mkt/moocs-collect-nix";
 
     cbhook.url = "git+ssh://git@github.com/mst-mkt/cbhook";
