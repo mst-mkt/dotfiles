@@ -1,4 +1,4 @@
-{ delib, ... }:
+{ delib, pkgs, ... }:
 
 delib.module {
   name = "core.localization";
@@ -11,7 +11,9 @@ delib.module {
     i18n.defaultLocale = "en_US.UTF-8";
 
     console = {
-      font = "Lat2-Terminus16";
+      font = "ter-v32n";
+      packages = [ pkgs.terminus_font ];
+      earlySetup = true;
       keyMap = "jp106";
     };
   };
