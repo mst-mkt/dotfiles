@@ -5,12 +5,5 @@ delib.module {
 
   home.ifEnabled.programs.niri.settings.spawn-at-startup = [
     { command = [ "widgets" ]; }
-    {
-      command = [
-        "fcitx5"
-        "-d"
-        "-r"
-      ];
-    }
   ];
 }
