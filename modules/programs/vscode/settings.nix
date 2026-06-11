@@ -74,14 +74,6 @@ delib.module {
         "typescript.updateImportsOnFileMove.enabled" = "always";
         "typescript.preferences.importModuleSpecifier" = "relative";
         "typescript.preferences.quoteStyle" = "single";
-        "typescript.inlayHints.parameterNames.enabled" = "literals";
-        "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName" = true;
-        "typescript.inlayHints.parameterTypes.enabled" = true;
-        "typescript.inlayHints.variableTypes.enabled" = true;
-        "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName" = true;
-        "typescript.inlayHints.propertyDeclarationTypes.enabled" = true;
-        "typescript.inlayHints.functionLikeReturnTypes.enabled" = true;
-        "typescript.inlayHints.enumMemberValues.enabled" = true;
 
         # notebook.*
         "notebook.formatOnSave.enabled" = true;
