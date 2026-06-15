@@ -6,16 +6,16 @@
 
 buildGoModule rec {
   pname = "gh-pr-reviews";
-  version = "0.10.2";
+  version = "0.11.0";
 
   src = fetchFromGitHub {
     owner = "k1LoW";
     repo = "gh-pr-reviews";
     rev = "v${version}";
-    hash = "sha256-XyY+gI9uNYThdyIV0ch+a8pn23oiDYY1ZEqhBlTPgYY=";
+    hash = "sha256-Ue3aDhg8QsPTTCzv2V7uq4td6LkwZwbffoFEF0y5K5I=";
   };
 
-  vendorHash = "sha256-wy8hscTE4BB3Uu1x5o2sMediyDEPrU6zegfB6B/fbXA=";
+  vendorHash = "sha256-8NHglMb6RTjt5hgtAW+wr9OOLwbLn3kjF2vnKbVyjEY=";
 
   ldflags = [
     "-s"

@@ -5,15 +5,15 @@
 }:
 
 let
-  version = "1.5.5";
+  version = "1.5.6";
   sources = {
     x86_64-linux = {
       url = "https://github.com/k1LoW/mo/releases/download/v${version}/mo_v${version}_linux_amd64.tar.gz";
-      hash = "sha256-I38SHMd2PPODZ5/ZGKJMefWfda9vNcNU4qALLi4UTzE=";
+      hash = "sha256-MZXfzWc1+rrekBphU/Ic+mGROVXxxQVk/fWcY1DLwtM=";
     };
     aarch64-linux = {
       url = "https://github.com/k1LoW/mo/releases/download/v${version}/mo_v${version}_linux_arm64.tar.gz";
-      hash = "sha256-X2vX/PVujLA1SbC38Ki9vienmglUdC7Q0CsANN0nA34=";
+      hash = "sha256-YQYDzRiMq/WsxRSFCDnrC1jzVtuO7auK8afU0Adn+Ww=";
     };
   };
   source =
