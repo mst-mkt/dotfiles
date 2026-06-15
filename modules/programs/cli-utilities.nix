@@ -13,10 +13,13 @@ delib.module {
   home.ifEnabled = {
     home.packages = [
       pkgs.bottom
+      pkgs.ffmpeg
       pkgs.jnv
+      pkgs.jq
       pkgs.mmv-go
       pkgs.tree
       pkgs.wget
+      pkgs.wl-clipboard
     ];
 
     programs.bat.enable = true;
