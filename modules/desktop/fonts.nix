@@ -11,6 +11,8 @@ delib.module {
   options = delib.singleEnableOption host.guiFeatured;
 
   nixos.ifEnabled = {
+    fonts.enableDefaultPackages = true;
+
     fonts.packages = with pkgs; [
       noto-fonts
       noto-fonts-cjk-sans
