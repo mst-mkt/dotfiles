@@ -29,6 +29,7 @@ delib.module {
           ms-python.python
           ms-toolsai.jupyter
           nefrob.vscode-just-syntax
+          rust-lang.rust-analyzer
           streetsidesoftware.code-spell-checker
           sumneko.lua
           tamasfe.even-better-toml
