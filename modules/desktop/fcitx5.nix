@@ -17,8 +17,11 @@ delib.module {
         waylandFrontend = true;
         settings = {
           globalOptions = {
+            "Hotkey/TriggerKeys"."0" = "Zenkaku_Hankaku";
             "Hotkey/ActivateKeys"."0" = "Muhenkan";
             "Hotkey/DeactivateKeys"."0" = "Henkan_Mode";
+            "Hotkey/AltTriggerKeys" = { };
+            "Behavior".ShowFirstInputMethodInformation = false;
           };
           inputMethod = {
             GroupOrder."0" = "Default";
