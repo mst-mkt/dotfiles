@@ -1,7 +1,6 @@
 {
   delib,
   host,
-  inputs,
   ...
 }:
 
@@ -10,11 +9,7 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  home.always.imports = [ inputs.nix-hazkey.homeModules.hazkey ];
-
   home.ifEnabled = {
-    services.hazkey.enable = true;
-
     i18n.inputMethod = {
       enable = true;
       type = "fcitx5";
