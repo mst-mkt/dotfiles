@@ -42,7 +42,6 @@ delib.module {
             PreferTextIcon = true;
             Theme = "mellow-graphite-dark";
           };
-          addons.keyboard.globalSection.EnableHintByDefault = true;
         };
       };
     };
