@@ -61,5 +61,11 @@ delib.module {
         zenzaiPreference = "外来語はカタカナで書く";
       }
     ];
+
+    i18n.inputMethod.fcitx5.settings.addons.hazkey = {
+      globalSection = {
+        showTabToSelect = false;
+      };
+    };
   };
 }
