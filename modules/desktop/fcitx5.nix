@@ -33,6 +33,11 @@ delib.module {
             "Groups/0/Items/0".Name = "keyboard-us";
             "Groups/0/Items/1".Name = "hazkey";
           };
+          addons.classicui.globalSection = {
+            "Vertical Candidate List" = true;
+            WheelForPaging = false;
+            PreferTextIcon = true;
+          };
         };
       };
     };
