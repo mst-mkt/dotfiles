@@ -24,6 +24,7 @@ delib.module {
             "Hotkey/DeactivateKeys"."0" = "Henkan_Mode";
             "Hotkey/AltTriggerKeys" = { };
             "Behavior".ShowFirstInputMethodInformation = false;
+            "Behavior/DisabledAddons"."0" = "clipboard";
           };
           inputMethod = {
             GroupOrder."0" = "Default";
@@ -41,6 +42,7 @@ delib.module {
             PreferTextIcon = true;
             Theme = "mellow-graphite-dark";
           };
+          addons.keyboard.globalSection.EnableHintByDefault = true;
         };
       };
     };
