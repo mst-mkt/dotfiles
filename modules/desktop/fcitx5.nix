@@ -20,8 +20,8 @@ delib.module {
         settings = {
           globalOptions = {
             "Hotkey/TriggerKeys"."0" = "Zenkaku_Hankaku";
-            "Hotkey/ActivateKeys"."0" = "Muhenkan";
-            "Hotkey/DeactivateKeys"."0" = "Henkan_Mode";
+            "Hotkey/ActivateKeys"."0" = "Henkan_Mode";
+            "Hotkey/DeactivateKeys"."0" = "Muhenkan";
             "Hotkey/AltTriggerKeys" = { };
             "Behavior".ShowFirstInputMethodInformation = false;
             "Behavior/DisabledAddons"."0" = "clipboard";
