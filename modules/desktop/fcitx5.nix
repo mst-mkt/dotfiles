@@ -28,10 +28,10 @@ delib.module {
             "Groups/0" = {
               Name = "Default";
               "Default Layout" = "us";
-              DefaultIM = "keyboard-us";
+              DefaultIM = "hazkey";
             };
-            "Groups/0/Items/0".Name = "hazkey";
-            "Groups/0/Items/1".Name = "keyboard-us";
+            "Groups/0/Items/0".Name = "keyboard-us";
+            "Groups/0/Items/1".Name = "hazkey";
           };
         };
       };
