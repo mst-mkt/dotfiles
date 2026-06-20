@@ -46,6 +46,7 @@ delib.module {
           oxc.oxc-vscode
           ryuta46.multi-command
           thang-nm.flow-icons
+          typespec.typespec-vscode
         ])
         ++ [ tnix ];
     };
