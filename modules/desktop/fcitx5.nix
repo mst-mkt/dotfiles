@@ -1,6 +1,7 @@
 {
   delib,
   host,
+  pkgs,
   ...
 }:
 
@@ -15,6 +16,7 @@ delib.module {
       type = "fcitx5";
       fcitx5 = {
         waylandFrontend = true;
+        addons = [ pkgs.fcitx5-mellow-themes ];
         settings = {
           globalOptions = {
             "Hotkey/TriggerKeys"."0" = "Zenkaku_Hankaku";
@@ -37,6 +39,7 @@ delib.module {
             "Vertical Candidate List" = true;
             WheelForPaging = false;
             PreferTextIcon = true;
+            Theme = "mellow-graphite-dark";
           };
         };
       };
