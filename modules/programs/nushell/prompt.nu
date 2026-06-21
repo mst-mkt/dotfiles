@@ -54,3 +54,13 @@ $env.PROMPT_COMMAND = {||
 
   $"($cwd)($git_str)\n"
 }
+
+$env.PROMPT_COMMAND_RIGHT = {||
+  let exit_code = $env.LAST_EXIT_CODE
+  let is_error = $exit_code != 0
+  let display_code = if $is_error { $"($exit_code) " } else { "" }
+
+  let time = (date now | format date "%Y-%m-%d %H:%M:%S")
+
+  $"($display_code)($time)"
+}
