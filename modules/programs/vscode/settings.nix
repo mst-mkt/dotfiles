@@ -171,6 +171,7 @@ delib.module {
         # github.copilot.*
         "github.copilot.enable" = {
           "*" = true;
+          "markdown" = true;
         };
         "github.copilot.nextEditSuggestions.enabled" = true;
 
