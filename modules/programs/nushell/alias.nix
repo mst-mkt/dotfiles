@@ -95,5 +95,8 @@ delib.module {
     gt = "git tag";
     gtd = "git tag -d";
     gtp = "git push --tags";
+
+    # claude code
+    "/new" = "claude";
   };
 }
