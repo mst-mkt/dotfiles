@@ -47,6 +47,7 @@ delib.module {
           ryuta46.multi-command
           thang-nm.flow-icons
           typespec.typespec-vscode
+          ubugeeei.vize
         ])
         ++ [ tnix ];
     };
