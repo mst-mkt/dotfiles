@@ -30,6 +30,7 @@ delib.module {
           ms-python.python
           ms-toolsai.jupyter
           nefrob.vscode-just-syntax
+          oxc.oxc-vscode
           rust-lang.rust-analyzer
           streetsidesoftware.code-spell-checker
           sumneko.lua
@@ -44,7 +45,6 @@ delib.module {
           ionutvmi.path-autocomplete
           kdl-org.kdl
           moonbit.moonbit-lang
-          oxc.oxc-vscode
           ryuta46.multi-command
           thang-nm.flow-icons
           typespec.typespec-vscode
