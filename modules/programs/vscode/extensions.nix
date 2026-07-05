@@ -20,6 +20,7 @@ delib.module {
     {
       programs.vscode.profiles.default.extensions =
         (with pkgs.vscode-extensions; [
+          antfu.slidev
           charliermarsh.ruff
           github.copilot-chat
           golang.go
