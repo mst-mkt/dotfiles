@@ -12,8 +12,9 @@ delib.module {
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
   home.ifEnabled = {
-    home.packages = with pkgs.llm-agents; [
-      ccusage
+    home.packages = [
+      pkgs.llm-agents.ccusage
+      pkgs.ccsession
     ];
 
     programs.claude-code = {
