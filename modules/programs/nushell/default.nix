@@ -51,7 +51,6 @@ delib.module {
       plugins = with pkgs.nushellPlugins; [
         gstat
         query
-        skim
       ];
     };
   };

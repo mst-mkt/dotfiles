@@ -1,16 +1,16 @@
 # functions.nu: custom functions
 
-# ghcd: ghq 管理下のリポジトリを sk で選択して cd
-# deps: ghq, nu_plugin_skim
+# ghcd: ghq 管理下のリポジトリを fuzzy find して cd
+# deps: ghq
 def --env ghcd [] {
-  let result = (^ghq list | lines | sk)
+  let result = (^ghq list | lines | input list --fuzzy)
   if ($result | is-not-empty) {
     cd ((^ghq root | str trim) | path join ($result | to text | str trim))
   }
 }
 
-# ghget: GitHub 上のリポジトリを sk で選択して ghq get -p
-# deps: ghq, gh cli, nu_plugin_skim
+# ghget: GitHub 上のリポジトリを fuzzy find して ghq get -p
+# deps: ghq, gh cli
 def --env ghget [] {
   let existing = ghq list
     | lines
@@ -34,7 +34,7 @@ def --env ghget [] {
 
   let selected = $all_repos
     | where { |it| $it not-in $existing }
-    | sk
+    | input list --fuzzy
 
   if ($selected | is-not-empty) {
     let repo = ($selected | to text | str trim)
@@ -44,10 +44,10 @@ def --env ghget [] {
   }
 }
 
-# ghsw: ローカルブランチを sk で選択して switch
-# deps: git, nu_plugin_skim
+# ghsw: ローカルブランチを fuzzy find して switch
+# deps: git
 def ghsw [] {
-  let selected = (^git branch --format='%(refname:short)' | lines | sk)
+  let selected = (^git branch --format='%(refname:short)' | lines | input list --fuzzy)
   if ($selected | is-not-empty) {
     let branch = ($selected | to text | str trim)
     ^git switch $branch
