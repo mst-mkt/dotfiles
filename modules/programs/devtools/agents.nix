@@ -34,12 +34,13 @@ delib.module {
         cleanupPeriodDays = 9999;
 
         spinnerTipsEnabled = false;
-        feedbackSurveyRate = 0;
         statusLine = {
           type = "command";
           command = "ccusage statusline";
           padding = 0;
         };
+
+        env.CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY = "1";
       };
 
       outputStyles.japanese_writing = builtins.readFile "${inputs.claude-output-styles}/japanese-writing.md";
