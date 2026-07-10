@@ -189,6 +189,22 @@
         "type": "github"
       }
     },
+    "claude-output-styles": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783678261,
+        "narHash": "sha256-URlkV37d/5guM/1MIc/wmT3XhfIBoWR8ctsevmGxyoA=",
+        "ref": "refs/heads/main",
+        "rev": "cf3305d12d5123752b3499e352a5fe4e4db3f644",
+        "revCount": 1,
+        "type": "git",
+        "url": "https://gist.github.com/mst-mkt/591493bb7c12c8a5774b0ffe3d80d5cf"
+      },
+      "original": {
+        "type": "git",
+        "url": "https://gist.github.com/mst-mkt/591493bb7c12c8a5774b0ffe3d80d5cf"
+      }
+    },
     "crane": {
       "locked": {
         "lastModified": 1760924934,
@@ -1050,6 +1066,7 @@
       "inputs": {
         "cbhook": "cbhook",
         "cf-open": "cf-open",
+        "claude-output-styles": "claude-output-styles",
         "denix": "denix",
         "googleworkspace-cli": "googleworkspace-cli",
         "home-manager": "home-manager_2",

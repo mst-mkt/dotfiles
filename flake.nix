@@ -50,6 +50,9 @@
 
     llm-agents.url = "github:numtide/llm-agents.nix";
 
+    claude-output-styles.url = "git+https://gist.github.com/mst-mkt/591493bb7c12c8a5774b0ffe3d80d5cf";
+    claude-output-styles.flake = false;
+
     ragenix.url = "github:yaxitech/ragenix";
     ragenix.inputs.nixpkgs.follows = "nixpkgs";
 

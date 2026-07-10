@@ -2,6 +2,7 @@
   delib,
   host,
   pkgs,
+  inputs,
   ...
 }:
 
@@ -10,12 +11,37 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  home.ifEnabled.home.packages = with pkgs.llm-agents; [
-    # agents
-    claude-code
-    copilot-cli
+  home.ifEnabled = {
+    home.packages = with pkgs.llm-agents; [
+      ccusage
+    ];
 
-    # utilities
-    ccusage
-  ];
+    programs.claude-code = {
+      enable = true;
+      package = pkgs.llm-agents.claude-code;
+
+      settings = {
+        model = "claude-fable-5[1m]";
+        effortLevel = "high";
+
+        language = "日本語 (Japanese)";
+        outputStyle = "Japanese writing";
+
+        permissions.defaultMode = "auto";
+        skipAutoPermissionPrompt = true;
+
+        cleanupPeriodDays = 9999;
+
+        spinnerTipsEnabled = false;
+        feedbackSurveyRate = 0;
+        statusLine = {
+          type = "command";
+          command = "ccusage statusline";
+          padding = 0;
+        };
+      };
+
+      outputStyles.japanese_writing = builtins.readFile "${inputs.claude-output-styles}/japanese-writing.md";
+    };
+  };
 }
