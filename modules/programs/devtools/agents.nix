@@ -14,6 +14,7 @@ delib.module {
   home.ifEnabled = {
     home.packages = [
       pkgs.llm-agents.ccusage
+      pkgs.llm-agents.herdr
       pkgs.ccsession
     ];
 
