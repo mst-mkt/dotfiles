@@ -11,6 +11,7 @@ delib.module {
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
   home.ifEnabled.home.packages = [
+    pkgs.ax
     pkgs.cf-open
     pkgs.gengo
     pkgs.git-hunk

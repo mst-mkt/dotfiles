@@ -51,8 +51,17 @@ delib.module {
 
     programs.agent-skills = {
       enable = true;
-      sources.git-hunk.path = pkgs.git-hunk.src.outPath;
-      skills.enable = [ "git-hunk" ];
+      sources = {
+        ax = {
+          path = pkgs.ax.src.outPath;
+          subdir = "skills/ax";
+        };
+        git-hunk.path = pkgs.git-hunk.src.outPath;
+      };
+      skills.enable = [
+        "ax"
+        "git-hunk"
+      ];
       targets.claude.enable = true;
     };
   };
