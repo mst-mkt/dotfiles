@@ -56,6 +56,10 @@
     claude-output-styles.url = "git+https://gist.github.com/mst-mkt/591493bb7c12c8a5774b0ffe3d80d5cf";
     claude-output-styles.flake = false;
 
+    agent-skills.url = "github:Kyure-A/agent-skills-nix";
+    agent-skills.inputs.nixpkgs.follows = "nixpkgs";
+    agent-skills.inputs.home-manager.follows = "home-manager";
+
     ragenix.url = "github:yaxitech/ragenix";
     ragenix.inputs.nixpkgs.follows = "nixpkgs";
 

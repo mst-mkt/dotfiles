@@ -26,6 +26,29 @@
     },
     "agent-skills": {
       "inputs": {
+        "home-manager": [
+          "home-manager"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783839654,
+        "narHash": "sha256-rn5DkeQ9PBaJTZl9juBtPnVawyN4B83tyz1VpiinQFo=",
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "rev": "8326df98cf494dc515db99affa9ea9d2bd6666b6",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Kyure-A",
+        "repo": "agent-skills-nix",
+        "type": "github"
+      }
+    },
+    "agent-skills_2": {
+      "inputs": {
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs"
       },
@@ -147,7 +170,7 @@
     },
     "cbhook": {
       "inputs": {
-        "agent-skills": "agent-skills",
+        "agent-skills": "agent-skills_2",
         "moon-registry": "moon-registry",
         "moonbit-overlay": "moonbit-overlay",
         "moonbit-skills": "moonbit-skills",
@@ -1084,6 +1107,7 @@
     },
     "root": {
       "inputs": {
+        "agent-skills": "agent-skills",
         "cbhook": "cbhook",
         "ccsession": "ccsession",
         "cf-open": "cf-open",

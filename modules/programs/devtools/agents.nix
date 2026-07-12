@@ -11,6 +11,8 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
+  home.always.imports = [ inputs.agent-skills.homeManagerModules.default ];
+
   home.ifEnabled = {
     home.packages = [
       pkgs.llm-agents.ccusage
@@ -45,6 +47,13 @@ delib.module {
       };
 
       outputStyles.japanese_writing = builtins.readFile "${inputs.claude-output-styles}/japanese-writing.md";
+    };
+
+    programs.agent-skills = {
+      enable = true;
+      sources.git-hunk.path = pkgs.git-hunk.src.outPath;
+      skills.enable = [ "git-hunk" ];
+      targets.claude.enable = true;
     };
   };
 }
