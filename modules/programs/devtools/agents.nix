@@ -57,11 +57,15 @@ delib.module {
           subdir = "skills/ax";
         };
         git-hunk.path = pkgs.git-hunk.src.outPath;
+        skills.path = inputs.skills.outPath;
       };
-      skills.enable = [
-        "ax"
-        "git-hunk"
-      ];
+      skills = {
+        enableAll = [ "skills" ];
+        enable = [
+          "ax"
+          "git-hunk"
+        ];
+      };
       targets.claude.enable = true;
     };
   };

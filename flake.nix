@@ -60,6 +60,9 @@
     agent-skills.inputs.nixpkgs.follows = "nixpkgs";
     agent-skills.inputs.home-manager.follows = "home-manager";
 
+    skills.url = "git+ssh://git@github.com/mst-mkt/skills";
+    skills.flake = false;
+
     ragenix.url = "github:yaxitech/ragenix";
     ragenix.inputs.nixpkgs.follows = "nixpkgs";
 

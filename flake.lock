@@ -1127,6 +1127,7 @@
         "nur": "nur",
         "pgbackup": "pgbackup",
         "ragenix": "ragenix",
+        "skills": "skills",
         "treefmt-nix": "treefmt-nix_3",
         "widgets": "widgets"
       }
@@ -1150,6 +1151,22 @@
         "owner": "oxalica",
         "repo": "rust-overlay",
         "type": "github"
+      }
+    },
+    "skills": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1783871354,
+        "narHash": "sha256-tByYp32IVeFhf/sXBCecRuawzLBeC0qPWRm6fzyPYco=",
+        "ref": "refs/heads/main",
+        "rev": "acd5e6ea4c6ab1774ba67bd5795d6d054f3edc55",
+        "revCount": 1,
+        "type": "git",
+        "url": "ssh://git@github.com/mst-mkt/skills"
+      },
+      "original": {
+        "type": "git",
+        "url": "ssh://git@github.com/mst-mkt/skills"
       }
     },
     "systems": {
