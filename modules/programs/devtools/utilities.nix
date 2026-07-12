@@ -13,6 +13,7 @@ delib.module {
   home.ifEnabled.home.packages = [
     pkgs.cf-open
     pkgs.gengo
+    pkgs.git-hunk
     pkgs.git-wt
     pkgs.mo
   ];
