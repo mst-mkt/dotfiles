@@ -32,7 +32,6 @@
     cf-open.inputs.nixpkgs.follows = "nixpkgs";
 
     widgets.url = "github:mst-mkt/widgets";
-    widgets.inputs.nixpkgs.follows = "nixpkgs";
 
     googleworkspace-cli.url = "github:googleworkspace/cli";
     googleworkspace-cli.inputs.nixpkgs.follows = "nixpkgs";
