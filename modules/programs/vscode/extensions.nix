@@ -24,6 +24,7 @@ delib.module {
           charliermarsh.ruff
           github.copilot-chat
           golang.go
+          graphql.vscode-graphql-syntax
           ibm.output-colorizer
           jnoortheen.nix-ide
           mkhl.direnv
