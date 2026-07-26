@@ -164,10 +164,6 @@ delib.module {
         "extensions.closeExtensionDetailsOnViewChange" = true;
 
         # [extensions]
-        # chat.*
-        "chat.commandCenter.enabled" = false;
-        "chat.experimental.offerSetup" = false;
-
         # github.copilot.*
         "github.copilot.enable" = {
           "*" = true;
