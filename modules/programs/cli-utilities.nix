@@ -14,6 +14,7 @@ delib.module {
     home.packages = [
       pkgs.bottom
       pkgs.ffmpeg
+      pkgs.fzf
       pkgs.jnv
       pkgs.jq
       pkgs.mmv-go
