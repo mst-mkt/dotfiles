@@ -159,7 +159,7 @@ delib.module {
         "update.showReleaseNotes" = false;
 
         # extensions.*
-        "extensions.autoUpdate" = false;
+        "extensions.autoUpdate" = "off";
         "extensions.ignoreRecommendations" = true;
         "extensions.closeExtensionDetailsOnViewChange" = true;
 
