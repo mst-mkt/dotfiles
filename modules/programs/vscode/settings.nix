@@ -70,10 +70,10 @@ delib.module {
         };
         "emmet.useInlineCompletions" = true;
 
-        # typescript.*
-        "typescript.updateImportsOnFileMove.enabled" = "always";
-        "typescript.preferences.importModuleSpecifier" = "relative";
-        "typescript.preferences.quoteStyle" = "single";
+        # js/ts.*
+        "js/ts.updateImportsOnFileMove.enabled" = "always";
+        "js/ts.preferences.importModuleSpecifier" = "relative";
+        "js/ts.preferences.quoteStyle" = "single";
 
         # notebook.*
         "notebook.formatOnSave.enabled" = true;
