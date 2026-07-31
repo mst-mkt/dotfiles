@@ -4,11 +4,6 @@
     let
       forAllSystems = inputs.nixpkgs.lib.genAttrs [ "x86_64-linux" ];
 
-      pkgsFor = forAllSystems (system: inputs.nixpkgs.legacyPackages.${system});
-
-      treefmtEval = forAllSystems (
-        system: inputs.treefmt-nix.lib.evalModule pkgsFor.${system} ./treefmt.nix
-      );
     in
     {
       nixosConfigurations = inputs.denix.lib.configurations {
@@ -71,52 +66,7 @@
         ];
       };
 
-      packages = forAllSystems (
-        system:
-        let
-          pkgs = pkgsFor.${system};
-          wezterm-types = pkgs.fetchFromGitHub {
-            owner = "DrKJeff16";
-            repo = "wezterm-types";
-            rev = "d3505f689e53d8fda536d265d870a1fee937e69f"; # v4.2.0-1
-            hash = "sha256-4phaLDVFjH83D54lEMHin3b4ycgKUzdryjdv8u7tvNo=";
-          };
-        in
-        {
-          luarc = pkgs.writeText "luarc.json" (
-            builtins.toJSON {
-              "runtime.version" = "Lua 5.4";
-              "workspace.library" = [ "${wezterm-types}/lua" ];
-              "workspace.checkThirdParty" = false;
-              "diagnostics.globals" = [ "wezterm" ];
-            }
-          );
-        }
-      );
-
-      devShells = forAllSystems (
-        system:
-        let
-          pkgs = pkgsFor.${system};
-        in
-        {
-          default = pkgs.mkShell {
-            packages = [
-              pkgs.nil
-              treefmtEval.${system}.config.build.wrapper
-            ];
-            shellHook = ''
-              ln -sfn ${inputs.self.packages.${system}.luarc} .luarc.json
-            '';
-          };
-        }
-      );
-
-      formatter = forAllSystems (system: treefmtEval.${system}.config.build.wrapper);
-
-      checks = forAllSystems (system: {
-        formatting = treefmtEval.${system}.config.build.check inputs.self;
-      });
+      formatter = forAllSystems (system: inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree);
     };
 
   inputs = {
@@ -133,11 +83,6 @@
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
       };
-    };
-
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nixos-hardware = {
