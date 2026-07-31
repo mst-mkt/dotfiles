@@ -596,6 +596,22 @@
         "type": "github"
       }
     },
+    "misskey": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1785484081,
+        "narHash": "sha256-fzLV3rkUzCLZ7StXULMmxztGIGRqPmdT7YThTZMA+HU=",
+        "owner": "flestudio",
+        "repo": "flestudio",
+        "rev": "00f66349766dc61298c66129ded5fdeb29e93f41",
+        "type": "github"
+      },
+      "original": {
+        "owner": "flestudio",
+        "repo": "flestudio",
+        "type": "github"
+      }
+    },
     "moocs-collect-ex-src": {
       "flake": false,
       "locked": {
@@ -1132,6 +1148,7 @@
         "googleworkspace-cli": "googleworkspace-cli",
         "home-manager": "home-manager_2",
         "llm-agents": "llm-agents",
+        "misskey": "misskey",
         "moocs-collect-nix": "moocs-collect-nix",
         "niri-flake": "niri-flake",
         "nix-hazkey": "nix-hazkey",

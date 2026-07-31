@@ -164,5 +164,9 @@
       url = "github:flestudio/pgbackup";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    misskey = {
+      url = "github:flestudio/flestudio";
+      flake = false;
+    };
   };
 }

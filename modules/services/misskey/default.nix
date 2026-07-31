@@ -2,6 +2,7 @@
   delib,
   host,
   config,
+  inputs,
   lib,
   pkgs,
   ...
@@ -17,6 +18,17 @@ delib.module {
 
     services.misskey = {
       enable = true;
+
+      package = pkgs.misskey.overrideAttrs (prev: {
+        version = (lib.importJSON "${inputs.misskey}/package.json").version;
+        src = inputs.misskey;
+        buildPhase =
+          builtins.replaceStrings [ "pnpm run install" ] [ "pnpm run --if-present install" ]
+            prev.buildPhase;
+        pnpmDeps = prev.pnpmDeps.overrideAttrs {
+          outputHash = "sha256-FMWESIav2TQG0X7mlGs4r5gO5mkfVvWvQvwL/Dxs868=";
+        };
+      });
 
       database.createLocally = true;
       redis.createLocally = true;
