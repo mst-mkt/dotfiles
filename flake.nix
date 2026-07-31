@@ -2,10 +2,7 @@
   outputs =
     inputs:
     let
-      forAllSystems = inputs.nixpkgs.lib.genAttrs [
-        "x86_64-linux"
-        "aarch64-linux"
-      ];
+      forAllSystems = inputs.nixpkgs.lib.genAttrs [ "x86_64-linux" ];
 
       pkgsFor = forAllSystems (system: inputs.nixpkgs.legacyPackages.${system});
 
