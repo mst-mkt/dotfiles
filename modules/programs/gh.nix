@@ -17,6 +17,7 @@ delib.module {
       pkgs.gh-markdown-preview
       pkgs.gh-poi
       pkgs.gh-pr-reviews
+      pkgs.gh-stack
     ];
   };
 }

@@ -56,6 +56,10 @@ delib.module {
           path = pkgs.ax.src.outPath;
           subdir = "skills/ax";
         };
+        gh-stack = {
+          path = pkgs.gh-stack.src.outPath;
+          subdir = "skills/gh-stack";
+        };
         git-hunk.path = pkgs.git-hunk.src.outPath;
         skills.path = inputs.skills.outPath;
       };
@@ -63,6 +67,7 @@ delib.module {
         enableAll = [ "skills" ];
         enable = [
           "ax"
+          "gh-stack"
           "git-hunk"
         ];
       };
