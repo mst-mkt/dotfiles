@@ -1,4 +1,13 @@
-{ delib, pkgs, ... }:
+{
+  delib,
+  pkgs,
+  inputs,
+  ...
+}:
+
+let
+  extensions = inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system};
+in
 
 delib.module {
   name = "programs.vscode";
@@ -41,7 +50,7 @@ delib.module {
           vitest.explorer
           yoavbls.pretty-ts-errors
         ])
-        ++ (with pkgs.vscode-marketplace-release-universal; [
+        ++ (with extensions.vscode-marketplace-release-universal; [
           antfu.unocss
           ionutvmi.path-autocomplete
           kdl-org.kdl

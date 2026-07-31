@@ -8,6 +8,7 @@
 
 let
   dbSettings = config.services.misskey.settings.db;
+  pgbackup = inputs.pgbackup.packages.${host.system};
 in
 delib.module {
   name = "services.misskey.backup";
@@ -36,7 +37,7 @@ delib.module {
 
       serviceConfig = {
         Type = "oneshot";
-        ExecStart = "${inputs.pgbackup.packages.${host.system}.default}/bin/pgbackup";
+        ExecStart = "${pgbackup.default}/bin/pgbackup";
         EnvironmentFile = config.age.secrets.misskey-backup-env.path;
         DynamicUser = true;
         User = dbSettings.user;

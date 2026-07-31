@@ -6,6 +6,11 @@
   ...
 }:
 
+let
+  llm-agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+  ccsession = inputs.ccsession.packages.${pkgs.stdenv.hostPlatform.system};
+in
+
 delib.module {
   name = "programs.devtools.agents";
 
@@ -15,14 +20,14 @@ delib.module {
 
   home.ifEnabled = {
     home.packages = [
-      pkgs.llm-agents.ccusage
-      pkgs.llm-agents.herdr
-      pkgs.ccsession
+      llm-agents.ccusage
+      llm-agents.herdr
+      ccsession.default
     ];
 
     programs.claude-code = {
       enable = true;
-      package = pkgs.llm-agents.claude-code;
+      package = llm-agents.claude-code;
 
       settings = {
         model = "claude-fable-5[1m]";

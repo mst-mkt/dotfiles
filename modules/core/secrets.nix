@@ -5,6 +5,10 @@
   ...
 }:
 
+let
+  ragenix = inputs.ragenix.packages.${host.system};
+in
+
 delib.module {
   name = "core.secrets";
 
@@ -16,8 +20,6 @@ delib.module {
   nixos.ifEnabled = {
     age.identityPaths = [ "/etc/ssh/ssh_host_ed25519_key" ];
 
-    environment.systemPackages = [
-      inputs.ragenix.packages.${host.system}.default
-    ];
+    environment.systemPackages = [ ragenix.default ];
   };
 }
