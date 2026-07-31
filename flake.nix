@@ -1,72 +1,4 @@
 {
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-
-    home-manager.url = "github:nix-community/home-manager";
-    home-manager.inputs.nixpkgs.follows = "nixpkgs";
-
-    denix.url = "github:yunfachi/denix";
-    denix.inputs.nixpkgs.follows = "nixpkgs";
-    denix.inputs.home-manager.follows = "home-manager";
-
-    nixos-hardware.url = "github:NixOS/nixos-hardware";
-
-    nix-hazkey.url = "github:aster-void/nix-hazkey";
-    nix-hazkey.inputs.nixpkgs.follows = "nixpkgs";
-
-    niri-flake.url = "github:sodiboo/niri-flake/very-refactor";
-    niri-flake.inputs.nixpkgs.follows = "nixpkgs";
-
-    treefmt-nix.url = "github:numtide/treefmt-nix";
-    treefmt-nix.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-index-database.url = "github:nix-community/nix-index-database";
-    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-vite-plus.url = "github:ryoppippi/nix-vite-plus";
-    nix-vite-plus.inputs.nixpkgs.follows = "nixpkgs";
-
-    cf-open.url = "github:mst-mkt/cf-open";
-    cf-open.inputs.nixpkgs.follows = "nixpkgs";
-
-    widgets.url = "github:mst-mkt/widgets";
-
-    googleworkspace-cli.url = "github:googleworkspace/cli";
-    googleworkspace-cli.inputs.nixpkgs.follows = "nixpkgs";
-
-    moocs-collect-nix.url = "github:mst-mkt/moocs-collect-nix";
-
-    cbhook.url = "git+ssh://git@github.com/mst-mkt/cbhook";
-    cbhook.inputs.nixpkgs.follows = "nixpkgs";
-
-    nix-vscode-extensions.url = "github:nix-community/nix-vscode-extensions";
-    nix-vscode-extensions.inputs.nixpkgs.follows = "nixpkgs";
-
-    llm-agents.url = "github:numtide/llm-agents.nix";
-
-    ccsession.url = "github:sorafujitani/ccsession";
-    ccsession.inputs.nixpkgs.follows = "nixpkgs";
-
-    ax.url = "github:yusukebe/ax";
-    ax.inputs.nixpkgs.follows = "nixpkgs";
-
-    claude-output-styles.url = "git+https://gist.github.com/mst-mkt/591493bb7c12c8a5774b0ffe3d80d5cf";
-    claude-output-styles.flake = false;
-
-    agent-skills.url = "github:Kyure-A/agent-skills-nix";
-    agent-skills.inputs.nixpkgs.follows = "nixpkgs";
-    agent-skills.inputs.home-manager.follows = "home-manager";
-
-    skills.url = "git+ssh://git@github.com/mst-mkt/skills";
-    skills.flake = false;
-
-    ragenix.url = "github:yaxitech/ragenix";
-    ragenix.inputs.nixpkgs.follows = "nixpkgs";
-
-    pgbackup.url = "github:flestudio/pgbackup";
-    pgbackup.inputs.nixpkgs.follows = "nixpkgs";
-  };
-
   outputs =
     inputs@{
       self,
@@ -192,4 +124,106 @@
         formatting = treefmtEval.${system}.config.build.check self;
       });
     };
+
+  inputs = {
+    nixpkgs = {
+      url = "github:NixOS/nixpkgs/nixos-unstable";
+    };
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    denix = {
+      url = "github:yunfachi/denix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-hardware = {
+      url = "github:NixOS/nixos-hardware";
+    };
+    ragenix = {
+      url = "github:yaxitech/ragenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    niri-flake = {
+      url = "github:sodiboo/niri-flake/very-refactor";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-hazkey = {
+      url = "github:aster-void/nix-hazkey";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    widgets = {
+      url = "github:mst-mkt/widgets";
+    };
+    cf-open = {
+      url = "github:mst-mkt/cf-open";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-vite-plus = {
+      url = "github:ryoppippi/nix-vite-plus";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    googleworkspace-cli = {
+      url = "github:googleworkspace/cli";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    moocs-collect-nix = {
+      url = "github:mst-mkt/moocs-collect-nix";
+    };
+    cbhook = {
+      url = "git+ssh://git@github.com/mst-mkt/cbhook";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+    };
+    agent-skills = {
+      url = "github:Kyure-A/agent-skills-nix";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
+    skills = {
+      url = "git+ssh://git@github.com/mst-mkt/skills";
+      flake = false;
+    };
+    claude-output-styles = {
+      url = "git+https://gist.github.com/mst-mkt/591493bb7c12c8a5774b0ffe3d80d5cf";
+      flake = false;
+    };
+    ccsession = {
+      url = "github:sorafujitani/ccsession";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    ax = {
+      url = "github:yusukebe/ax";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    pgbackup = {
+      url = "github:flestudio/pgbackup";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+  };
 }
