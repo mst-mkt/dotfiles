@@ -11,6 +11,7 @@ delib.module {
   options = delib.singleEnableOption host.guiFeatured;
 
   home.ifEnabled.home.pointerCursor = {
+    enable = true;
     name = "Breeze_Light";
     package = pkgs.kdePackages.breeze;
     size = 24;
