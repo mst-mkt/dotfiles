@@ -1,6 +1,4 @@
 {
-  description = "mst-mkt's NixOS & home-manager configurations (denix-powered)";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
 
