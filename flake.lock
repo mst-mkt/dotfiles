@@ -201,15 +201,15 @@
       "locked": {
         "lastModified": 1779894574,
         "narHash": "sha256-ttJC2v4qtiu6/immZPxOCXXCvRin4txsyYeFeqwb3QY=",
-        "ref": "refs/heads/main",
+        "owner": "mst-mkt",
+        "repo": "cbhook",
         "rev": "6be6d68440d94ed211bcb28ab56e06e8092a2d9a",
-        "revCount": 33,
-        "type": "git",
-        "url": "ssh://git@github.com/mst-mkt/cbhook"
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "ssh://git@github.com/mst-mkt/cbhook"
+        "owner": "mst-mkt",
+        "repo": "cbhook",
+        "type": "github"
       }
     },
     "ccsession": {

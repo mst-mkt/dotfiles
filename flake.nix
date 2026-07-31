@@ -187,7 +187,7 @@
       url = "github:mst-mkt/moocs-collect-nix";
     };
     cbhook = {
-      url = "git+ssh://git@github.com/mst-mkt/cbhook";
+      url = "github:mst-mkt/cbhook";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
