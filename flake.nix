@@ -1,23 +1,20 @@
 {
   outputs =
-    inputs@{
-      self,
-      nixpkgs,
-      denix,
-      ...
-    }:
+    inputs:
     let
-      forAllSystems = nixpkgs.lib.genAttrs [
+      forAllSystems = inputs.nixpkgs.lib.genAttrs [
         "x86_64-linux"
         "aarch64-linux"
       ];
 
+      pkgsFor = forAllSystems (system: inputs.nixpkgs.legacyPackages.${system});
+
       treefmtEval = forAllSystems (
-        system: inputs.treefmt-nix.lib.evalModule nixpkgs.legacyPackages.${system} ./treefmt.nix
+        system: inputs.treefmt-nix.lib.evalModule pkgsFor.${system} ./treefmt.nix
       );
     in
     {
-      nixosConfigurations = denix.lib.configurations {
+      nixosConfigurations = inputs.denix.lib.configurations {
         moduleSystem = "nixos";
         homeManagerUser = "mst-mkt";
         paths = [
@@ -25,7 +22,7 @@
           ./modules
         ];
         specialArgs = { inherit inputs; };
-        extensions = with denix.lib.extensions; [
+        extensions = with inputs.denix.lib.extensions; [
           args
           (base.withConfig {
             args.enable = true;
@@ -80,7 +77,7 @@
       packages = forAllSystems (
         system:
         let
-          pkgs = nixpkgs.legacyPackages.${system};
+          pkgs = pkgsFor.${system};
           wezterm-types = pkgs.fetchFromGitHub {
             owner = "DrKJeff16";
             repo = "wezterm-types";
@@ -103,7 +100,7 @@
       devShells = forAllSystems (
         system:
         let
-          pkgs = nixpkgs.legacyPackages.${system};
+          pkgs = pkgsFor.${system};
         in
         {
           default = pkgs.mkShell {
@@ -112,7 +109,7 @@
               treefmtEval.${system}.config.build.wrapper
             ];
             shellHook = ''
-              ln -sfn ${self.packages.${system}.luarc} .luarc.json
+              ln -sfn ${inputs.self.packages.${system}.luarc} .luarc.json
             '';
           };
         }
@@ -121,7 +118,7 @@
       formatter = forAllSystems (system: treefmtEval.${system}.config.build.wrapper);
 
       checks = forAllSystems (system: {
-        formatting = treefmtEval.${system}.config.build.check self;
+        formatting = treefmtEval.${system}.config.build.check inputs.self;
       });
     };
 
