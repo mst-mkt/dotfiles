@@ -21,13 +21,14 @@ delib.module {
   };
 
   home.ifEnabled.xdg.configFile."xdg-desktop-portal-termfilechooser/config".text =
-    lib.generators.toINI { } {
-      filechooser = {
-        cmd = "${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh";
-        default_dir = "$HOME";
-        env = "TERMCMD=wezterm start --always-new-process --class termfilechooser --";
-        open_mode = "suggested";
-        save_mode = "suggested";
+    lib.generators.toINI { }
+      {
+        filechooser = {
+          cmd = "${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh";
+          default_dir = "$HOME";
+          env = "TERMCMD=wezterm start --always-new-process --class termfilechooser --";
+          open_mode = "suggested";
+          save_mode = "suggested";
+        };
       };
-    };
 }
