@@ -53,7 +53,7 @@ delib.module {
       enable = true;
       sources = {
         ax = {
-          path = pkgs.ax.src.outPath;
+          path = inputs.ax.outPath;
           subdir = "skills/ax";
         };
         gh-stack = {

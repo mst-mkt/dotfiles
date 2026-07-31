@@ -52,6 +52,9 @@
     ccsession.url = "github:sorafujitani/ccsession";
     ccsession.inputs.nixpkgs.follows = "nixpkgs";
 
+    ax.url = "github:yusukebe/ax";
+    ax.inputs.nixpkgs.follows = "nixpkgs";
+
     claude-output-styles.url = "git+https://gist.github.com/mst-mkt/591493bb7c12c8a5774b0ffe3d80d5cf";
     claude-output-styles.flake = false;
 
