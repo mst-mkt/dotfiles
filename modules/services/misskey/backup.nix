@@ -54,7 +54,6 @@ delib.module {
       timerConfig = {
         OnCalendar = "*-*-* 4,16:00:00";
         Persistent = true;
-        Unit = "misskey-backup.service";
       };
     };
   };
