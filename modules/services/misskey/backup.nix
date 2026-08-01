@@ -24,6 +24,7 @@ delib.module {
         "misskey.service"
         "postgresql.target"
       ];
+      wants = [ "postgresql.target" ];
 
       environment = {
         DATABASE = dbSettings.db;
