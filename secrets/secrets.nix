@@ -9,4 +9,5 @@ in
   "misskey-backup-env.age".publicKeys = users ++ [ hosts.crossroads ];
   "spotifyd-oauth-credentials.json.age".publicKeys = users ++ [ hosts.dirtmouth ];
   "gws-client-secret.json.age".publicKeys = users ++ builtins.attrValues hosts;
+  "nixbuild-ssh-key.age".publicKeys = users ++ builtins.attrValues hosts;
 }
