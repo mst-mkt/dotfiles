@@ -1066,6 +1066,22 @@
     },
     "nixpkgs_8": {
       "locked": {
+        "lastModified": 1785571196,
+        "narHash": "sha256-KoTsyMQqnXQZq8deCEnu4QkyldkwH/bpMMhUcfMdGIw=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "148bab9c1c3c53136ecb44a6ea356a0ed5b39b06",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_9": {
+      "locked": {
         "lastModified": 1783522502,
         "narHash": "sha256-iffAls3iaNTyJC2faYcUXSI+Gp02cDjYl+MygxKl2GI=",
         "owner": "NixOS",
@@ -1077,6 +1093,24 @@
         "owner": "NixOS",
         "ref": "nixos-unstable",
         "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nur-packages": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_8"
+      },
+      "locked": {
+        "lastModified": 1785619438,
+        "narHash": "sha256-pLq6kqyXct6A1Nr+Td8FpR9x+fNzxFxv4Ze+x3Ii71E=",
+        "owner": "mst-mkt",
+        "repo": "nur-packages",
+        "rev": "52d07772726ecb217ffb31220412176afa4d61ae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mst-mkt",
+        "repo": "nur-packages",
         "type": "github"
       }
     },
@@ -1164,6 +1198,7 @@
         "nix-vscode-extensions": "nix-vscode-extensions",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_7",
+        "nur-packages": "nur-packages",
         "pgbackup": "pgbackup",
         "ragenix": "ragenix",
         "skills": "skills",
@@ -1387,7 +1422,7 @@
     "widgets": {
       "inputs": {
         "ags": "ags",
-        "nixpkgs": "nixpkgs_8"
+        "nixpkgs": "nixpkgs_9"
       },
       "locked": {
         "lastModified": 1783697248,

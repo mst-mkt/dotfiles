@@ -2,8 +2,13 @@
   delib,
   host,
   pkgs,
+  inputs,
   ...
 }:
+
+let
+  nur-packages = inputs.nur-packages.packages.${pkgs.stdenv.hostPlatform.system};
+in
 
 delib.module {
   name = "programs.gh";
@@ -16,7 +21,7 @@ delib.module {
     extensions = [
       pkgs.gh-markdown-preview
       pkgs.gh-poi
-      pkgs.gh-pr-reviews
+      nur-packages.gh-pr-reviews
       pkgs.gh-stack
     ];
   };

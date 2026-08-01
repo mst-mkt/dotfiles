@@ -9,6 +9,7 @@
 let
   llm-agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
   ccsession = inputs.ccsession.packages.${pkgs.stdenv.hostPlatform.system};
+  nur-packages = inputs.nur-packages.packages.${pkgs.stdenv.hostPlatform.system};
 in
 
 delib.module {
@@ -65,7 +66,7 @@ delib.module {
           path = pkgs.gh-stack.src.outPath;
           subdir = "skills/gh-stack";
         };
-        git-hunk.path = pkgs.git-hunk.src.outPath;
+        git-hunk.path = nur-packages.git-hunk.src.outPath;
         skills.path = inputs.skills.outPath;
       };
       skills = {

@@ -62,7 +62,6 @@
               )
             ];
           })
-          overlays
         ];
       };
 
@@ -120,6 +119,9 @@
     nix-vite-plus = {
       url = "github:ryoppippi/nix-vite-plus";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur-packages = {
+      url = "github:mst-mkt/nur-packages";
     };
     moocs-collect-nix = {
       url = "github:mst-mkt/moocs-collect-nix";

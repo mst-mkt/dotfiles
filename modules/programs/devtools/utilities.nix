@@ -9,6 +9,7 @@
 let
   ax = inputs.ax.packages.${pkgs.stdenv.hostPlatform.system};
   cf-open = inputs.cf-open.packages.${pkgs.stdenv.hostPlatform.system};
+  nur-packages = inputs.nur-packages.packages.${pkgs.stdenv.hostPlatform.system};
 in
 
 delib.module {
@@ -19,8 +20,8 @@ delib.module {
   home.ifEnabled.home.packages = [
     ax.default
     cf-open.default
-    pkgs.gengo
-    pkgs.git-hunk
+    nur-packages.gengo
+    nur-packages.git-hunk
     pkgs.git-wt
     pkgs.mo-viewer
   ];
