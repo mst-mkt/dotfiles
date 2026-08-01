@@ -2,14 +2,9 @@
   delib,
   host,
   constants,
-  inputs,
   pkgs,
   ...
 }:
-
-let
-  gws = inputs.googleworkspace-cli.packages.${pkgs.stdenv.hostPlatform.system};
-in
 
 delib.module {
   name = "programs.gws";
@@ -17,7 +12,7 @@ delib.module {
   options = delib.singleEnableOption host.cliFeatured;
 
   home.ifEnabled = {
-    home.packages = [ gws.default ];
+    home.packages = [ pkgs.gws ];
 
     age.secrets.gws-client-secret = {
       file = ../../secrets/gws-client-secret.json.age;

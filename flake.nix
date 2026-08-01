@@ -121,10 +121,6 @@
       url = "github:ryoppippi/nix-vite-plus";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    googleworkspace-cli = {
-      url = "github:googleworkspace/cli";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     moocs-collect-nix = {
       url = "github:mst-mkt/moocs-collect-nix";
     };
