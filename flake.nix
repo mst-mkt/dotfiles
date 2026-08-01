@@ -105,7 +105,6 @@
     };
     cf-open = {
       url = "github:mst-mkt/cf-open";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     nix-index-database = {
@@ -128,7 +127,6 @@
     };
     cbhook = {
       url = "github:mst-mkt/cbhook";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     llm-agents = {
@@ -160,7 +158,6 @@
 
     pgbackup = {
       url = "github:flestudio/pgbackup";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     misskey = {
       url = "github:flestudio/flestudio";
