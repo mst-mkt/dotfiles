@@ -121,6 +121,7 @@ delib.module {
         "workbench.activityBar.iconClickBehavior" = "focus";
         "workbench.panel.opensMaximized" = "never";
         "workbench.panel.showLabels" = false;
+        "workbench.secondarySideBar.defaultVisibility" = "hidden";
         "workbench.layoutControl.enabled" = false;
         "workbench.browser.showInTitleBar" = false;
         "workbench.tree.indent" = 16;
