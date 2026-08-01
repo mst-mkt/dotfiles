@@ -94,6 +94,9 @@ delib.module {
         "github.gitProtocol" = "ssh";
 
         # [ui]
+        # chat.*
+        "chat.titleBar.openInAgentsWindow.enabled" = false;
+
         # window.*
         "window.titleBarStyle" = "custom";
         "window.customTitleBarVisibility" = "never";
