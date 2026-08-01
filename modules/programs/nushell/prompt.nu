@@ -12,6 +12,12 @@
 # - `↓`: behind remote
 
 $env.PROMPT_COMMAND = {||
+  let host_str = if ($env.SSH_CONNECTION? | is-empty) {
+    ""
+  } else {
+    $"(ansi red_bold)\(((sys host).hostname))(ansi reset) "
+  }
+
   let cwd = (pwd | str replace $env.HOME "~")
 
   let stat = try { gstat } catch { null }
@@ -52,7 +58,7 @@ $env.PROMPT_COMMAND = {||
     $" (ansi yellow_bold)($stat.branch)(ansi reset)($status_str)"
   }
 
-  $"($cwd)($git_str)\n"
+  $"($host_str)($cwd)($git_str)\n"
 }
 
 $env.PROMPT_COMMAND_RIGHT = {||
