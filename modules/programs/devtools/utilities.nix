@@ -22,6 +22,6 @@ delib.module {
     pkgs.gengo
     pkgs.git-hunk
     pkgs.git-wt
-    pkgs.mo
+    pkgs.mo-viewer
   ];
 }
