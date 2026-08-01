@@ -1079,11 +1079,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1780128640,
-        "narHash": "sha256-09GG04fTDNGEfTs48u3ZNnSkfqB2xnZTi6pgMlqdzr0=",
+        "lastModified": 1785583554,
+        "narHash": "sha256-UZyBippCOsTAwMGQCph3PCli9R98KRxbVWM9RatmY9c=",
         "owner": "flestudio",
         "repo": "pgbackup",
-        "rev": "f5a66f89fc3a18756d30f3f00d6f8a4f26825177",
+        "rev": "c5370107fb2ac9add7810abb3a3c97e95b909089",
         "type": "github"
       },
       "original": {
