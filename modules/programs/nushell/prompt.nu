@@ -18,7 +18,7 @@ $env.PROMPT_COMMAND = {||
     $"(ansi red_bold)\(((sys host).hostname))(ansi reset) "
   }
 
-  let cwd = (pwd | str replace $env.HOME "~")
+  let cwd = $"(ansi green)(pwd | str replace $env.HOME "~")(ansi reset)"
 
   let stat = try { gstat } catch { null }
   let git_str = if $stat == null or $stat.repo_name == "no_repository" {
