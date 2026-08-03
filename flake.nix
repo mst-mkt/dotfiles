@@ -128,6 +128,9 @@
     cbhook = {
       url = "github:mst-mkt/cbhook";
     };
+    autopair-nu = {
+      url = "github:mst-mkt/autopair.nu";
+    };
 
     llm-agents = {
       url = "github:numtide/llm-agents.nix";

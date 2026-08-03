@@ -1,6 +1,7 @@
 {
   delib,
   host,
+  inputs,
   pkgs,
   ...
 }:
@@ -10,7 +11,11 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
+  home.always.imports = [ inputs.autopair-nu.homeModules.default ];
+
   home.ifEnabled = {
+    programs.autopair-nu.enable = true;
+
     programs.nushell = {
       enable = true;
 
@@ -42,7 +47,6 @@ delib.module {
 
       extraConfig = builtins.concatStringsSep "\n\n" (
         map builtins.readFile [
-          ./autopair.nu
           ./prompt.nu
           ./functions.nu
         ]
