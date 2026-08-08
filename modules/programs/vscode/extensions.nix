@@ -55,6 +55,7 @@ delib.module {
           antfu.unocss
           ionutvmi.path-autocomplete
           kdl-org.kdl
+          mizdra.css-modules-kit-vscode
           moonbit.moonbit-lang
           ryuta46.multi-command
           thang-nm.flow-icons
