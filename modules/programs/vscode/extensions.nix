@@ -43,6 +43,7 @@ delib.module {
           oxc.oxc-vscode
           rust-lang.rust-analyzer
           streetsidesoftware.code-spell-checker
+          stylelint.vscode-stylelint
           sumneko.lua
           tamasfe.even-better-toml
           thenuprojectcontributors.vscode-nushell-lang
