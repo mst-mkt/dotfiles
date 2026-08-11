@@ -8,6 +8,12 @@ delib.module {
   nixos.ifEnabled = {
     age.secrets.nixbuild-ssh-key.file = ../../secrets/nixbuild-ssh-key.age;
 
+    programs.ssh.extraConfig = ''
+      Host eu.nixbuild.net
+        PubkeyAcceptedKeyTypes ssh-ed25519
+        ServerAliveInterval 60
+    '';
+
     nix = {
       distributedBuilds = true;
       buildMachines = [
