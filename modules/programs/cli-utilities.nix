@@ -1,9 +1,15 @@
 {
   delib,
   host,
+  lib,
   pkgs,
+  inputs,
   ...
 }:
+
+let
+  nur-packages = inputs.nur-packages.packages.${pkgs.stdenv.hostPlatform.system};
+in
 
 delib.module {
   name = "programs.cli-utilities";
@@ -21,7 +27,8 @@ delib.module {
       pkgs.tree
       pkgs.wget
       pkgs.wl-clipboard
-    ];
+    ]
+    ++ lib.optional host.iniadFeatured nur-packages.esa-cli;
 
     programs.bat.enable = true;
 
