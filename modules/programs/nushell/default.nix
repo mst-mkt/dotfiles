@@ -49,6 +49,7 @@ delib.module {
         map builtins.readFile [
           ./prompt.nu
           ./functions.nu
+          ./completions.nu
         ]
       );
 
