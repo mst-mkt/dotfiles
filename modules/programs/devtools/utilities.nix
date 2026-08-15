@@ -20,8 +20,10 @@ delib.module {
   home.ifEnabled.home.packages = [
     ax.default
     cf-open.default
+    nur-packages.calldiff
     nur-packages.gengo
     nur-packages.git-hunk
+    nur-packages.rinkaku
     pkgs.git-wt
     pkgs.mo-viewer
   ];
