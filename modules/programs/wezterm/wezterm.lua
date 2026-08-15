@@ -9,6 +9,7 @@ config.font = wezterm.font_with_fallback({
 })
 config.font_size = 12.0
 
+config.front_end = "WebGpu"
 config.enable_wayland = true
 config.use_ime = true
 
