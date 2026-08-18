@@ -1,3 +1,14 @@
+def send-action [action: record] {
+  let response = (
+    { Action: $action }
+    | to json --raw
+    | socat - $"UNIX-CONNECT:($env.NIRI_SOCKET)"
+    | from json
+  )
+
+  if ($response | get -o Err) != null { print -e $response.Err }
+}
+
 def main [pip_title: string] {
   for $event in (niri msg --json event-stream | lines) {
     let workspace = ($event | from json | get -o WorkspaceActivated)
@@ -10,17 +21,13 @@ def main [pip_title: string] {
       | where workspace_id != $workspace.id
       | where ($it.title | default "") =~ $pip_title
       | each {|window|
-          {
-            Action: {
-              MoveWindowToWorkspace: {
-                window_id: $window.id
-                reference: { Id: $workspace.id }
-                focus: false
-              }
+          send-action {
+            MoveWindowToWorkspace: {
+              window_id: $window.id
+              reference: { Id: $workspace.id }
+              focus: false
             }
           }
-          | to json --raw
-          | socat - $"UNIX-CONNECT:($env.NIRI_SOCKET)"
         }
       | ignore
     } catch {|e| print -e $e.rendered }
