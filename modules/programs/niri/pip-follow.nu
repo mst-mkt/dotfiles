@@ -6,7 +6,9 @@ def main [pip_title: string] {
     try {
       niri msg --json windows
       | from json
-      | where is_floating and workspace_id != $workspace.id and ($it.title | default "") =~ $pip_title
+      | where is_floating
+      | where workspace_id != $workspace.id
+      | where ($it.title | default "") =~ $pip_title
       | each {|window|
           {
             Action: {
