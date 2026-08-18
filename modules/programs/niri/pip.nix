@@ -23,7 +23,7 @@ delib.module {
   name = "programs.niri";
 
   home.ifEnabled = {
-    programs.niri.settings.window-rules = [
+    programs.niri.settings.window-rules = lib.mkAfter [
       {
         matches = [ { title = pipTitle; } ];
         open-floating = true;
