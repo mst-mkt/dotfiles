@@ -32,7 +32,7 @@ delib.module {
       selection-word-chars = "\" \\t'\\\"│`|:;,()[]{}<>$　、。，．・「」『』（）【】〔〕［］｛｝〈〉《》：；？！\"";
       confirm-close-surface = false;
       keybind = [
-        # tabs: reserved for herdr
+        # tabs: passed through to herdr keybinds
         "ctrl+shift+t=unbind"
         "ctrl+shift+w=unbind"
         "ctrl+tab=unbind"
@@ -59,9 +59,10 @@ delib.module {
         "alt+digit_7=unbind"
         "alt+digit_8=unbind"
 
-        # splits: reserved for herdr
+        # splits: passed through to herdr keybinds
         "ctrl+shift+o=unbind"
         "ctrl+shift+e=unbind"
+        "ctrl+shift+j=unbind"
         "ctrl+shift+enter=unbind"
         "ctrl+alt+arrow_up=unbind"
         "ctrl+alt+arrow_down=unbind"
