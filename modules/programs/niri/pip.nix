@@ -6,7 +6,17 @@
 }:
 
 let
-  pipTitle = "^(Picture(-| )in(-| )[Pp]icture|ピクチャー ?イン ?ピクチャー)$";
+  genericPipTitles = [
+    "Picture(-| )in(-| )[Pp]icture"
+    "ピクチャー ?イン ?ピクチャー"
+  ];
+  meetPipTitle = "Meet - [a-z]{3}-[a-z]{4}-[a-z]{3}";
+  anchor = alts: "^(${lib.concatStringsSep "|" alts})$";
+  pipPosition = {
+    x = 16;
+    y = 16;
+    relative-to = "bottom-right";
+  };
   pipFollow = pkgs.writers.writeNu "niri-pip-follow" {
     makeWrapperArgs = [
       "--prefix"
@@ -25,17 +35,26 @@ delib.module {
   home.ifEnabled = {
     programs.niri.settings.window-rules = lib.mkAfter [
       {
-        matches = [ { title = pipTitle; } ];
+        matches = [ { title = anchor genericPipTitles; } ];
         open-floating = true;
         min-width = 480;
         max-width = 480;
         min-height = 270;
         max-height = 270;
-        default-floating-position = {
-          x = 16;
-          y = 16;
-          relative-to = "bottom-right";
-        };
+        default-floating-position = pipPosition;
+        opacity = 1.0;
+      }
+      {
+        matches = [
+          {
+            app-id = "^vivaldi-";
+            title = anchor [ meetPipTitle ];
+          }
+        ];
+        open-floating = true;
+        default-column-width.fixed = 640;
+        default-window-height.fixed = 360;
+        default-floating-position = pipPosition;
         opacity = 1.0;
       }
     ];
@@ -47,7 +66,7 @@ delib.module {
         After = [ "niri.service" ];
       };
       Service = {
-        ExecStart = "${pipFollow} '${pipTitle}'";
+        ExecStart = "${pipFollow} '${anchor (genericPipTitles ++ [ meetPipTitle ])}'";
         Restart = "always";
         RestartSec = 1;
       };
