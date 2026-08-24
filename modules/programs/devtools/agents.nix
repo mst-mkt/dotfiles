@@ -22,7 +22,6 @@ delib.module {
   home.ifEnabled = {
     home.packages = [
       llm-agents.ccusage
-      llm-agents.herdr
       ccsession.default
     ];
 
