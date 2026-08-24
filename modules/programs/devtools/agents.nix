@@ -41,6 +41,7 @@ delib.module {
 
         cleanupPeriodDays = 9999;
 
+        tui = "fullscreen";
         spinnerTipsEnabled = false;
         statusLine = {
           type = "command";
