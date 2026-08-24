@@ -70,3 +70,5 @@ $env.PROMPT_COMMAND_RIGHT = {||
 
   $"($display_code)($time)"
 }
+
+$env.config.hooks.pre_prompt ++= [{|| print "" }]
