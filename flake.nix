@@ -131,6 +131,9 @@
     autopair-nu = {
       url = "github:mst-mkt/autopair.nu";
     };
+    serenity-emoji = {
+      url = "github:mst-mkt/serenity-emoji";
+    };
 
     llm-agents = {
       url = "github:numtide/llm-agents.nix";

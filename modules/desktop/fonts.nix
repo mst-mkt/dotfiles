@@ -2,8 +2,13 @@
   delib,
   host,
   pkgs,
+  inputs,
   ...
 }:
+
+let
+  serenity-emoji = inputs.serenity-emoji.packages.${pkgs.stdenv.hostPlatform.system};
+in
 
 delib.module {
   name = "desktop.fonts";
@@ -19,6 +24,7 @@ delib.module {
       noto-fonts-cjk-serif
       noto-fonts-color-emoji
       udev-gothic-nf
+      serenity-emoji.font
     ];
 
     fonts.fontconfig.defaultFonts = {
