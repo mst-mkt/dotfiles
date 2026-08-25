@@ -71,6 +71,10 @@ delib.module {
           path = llm-agents.herdr.src.outPath;
           subdir = "skills/herdr";
         };
+        hunk-review = {
+          path = llm-agents.hunk.outPath;
+          subdir = "skills/hunk-review";
+        };
         skills.path = inputs.skills.outPath;
       };
       skills = {
@@ -80,6 +84,7 @@ delib.module {
           "gh-stack"
           "git-hunk"
           "herdr"
+          "hunk-review"
         ];
       };
       targets.claude.enable = true;
