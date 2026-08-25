@@ -15,6 +15,7 @@ delib.module {
       font-family = [
         "UDEV Gothic NFLG"
         "Noto Sans CJK JP"
+        "Noto Sans Symbols 2"
         "Noto Color Emoji"
       ];
       font-size = 12;
