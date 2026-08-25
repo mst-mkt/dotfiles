@@ -67,6 +67,10 @@ delib.module {
           subdir = "skills/gh-stack";
         };
         git-hunk.path = nur-packages.git-hunk.src.outPath;
+        herdr = {
+          path = llm-agents.herdr.src.outPath;
+          subdir = "skills/herdr";
+        };
         skills.path = inputs.skills.outPath;
       };
       skills = {
@@ -75,6 +79,7 @@ delib.module {
           "ax"
           "gh-stack"
           "git-hunk"
+          "herdr"
         ];
       };
       targets.claude.enable = true;
