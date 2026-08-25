@@ -1464,11 +1464,11 @@
         "serenity": "serenity"
       },
       "locked": {
-        "lastModified": 1787668481,
-        "narHash": "sha256-3hZqsS2wTTP3LLtJRcrx5lJt201WS+VxCLEoMXOIEoQ=",
+        "lastModified": 1787675824,
+        "narHash": "sha256-68PvjaXl95k2/D7c8tlmtNW0w2Im9f2ztClwTIR/nlo=",
         "owner": "mst-mkt",
         "repo": "serenity-emoji",
-        "rev": "b084c4520701952fad0961c4bb2369e11f8f2fd0",
+        "rev": "0a7ebcacdaff6277b3733e109b2cfd763f67bd1a",
         "type": "github"
       },
       "original": {
