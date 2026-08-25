@@ -158,6 +158,10 @@
       url = "github:yusukebe/ax";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    hunk = {
+      url = "github:modem-dev/hunk";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
 
     pgbackup = {
       url = "github:flestudio/pgbackup";
