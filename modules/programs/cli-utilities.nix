@@ -9,6 +9,7 @@
 
 let
   nur-packages = inputs.nur-packages.packages.${pkgs.stdenv.hostPlatform.system};
+  serenity-emoji = inputs.serenity-emoji.packages.${pkgs.stdenv.hostPlatform.system};
 in
 
 delib.module {
@@ -27,6 +28,7 @@ delib.module {
       pkgs.tree
       pkgs.wget
       pkgs.wl-clipboard
+      serenity-emoji.cli
     ]
     ++ lib.optional host.iniadFeatured nur-packages.esa-cli;
 
