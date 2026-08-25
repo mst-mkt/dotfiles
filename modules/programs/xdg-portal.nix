@@ -26,7 +26,7 @@ delib.module {
         filechooser = {
           cmd = "${pkgs.xdg-desktop-portal-termfilechooser}/share/xdg-desktop-portal-termfilechooser/yazi-wrapper.sh";
           default_dir = "$HOME";
-          env = "TERMCMD=wezterm start --always-new-process --class termfilechooser --";
+          env = "TERMCMD=ghostty --class=termfilechooser -e";
           open_mode = "suggested";
           save_mode = "suggested";
         };

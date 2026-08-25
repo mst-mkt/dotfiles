@@ -7,8 +7,8 @@ delib.module {
     "Mod+Shift+Slash".action.show-hotkey-overlay = [ ];
 
     "Mod+Return" = {
-      action.spawn = "wezterm";
-      hotkey-overlay.title = "Open a Terminal: wezterm";
+      action.spawn = "ghostty";
+      hotkey-overlay.title = "Open a Terminal: ghostty";
     };
     "Mod+D" = {
       action.spawn = [
