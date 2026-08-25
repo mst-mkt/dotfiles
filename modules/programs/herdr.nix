@@ -1,6 +1,7 @@
 {
   delib,
   host,
+  lib,
   pkgs,
   inputs,
   ...
@@ -25,6 +26,10 @@ delib.module {
 
         update = {
           version_check = false;
+        };
+
+        terminal = {
+          default_shell = lib.getExe pkgs.nushell;
         };
 
         keys = {
