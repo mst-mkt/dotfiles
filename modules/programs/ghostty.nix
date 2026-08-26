@@ -15,7 +15,6 @@ delib.module {
       font-family = [
         "UDEV Gothic NFLG"
         "Noto Sans CJK JP"
-        "Noto Sans Symbols 2"
         "Serenity Emoji"
         "Noto Color Emoji"
       ];
