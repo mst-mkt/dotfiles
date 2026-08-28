@@ -4,14 +4,13 @@ delib.host {
   name = "crossroads";
   type = "server";
   system = "x86_64-linux";
-  features = [
-    "dev"
-    "misskey"
-  ];
+  features = [ "dev" ];
   ssh = {
     hostname = "crossroads.fle.st";
     via = "cloudflared";
   };
+
+  myconfig.services.misskey.enable = true;
 
   nixos = {
     system.stateVersion = "25.05";

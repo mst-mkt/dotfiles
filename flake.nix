@@ -29,7 +29,6 @@
                 "dev"
                 "game"
                 "iniad"
-                "misskey"
               ];
               defaultByHostType = {
                 laptop = [

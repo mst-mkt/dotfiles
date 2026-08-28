@@ -13,7 +13,7 @@ in
 delib.module {
   name = "services.misskey.backup";
 
-  options = delib.singleEnableOption host.misskeyFeatured;
+  options = delib.singleCascadeEnableOption;
 
   nixos.ifEnabled = {
     age.secrets.misskey-backup-env.file = ../../../secrets/misskey-backup-env.age;

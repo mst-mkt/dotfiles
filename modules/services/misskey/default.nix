@@ -1,6 +1,5 @@
 {
   delib,
-  host,
   config,
   inputs,
   lib,
@@ -11,7 +10,7 @@
 delib.module {
   name = "services.misskey";
 
-  options = delib.singleEnableOption host.misskeyFeatured;
+  options = delib.singleEnableOption false;
 
   nixos.ifEnabled = {
     age.secrets.misskey-sentry-dsn.file = ../../../secrets/misskey-sentry-dsn.age;
