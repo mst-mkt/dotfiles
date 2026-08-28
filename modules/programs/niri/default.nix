@@ -1,7 +1,6 @@
 {
   delib,
   host,
-  inputs,
   lib,
   pkgs,
   ...
@@ -12,21 +11,24 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  nixos.always.imports = [ inputs.niri-flake.nixosModules.niri ];
-
   nixos.ifEnabled = {
     programs.niri = {
       enable = true;
-      package = pkgs.niri;
+      useNautilus = false;
     };
     environment.sessionVariables.NIXOS_OZONE_WL = "1";
   };
 
-  home.ifEnabled.programs.niri.settings = {
-    prefer-no-csd = true;
-    hotkey-overlay.skip-at-startup = true;
-    screenshot-path = "~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png";
-    xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
-    includes = [ ./effects.kdl ];
+  home.ifEnabled.wayland.windowManager.niri = {
+    enable = true;
+    portalPackage = null;
+    xwaylandSatellitePackage = null;
+
+    settings = {
+      prefer-no-csd = { };
+      hotkey-overlay.skip-at-startup = { };
+      screenshot-path = "~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png";
+      xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+    };
   };
 }

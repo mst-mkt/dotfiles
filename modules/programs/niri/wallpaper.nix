@@ -1,7 +1,7 @@
 {
   delib,
-  pkgs,
   lib,
+  pkgs,
   ...
 }:
 
@@ -14,8 +14,8 @@ in
 delib.module {
   name = "programs.niri";
 
-  home.ifEnabled.programs.niri.settings.spawn-at-startup = [
-    { command = [ (lib.getExe' pkgs.awww "awww-daemon") ]; }
-    { command = [ "${setWallpaper}" ]; }
+  home.ifEnabled.wayland.windowManager.niri.settings._children = [
+    { spawn-at-startup._args = [ (lib.getExe' pkgs.awww "awww-daemon") ]; }
+    { spawn-at-startup._args = [ "${setWallpaper}" ]; }
   ];
 }

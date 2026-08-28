@@ -13,11 +13,7 @@ delib.module {
 
   nixos.ifEnabled.xdg.portal = {
     extraPortals = [ pkgs.xdg-desktop-portal-termfilechooser ];
-    config.niri = {
-      default = [ "gnome" ];
-      "org.freedesktop.impl.portal.FileChooser" = [ "termfilechooser" ];
-      "org.freedesktop.impl.portal.Secret" = [ "gnome-keyring" ];
-    };
+    config.niri."org.freedesktop.impl.portal.FileChooser" = lib.mkForce [ "termfilechooser" ];
   };
 
   home.ifEnabled.xdg.configFile."xdg-desktop-portal-termfilechooser/config".text =

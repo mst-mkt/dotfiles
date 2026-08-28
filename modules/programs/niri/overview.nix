@@ -3,13 +3,13 @@
 delib.module {
   name = "programs.niri";
 
-  home.ifEnabled.programs.niri.settings.overview = {
+  home.ifEnabled.wayland.windowManager.niri.settings.overview = {
     backdrop-color = "#ffd200";
     zoom = 0.7;
     workspace-shadow = {
       softness = 60;
       spread = 6;
-      offset = {
+      offset._props = {
         x = 0;
         y = 10;
       };

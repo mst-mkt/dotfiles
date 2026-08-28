@@ -3,7 +3,7 @@
 delib.module {
   name = "programs.niri";
 
-  home.ifEnabled.programs.niri.settings.spawn-at-startup = [
-    { command = [ "widgets" ]; }
+  home.ifEnabled.wayland.windowManager.niri.settings._children = [
+    { spawn-at-startup._args = [ "widgets" ]; }
   ];
 }

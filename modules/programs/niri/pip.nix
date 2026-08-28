@@ -33,29 +33,31 @@ delib.module {
   name = "programs.niri";
 
   home.ifEnabled = {
-    programs.niri.settings.window-rules = lib.mkAfter [
+    wayland.windowManager.niri.settings._children = lib.mkAfter [
       {
-        matches = [ { title = anchor genericPipTitles; } ];
-        open-floating = true;
-        min-width = 480;
-        max-width = 480;
-        min-height = 270;
-        max-height = 270;
-        default-floating-position = pipPosition;
-        opacity = 1.0;
+        window-rule = {
+          match._props.title = anchor genericPipTitles;
+          open-floating = true;
+          min-width = 480;
+          max-width = 480;
+          min-height = 270;
+          max-height = 270;
+          default-floating-position._props = pipPosition;
+          opacity = 1.0;
+        };
       }
       {
-        matches = [
-          {
+        window-rule = {
+          match._props = {
             app-id = "^vivaldi-";
             title = anchor [ meetPipTitle ];
-          }
-        ];
-        open-floating = true;
-        default-column-width.fixed = 640;
-        default-window-height.fixed = 360;
-        default-floating-position = pipPosition;
-        opacity = 1.0;
+          };
+          open-floating = true;
+          default-column-width.fixed = 640;
+          default-window-height.fixed = 360;
+          default-floating-position._props = pipPosition;
+          opacity = 1.0;
+        };
       }
     ];
 

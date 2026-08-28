@@ -3,52 +3,64 @@
 delib.module {
   name = "programs.niri";
 
-  home.ifEnabled.programs.niri.settings.window-rules = [
+  home.ifEnabled.wayland.windowManager.niri.settings._children = [
     {
-      geometry-corner-radius = {
-        top-left = 12.0;
-        top-right = 12.0;
-        bottom-left = 12.0;
-        bottom-right = 12.0;
+      window-rule = {
+        geometry-corner-radius._args = [
+          12
+          12
+          12
+          12
+        ];
+        clip-to-geometry = true;
+        draw-border-with-background = false;
+        background-effect = {
+          blur = true;
+          xray = false;
+        };
       };
-      clip-to-geometry = true;
-      draw-border-with-background = false;
     }
     {
-      matches = [ { is-focused = true; } ];
-      opacity = 0.8;
+      window-rule = {
+        match._props.is-focused = true;
+        opacity = 0.8;
+      };
     }
     {
-      matches = [ { is-focused = false; } ];
-      opacity = 0.7;
+      window-rule = {
+        match._props.is-focused = false;
+        opacity = 0.7;
+      };
     }
     {
-      matches = [ { app-id = "^vivaldi-stable$"; } ];
-      opacity = 1.0;
+      window-rule = {
+        match._props.app-id = "^vivaldi-stable$";
+        opacity = 1.0;
+      };
     }
     {
-      matches = [
-        {
+      window-rule = {
+        match._props = {
           app-id = "^vivaldi-.*-Default$";
           title = "Twitch";
-        }
-      ];
-      opacity = 1.0;
+        };
+        opacity = 1.0;
+      };
     }
     {
-      matches = [
-        {
+      window-rule = {
+        match._props = {
           app-id = "^$";
           title = "^$";
-        }
-      ];
-      open-floating = true;
-      default-floating-position = {
-        x = 16;
-        y = 16;
-        relative-to = "bottom-right";
+        };
+        open-floating = true;
+        default-floating-position._props = {
+          x = 16;
+          y = 16;
+          relative-to = "bottom-right";
+        };
+        focus-ring.off = { };
       };
-      focus-ring.enable = false;
     }
   ];
 }

@@ -3,23 +3,20 @@
 delib.module {
   name = "programs.niri";
 
-  home.ifEnabled.programs.niri.settings.input = {
+  home.ifEnabled.wayland.windowManager.niri.settings.input = {
     keyboard = {
       xkb.layout = "jp";
-      numlock = true;
+      numlock = { };
     };
 
     touchpad = {
-      tap = true;
-      natural-scroll = true;
-      dwt = true;
+      tap = { };
+      natural-scroll = { };
+      dwt = { };
     };
 
-    focus-follows-mouse = {
-      enable = true;
-      max-scroll-amount = "100%";
-    };
+    focus-follows-mouse._props.max-scroll-amount = "100%";
 
-    workspace-auto-back-and-forth = true;
+    workspace-auto-back-and-forth = { };
   };
 }
