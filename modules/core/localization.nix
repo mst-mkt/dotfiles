@@ -17,4 +17,6 @@ delib.module {
       keyMap = "jp106";
     };
   };
+
+  darwin.ifEnabled.time.timeZone = "Asia/Tokyo";
 }

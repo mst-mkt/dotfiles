@@ -23,4 +23,10 @@ delib.module {
       shell = pkgs.nushell;
     };
   };
+
+  darwin.ifEnabled = {
+    environment.shells = [ pkgs.nushell ];
+
+    system.primaryUser = host.owner;
+  };
 }

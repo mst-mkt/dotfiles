@@ -44,4 +44,9 @@ delib.module {
       emoji = [ "Noto Color Emoji" ];
     };
   };
+
+  darwin.ifEnabled.fonts.packages = with pkgs; [
+    udev-gothic-nf
+    serenity-emoji.font
+  ];
 }
