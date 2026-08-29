@@ -401,7 +401,9 @@
         "home-manager": [
           "home-manager"
         ],
-        "nix-darwin": "nix-darwin",
+        "nix-darwin": [
+          "nix-darwin"
+        ],
         "nixpkgs": [
           "nixpkgs"
         ],
@@ -867,16 +869,15 @@
     "nix-darwin": {
       "inputs": {
         "nixpkgs": [
-          "denix",
           "nixpkgs"
         ]
       },
       "locked": {
-        "lastModified": 1751313918,
-        "narHash": "sha256-HsJM3XLa43WpG+665aGEh8iS8AfEwOIQWk3Mke3e7nk=",
+        "lastModified": 1786845137,
+        "narHash": "sha256-oQFip+v0luP8NIxJzmiW4Wu8bILsbFWom5l0zonl8hQ=",
         "owner": "nix-darwin",
         "repo": "nix-darwin",
-        "rev": "e04a388232d9a6ba56967ce5b53a8a6f713cdfcf",
+        "rev": "4cff07de74b50e64bdd68cd4e722ab5b6b35ee48",
         "type": "github"
       },
       "original": {
@@ -1331,6 +1332,7 @@
         "llm-agents": "llm-agents",
         "misskey": "misskey",
         "moocs-collect-nix": "moocs-collect-nix",
+        "nix-darwin": "nix-darwin",
         "nix-hazkey": "nix-hazkey",
         "nix-index-database": "nix-index-database",
         "nix-vite-plus": "nix-vite-plus",

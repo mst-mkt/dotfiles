@@ -8,7 +8,7 @@ delib.host {
   name = "crossroads";
 
   nixos = {
-    age.secrets.cloudflared-credentials.file = ../../secrets/cloudflared-credentials.json.age;
+    age.secrets.cloudflared-credentials.file = ../../../secrets/cloudflared-credentials.json.age;
 
     services.cloudflared = {
       enable = true;

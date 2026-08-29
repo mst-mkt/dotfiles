@@ -2,21 +2,37 @@
   outputs =
     inputs:
     let
-      forAllSystems = inputs.nixpkgs.lib.genAttrs [ "x86_64-linux" ];
+      forAllSystems = inputs.nixpkgs.lib.genAttrs [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
 
+      extensions = with inputs.denix.lib.extensions; [
+        args
+        (base.withConfig (import ./denix/config.nix))
+      ];
     in
     {
       nixosConfigurations = inputs.denix.lib.configurations {
         moduleSystem = "nixos";
         paths = [
-          ./hosts
+          ./hosts/nixos
           ./modules
         ];
+        exclude = [ ./modules/desktop/macos ];
         specialArgs = { inherit inputs; };
-        extensions = with inputs.denix.lib.extensions; [
-          args
-          (base.withConfig (import ./denix/config.nix))
+        inherit extensions;
+      };
+
+      darwinConfigurations = inputs.denix.lib.configurations {
+        moduleSystem = "darwin";
+        paths = [
+          ./hosts/darwin
+          ./modules
         ];
+        exclude = [ ./modules/desktop/linux ];
+        specialArgs = { inherit inputs; };
+        inherit extensions;
       };
 
       formatter = forAllSystems (system: inputs.nixpkgs.legacyPackages.${system}.nixfmt-tree);
@@ -30,11 +46,16 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-darwin = {
+      url = "github:nix-darwin/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     denix = {
       url = "github:yunfachi/denix";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
+        nix-darwin.follows = "nix-darwin";
       };
     };
 
