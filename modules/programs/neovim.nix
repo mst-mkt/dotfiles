@@ -5,14 +5,12 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  nixos.ifEnabled.programs = {
-    command-not-found.enable = false;
+  nixos.ifEnabled.programs.command-not-found.enable = false;
 
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      viAlias = true;
-      vimAlias = true;
-    };
+  home.ifEnabled.programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+    viAlias = true;
+    vimAlias = true;
   };
 }

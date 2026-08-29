@@ -1,9 +1,9 @@
-{ delib, ... }:
+{ delib, pkgs, ... }:
 
 delib.module {
   name = "core.xdg";
 
-  options = delib.singleEnableOption true;
+  options = delib.singleEnableOption pkgs.stdenv.hostPlatform.isLinux;
 
   home.ifEnabled.xdg.userDirs = {
     enable = true;

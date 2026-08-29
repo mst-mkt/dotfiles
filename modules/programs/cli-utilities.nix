@@ -27,10 +27,10 @@ delib.module {
       pkgs.mmv-go
       pkgs.tree
       pkgs.wget
-      pkgs.wl-clipboard
       serenity-emoji.cli
     ]
-    ++ lib.optionals host.iniadFeatured [ nur-packages.esa-cli ];
+    ++ lib.optionals host.iniadFeatured [ nur-packages.esa-cli ]
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [ pkgs.wl-clipboard ];
 
     programs.bat.enable = true;
 

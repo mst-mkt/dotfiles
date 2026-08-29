@@ -13,10 +13,8 @@ delib.module {
 
   home.ifEnabled.home.packages =
     with pkgs;
-    [
-      vivaldi
-      slack
-    ]
+    [ slack ]
     ++ lib.optionals host.isPersonal [ discord ]
-    ++ lib.optionals host.iniadFeatured [ mattermost-desktop ];
+    ++ lib.optionals host.iniadFeatured [ mattermost-desktop ]
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [ vivaldi ];
 }

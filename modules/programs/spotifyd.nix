@@ -2,6 +2,7 @@
   delib,
   homeConfig,
   host,
+  pkgs,
   ...
 }:
 
@@ -11,7 +12,9 @@ in
 delib.module {
   name = "programs.spotifyd";
 
-  options = delib.singleEnableOption (host.isPersonal && host.guiFeatured);
+  options = delib.singleEnableOption (
+    host.isPersonal && host.guiFeatured && pkgs.stdenv.hostPlatform.isLinux
+  );
 
   home.ifEnabled = {
     services.spotifyd = {
