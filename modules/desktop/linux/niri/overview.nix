@@ -1,7 +1,7 @@
 { delib, ... }:
 
 delib.module {
-  name = "programs.niri";
+  name = "desktop.niri";
 
   home.ifEnabled.wayland.windowManager.niri.settings.overview = {
     backdrop-color = "#ffd200";

@@ -30,7 +30,7 @@ let
   } ./pip-follow.nu;
 in
 delib.module {
-  name = "programs.niri";
+  name = "desktop.niri";
 
   home.ifEnabled = {
     wayland.windowManager.niri.settings._children = lib.mkAfter [

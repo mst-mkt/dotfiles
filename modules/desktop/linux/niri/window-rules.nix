@@ -1,7 +1,7 @@
 { delib, lib, ... }:
 
 delib.module {
-  name = "programs.niri";
+  name = "desktop.niri";
 
   home.ifEnabled.wayland.windowManager.niri.settings._children = lib.mkBefore [
     {

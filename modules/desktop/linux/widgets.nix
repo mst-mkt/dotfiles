@@ -11,7 +11,7 @@ let
 in
 
 delib.module {
-  name = "programs.widgets";
+  name = "desktop.widgets";
 
   options = delib.singleEnableOption host.guiFeatured;
 

@@ -11,7 +11,7 @@ let
 in
 
 delib.module {
-  name = "desktop.fonts";
+  name = "core.fonts";
 
   options = delib.singleEnableOption host.guiFeatured;
 

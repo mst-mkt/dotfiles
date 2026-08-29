@@ -7,7 +7,7 @@
 }:
 
 delib.module {
-  name = "programs.xdg-portal";
+  name = "desktop.xdg-portal";
 
   options = delib.singleEnableOption host.guiFeatured;
 

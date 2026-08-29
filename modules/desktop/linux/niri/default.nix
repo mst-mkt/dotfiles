@@ -7,7 +7,7 @@
 }:
 
 delib.module {
-  name = "programs.niri";
+  name = "desktop.niri";
 
   options = delib.singleEnableOption host.guiFeatured;
 

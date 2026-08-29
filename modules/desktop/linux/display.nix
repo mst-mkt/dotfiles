@@ -1,7 +1,7 @@
 { delib, host, ... }:
 
 delib.module {
-  name = "services.display";
+  name = "desktop.display";
 
   options = delib.singleEnableOption host.guiFeatured;
 
