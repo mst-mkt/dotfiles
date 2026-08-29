@@ -1,9 +1,9 @@
-{ delib, ... }:
+{ delib, lib, ... }:
 
 delib.module {
   name = "programs.niri";
 
-  home.ifEnabled.wayland.windowManager.niri.settings._children = [
+  home.ifEnabled.wayland.windowManager.niri.settings._children = lib.mkBefore [
     {
       window-rule = {
         geometry-corner-radius._args = [
