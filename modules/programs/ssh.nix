@@ -20,7 +20,7 @@ delib.module {
       };
 
       reachableHosts = lib.filterAttrs (
-        name: h: h.ssh.hostname != null && name != host.name
+        name: h: h.ssh.hostname != null && name != host.name && h.usage == host.usage
       ) myconfig.hosts;
     in
     {

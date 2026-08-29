@@ -11,7 +11,7 @@ in
 delib.module {
   name = "programs.spotifyd";
 
-  options = delib.singleEnableOption host.guiFeatured;
+  options = delib.singleEnableOption (host.isPersonal && host.guiFeatured);
 
   home.ifEnabled = {
     services.spotifyd = {

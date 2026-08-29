@@ -3,6 +3,7 @@
 delib.host {
   name = "crossroads";
   type = "server";
+  usage = "personal";
   system = "x86_64-linux";
   features = [ "dev" ];
   ssh = {

@@ -9,7 +9,7 @@
 delib.module {
   name = "programs.gws";
 
-  options = delib.singleEnableOption host.cliFeatured;
+  options = delib.singleEnableOption (host.isPersonal && host.cliFeatured);
 
   home.ifEnabled = {
     home.packages = [ pkgs.gws ];

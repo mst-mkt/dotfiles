@@ -8,7 +8,7 @@
 delib.module {
   name = "programs.steam";
 
-  options = delib.singleEnableOption (host.guiFeatured && host.gameFeatured);
+  options = delib.singleEnableOption (host.isPersonal && host.guiFeatured && host.gameFeatured);
 
   nixos.ifEnabled = {
     programs.steam = {

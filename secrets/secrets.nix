@@ -8,5 +8,8 @@ in
   "misskey-sentry-dsn.age".publicKeys = users ++ [ hosts.crossroads ];
   "misskey-backup-env.age".publicKeys = users ++ [ hosts.crossroads ];
   "spotifyd-oauth-credentials.json.age".publicKeys = users ++ [ hosts.dirtmouth ];
-  "gws-client-secret.json.age".publicKeys = users ++ builtins.attrValues hosts;
+  "gws-client-secret.json.age".publicKeys = users ++ [
+    hosts.crossroads
+    hosts.dirtmouth
+  ];
 }

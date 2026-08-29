@@ -42,6 +42,27 @@
             };
             hosts.extraSubmodules = [
               (
+                { config, lib, ... }:
+                {
+                  options = {
+                    usage = lib.mkOption {
+                      type = lib.types.enum [
+                        "personal"
+                        "work"
+                      ];
+                    };
+                    isPersonal = lib.mkOption {
+                      type = lib.types.bool;
+                      default = config.usage == "personal";
+                    };
+                    isWork = lib.mkOption {
+                      type = lib.types.bool;
+                      default = config.usage == "work";
+                    };
+                  };
+                }
+              )
+              (
                 { lib, ... }:
                 {
                   options.ssh = {

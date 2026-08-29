@@ -3,6 +3,7 @@
 delib.host {
   name = "dirtmouth";
   type = "laptop";
+  usage = "personal";
   system = "x86_64-linux";
   features = [
     "dev"
