@@ -17,6 +17,6 @@ delib.module {
       vivaldi
       slack
     ]
-    ++ lib.optional host.isPersonal discord
-    ++ lib.optional host.iniadFeatured mattermost-desktop;
+    ++ lib.optionals host.isPersonal [ discord ]
+    ++ lib.optionals host.iniadFeatured [ mattermost-desktop ];
 }

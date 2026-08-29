@@ -30,7 +30,7 @@ delib.module {
       pkgs.wl-clipboard
       serenity-emoji.cli
     ]
-    ++ lib.optional host.iniadFeatured nur-packages.esa-cli;
+    ++ lib.optionals host.iniadFeatured [ nur-packages.esa-cli ];
 
     programs.bat.enable = true;
 
