@@ -1,8 +1,15 @@
 {
   delib,
   host,
+  pkgs,
   ...
 }:
+
+let
+  isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
+  cjkFallback = if isDarwin then "Hiragino Sans" else "Noto Sans CJK JP";
+  emojiFallback = if isDarwin then "Apple Color Emoji" else "Noto Color Emoji";
+in
 
 delib.module {
   name = "programs.ghostty";
@@ -11,12 +18,13 @@ delib.module {
 
   home.ifEnabled.programs.ghostty = {
     enable = true;
+    package = if isDarwin then null else pkgs.ghostty;
     settings = {
       font-family = [
         "UDEV Gothic NFLG"
-        "Noto Sans CJK JP"
+        cjkFallback
         "Serenity Emoji"
-        "Noto Color Emoji"
+        emojiFallback
       ];
       font-size = 12;
       theme = "Harper";
