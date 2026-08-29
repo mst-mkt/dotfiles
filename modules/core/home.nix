@@ -1,4 +1,9 @@
-{ delib, host, ... }:
+{
+  delib,
+  host,
+  pkgs,
+  ...
+}:
 
 delib.module {
   name = "core.home";
@@ -7,7 +12,8 @@ delib.module {
 
   home.ifEnabled = {
     home.username = host.owner;
-    home.homeDirectory = "/home/${host.owner}";
+    home.homeDirectory =
+      if pkgs.stdenv.hostPlatform.isDarwin then "/Users/${host.owner}" else "/home/${host.owner}";
 
     programs.home-manager.enable = true;
   };

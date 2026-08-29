@@ -28,5 +28,7 @@ delib.module {
     environment.shells = [ pkgs.nushell ];
 
     system.primaryUser = host.owner;
+
+    users.users.${host.owner}.home = "/Users/${host.owner}";
   };
 }

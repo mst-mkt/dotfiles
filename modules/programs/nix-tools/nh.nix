@@ -1,5 +1,6 @@
 {
   delib,
+  homeConfig,
   host,
   pkgs,
   ...
@@ -26,6 +27,6 @@ delib.module {
   home.ifEnabled.programs.nh = {
     enable = true;
     package = pkgs.nh.override { inherit nix-output-monitor; };
-    osFlake = "/home/${host.owner}/dotfiles";
+    flake = "${homeConfig.home.homeDirectory}/dotfiles";
   };
 }

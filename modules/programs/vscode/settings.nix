@@ -1,12 +1,20 @@
-{ delib, host, ... }:
+{
+  delib,
+  homeConfig,
+  host,
+  pkgs,
+  ...
+}:
 
 delib.module {
   name = "programs.vscode";
 
   home.ifEnabled =
     let
-      flakePath = "/home/${host.owner}/dotfiles";
+      flakePath = "${homeConfig.home.homeDirectory}/dotfiles";
       hostname = host.name;
+      configurations =
+        if pkgs.stdenv.hostPlatform.isDarwin then "darwinConfigurations" else "nixosConfigurations";
     in
     {
       programs.vscode.profiles.default.userSettings = {
@@ -245,8 +253,8 @@ delib.module {
           nixd = {
             formatting.command = [ "nixfmt" ];
             options = {
-              nixos.expr = ''(builtins.getFlake "${flakePath}").nixosConfigurations.${hostname}.options'';
-              home-manager.expr = ''(builtins.getFlake "${flakePath}").nixosConfigurations.${hostname}.options.home-manager.users.type.getSubOptions []'';
+              nixos.expr = ''(builtins.getFlake "${flakePath}").${configurations}.${hostname}.options'';
+              home-manager.expr = ''(builtins.getFlake "${flakePath}").${configurations}.${hostname}.options.home-manager.users.type.getSubOptions []'';
             };
           };
         };

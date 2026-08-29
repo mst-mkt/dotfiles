@@ -1,5 +1,6 @@
 {
   delib,
+  homeConfig,
   host,
   pkgs,
   ...
@@ -15,7 +16,7 @@ delib.module {
 
     age.secrets.gws-client-secret = {
       file = ../../secrets/gws-client-secret.json.age;
-      path = "/home/${host.owner}/.config/gws/client_secret.json";
+      path = "${homeConfig.xdg.configHome}/gws/client_secret.json";
     };
   };
 }
