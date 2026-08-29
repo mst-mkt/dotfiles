@@ -4,6 +4,7 @@ delib.host {
   name = "dirtmouth";
   type = "laptop";
   usage = "personal";
+  owner = "mst-mkt";
   system = "x86_64-linux";
   features = [
     "dev"

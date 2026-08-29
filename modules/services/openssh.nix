@@ -2,7 +2,6 @@
   delib,
   host,
   lib,
-  constants,
   ...
 }:
 
@@ -21,6 +20,6 @@ delib.module {
       openFirewall = lib.mkDefault false;
     };
 
-    users.users.${constants.username}.openssh.authorizedKeys.keys = keys.users.${constants.username};
+    users.users.${host.owner}.openssh.authorizedKeys.keys = lib.concatLists (lib.attrValues keys.users);
   };
 }

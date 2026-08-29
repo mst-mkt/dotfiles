@@ -8,7 +8,6 @@
     {
       nixosConfigurations = inputs.denix.lib.configurations {
         moduleSystem = "nixos";
-        homeManagerUser = "mst-mkt";
         paths = [
           ./hosts
           ./modules
@@ -41,6 +40,16 @@
               };
             };
             hosts.extraSubmodules = [
+              (
+                { config, lib, ... }:
+                {
+                  options.owner = lib.mkOption {
+                    type = lib.types.str;
+                  };
+
+                  config.homeManagerUser = lib.mkDefault config.owner;
+                }
+              )
               (
                 { config, lib, ... }:
                 {

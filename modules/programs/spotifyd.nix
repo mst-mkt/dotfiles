@@ -1,12 +1,7 @@
-{
-  delib,
-  host,
-  constants,
-  ...
-}:
+{ delib, host, ... }:
 
 let
-  cacheDir = "/home/${constants.username}/.cache/spotifyd";
+  cacheDir = "/home/${host.owner}/.cache/spotifyd";
 in
 delib.module {
   name = "programs.spotifyd";

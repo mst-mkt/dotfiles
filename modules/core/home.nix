@@ -1,4 +1,4 @@
-{ delib, constants, ... }:
+{ delib, host, ... }:
 
 delib.module {
   name = "core.home";
@@ -6,8 +6,8 @@ delib.module {
   options = delib.singleEnableOption true;
 
   home.ifEnabled = {
-    home.username = constants.username;
-    home.homeDirectory = "/home/${constants.username}";
+    home.username = host.owner;
+    home.homeDirectory = "/home/${host.owner}";
 
     programs.home-manager.enable = true;
   };

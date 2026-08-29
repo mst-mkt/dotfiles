@@ -1,6 +1,6 @@
 {
   delib,
-  constants,
+  host,
   pkgs,
   ...
 }:
@@ -13,7 +13,7 @@ delib.module {
   nixos.ifEnabled = {
     environment.shells = [ pkgs.nushell ];
 
-    users.users.${constants.username} = {
+    users.users.${host.owner} = {
       isNormalUser = true;
       extraGroups = [
         "wheel"

@@ -1,9 +1,4 @@
-{
-  delib,
-  host,
-  constants,
-  ...
-}:
+{ delib, host, ... }:
 
 delib.module {
   name = "programs.git";
@@ -13,8 +8,8 @@ delib.module {
   home.ifEnabled.programs.git = {
     enable = true;
     settings.user = {
-      name = constants.username;
-      email = constants.useremail;
+      name = "mst-mkt";
+      email = "mail@keito.dev";
     };
   };
 }

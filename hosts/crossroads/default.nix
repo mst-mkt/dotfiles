@@ -4,6 +4,7 @@ delib.host {
   name = "crossroads";
   type = "server";
   usage = "personal";
+  owner = "mst-mkt";
   system = "x86_64-linux";
   features = [ "dev" ];
   ssh = {
