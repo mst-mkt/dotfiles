@@ -29,6 +29,8 @@ delib.module {
       hotkey-overlay.skip-at-startup = { };
       screenshot-path = "~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png";
       xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+
+      _children = [ { spawn-at-startup._args = [ "widgets" ]; } ];
     };
   };
 }
