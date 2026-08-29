@@ -5,8 +5,6 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  nixos.ifEnabled.programs.command-not-found.enable = false;
-
   home.ifEnabled.programs.neovim = {
     enable = true;
     defaultEditor = true;

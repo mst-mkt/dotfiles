@@ -10,6 +10,8 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
+  nixos.ifEnabled.programs.command-not-found.enable = false;
+
   home.always.imports = [ inputs.nix-index-database.homeModules.nix-index ];
 
   home.ifEnabled = {
