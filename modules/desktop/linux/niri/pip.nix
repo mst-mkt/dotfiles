@@ -38,6 +38,7 @@ delib.module {
         window-rule = {
           match._props.title = anchor genericPipTitles;
           open-floating = true;
+          open-focused = false;
           min-width = 480;
           max-width = 480;
           min-height = 270;
@@ -53,6 +54,7 @@ delib.module {
             title = anchor [ meetPipTitle ];
           };
           open-floating = true;
+          open-focused = false;
           default-column-width.fixed = 640;
           default-window-height.fixed = 360;
           default-floating-position._props = pipPosition;
