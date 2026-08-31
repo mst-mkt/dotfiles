@@ -3,7 +3,7 @@
 delib.module {
   name = "programs.git-tools.git";
 
-  options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
+  options = delib.singleEnableOption host.cliFeatured;
 
   home.ifEnabled.programs.git = {
     enable = true;
