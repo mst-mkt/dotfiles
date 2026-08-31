@@ -8,6 +8,8 @@
 }:
 
 let
+  ax = inputs.ax.packages.${pkgs.stdenv.hostPlatform.system};
+  cf-open = inputs.cf-open.packages.${pkgs.stdenv.hostPlatform.system};
   nur-packages = inputs.nur-packages.packages.${pkgs.stdenv.hostPlatform.system};
   serenity-emoji = inputs.serenity-emoji.packages.${pkgs.stdenv.hostPlatform.system};
 in
@@ -17,37 +19,23 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.ifEnabled = {
-    home.packages = [
-      pkgs.bottom
-      pkgs.ffmpeg
-      pkgs.fzf
-      pkgs.jnv
-      pkgs.jq
-      pkgs.mmv-go
-      pkgs.tree
-      pkgs.wget
-      serenity-emoji.cli
-    ]
-    ++ lib.optionals host.iniadFeatured [ nur-packages.esa-cli ]
-    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [ pkgs.wl-clipboard ];
-
-    programs.bat.enable = true;
-
-    programs.eza = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
-
-    programs.zoxide = {
-      enable = true;
-      enableNushellIntegration = true;
-    };
-
-    programs.carapace = {
-      enable = true;
-      enableNushellIntegration = true;
-      ignoreCase = true;
-    };
-  };
+  home.ifEnabled.home.packages = [
+    pkgs.bottom
+    pkgs.ffmpeg
+    pkgs.fzf
+    pkgs.jnv
+    pkgs.jq
+    pkgs.mmv-go
+    pkgs.tree
+    pkgs.wget
+    serenity-emoji.cli
+  ]
+  ++ lib.optionals host.devFeatured [
+    ax.default
+    cf-open.default
+    nur-packages.gengo
+    pkgs.mo-viewer
+  ]
+  ++ lib.optionals host.iniadFeatured [ nur-packages.esa-cli ]
+  ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [ pkgs.wl-clipboard ];
 }

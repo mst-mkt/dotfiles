@@ -1,7 +1,7 @@
 { delib, host, ... }:
 
 delib.module {
-  name = "programs.git";
+  name = "programs.git-tools.git";
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 

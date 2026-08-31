@@ -25,7 +25,7 @@ let
 in
 
 delib.module {
-  name = "programs.devtools.agents";
+  name = "programs.agents";
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 

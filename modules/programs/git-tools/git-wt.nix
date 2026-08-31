@@ -6,12 +6,9 @@
 }:
 
 delib.module {
-  name = "programs.ghq";
+  name = "programs.git-tools.git-wt";
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  home.ifEnabled = {
-    home.packages = [ pkgs.ghq ];
-    programs.git.settings.ghq.root = "~/_";
-  };
+  home.ifEnabled.home.packages = [ pkgs.git-wt ];
 }

@@ -11,7 +11,7 @@ let
 in
 
 delib.module {
-  name = "programs.gh";
+  name = "programs.git-tools.gh";
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 

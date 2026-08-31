@@ -1,14 +1,12 @@
 { delib, host, ... }:
 
 delib.module {
-  name = "programs.nix-tools.direnv";
+  name = "programs.eza";
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.ifEnabled.programs.direnv = {
+  home.ifEnabled.programs.eza = {
     enable = true;
-    nix-direnv.enable = true;
     enableNushellIntegration = true;
-    config.global.hide_env_diff = true;
   };
 }

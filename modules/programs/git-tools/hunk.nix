@@ -11,7 +11,7 @@ let
 in
 
 delib.module {
-  name = "programs.hunk";
+  name = "programs.git-tools.hunk";
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
