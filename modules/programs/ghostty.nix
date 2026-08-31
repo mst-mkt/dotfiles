@@ -18,7 +18,7 @@ delib.module {
 
   home.ifEnabled.programs.ghostty = {
     enable = true;
-    package = if isDarwin then null else pkgs.ghostty;
+    package = if isDarwin then pkgs.ghostty-bin else pkgs.ghostty;
     settings = {
       font-family = [
         "UDEV Gothic NFLG"
