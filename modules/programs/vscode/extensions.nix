@@ -14,21 +14,7 @@ in
 delib.module {
   name = "programs.vscode";
 
-  home.ifEnabled =
-    let
-      tnix = pkgs.vscode-utils.buildVscodeMarketplaceExtension {
-        mktplcRef = {
-          publisher = "ubugeeei";
-          name = "tnix";
-          version = "0.5.0";
-        };
-        vsix = pkgs.fetchurl {
-          url = "https://github.com/ubugeeei/tnix/releases/download/v0.5.0/tnix-vscode-v0.5.0.vsix";
-          hash = "sha256-bXIGClx5CN5SLciZ+Dk7CqLN6zPSwxYgq3zrsCIIHzA=";
-        };
-      };
-    in
-    {
+  home.ifEnabled = {
       programs.vscode.profiles.default.extensions =
         (with pkgs.vscode-extensions; [
           antfu.slidev
@@ -66,7 +52,6 @@ delib.module {
           typespec.typespec-vscode
           ubugeeei.vize
         ])
-        ++ [ tnix ]
         ++ lib.optionals (host.name == "greenpath") [
           pkgs.vscode-extensions.dbaeumer.vscode-eslint
           pkgs.vscode-extensions.esbenp.prettier-vscode
