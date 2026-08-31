@@ -172,6 +172,48 @@
         "type": "github"
       }
     },
+    "brew-api": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1788145365,
+        "narHash": "sha256-O7Tmn4AZSaY+i5krSxvVC346MR50HPEnEkwpnD/d6zM=",
+        "owner": "BatteredBunny",
+        "repo": "brew-api",
+        "rev": "17b4a3f9849fd3673cbec3c84ca2962f30f37108",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BatteredBunny",
+        "repo": "brew-api",
+        "type": "github"
+      }
+    },
+    "brew-nix": {
+      "inputs": {
+        "brew-api": [
+          "brew-api"
+        ],
+        "nix-darwin": [
+          "nix-darwin"
+        ],
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1787595493,
+        "narHash": "sha256-bgIC3LxTa1x8QXihLnGRo5MXOyNhRPyIUNa56bsucHU=",
+        "owner": "BatteredBunny",
+        "repo": "brew-nix",
+        "rev": "c262c772ab66ec5ec78aa0e32f648963e9dda499",
+        "type": "github"
+      },
+      "original": {
+        "owner": "BatteredBunny",
+        "repo": "brew-nix",
+        "type": "github"
+      }
+    },
     "bun2nix": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -1322,6 +1364,8 @@
         "agent-skills": "agent-skills",
         "autopair-nu": "autopair-nu",
         "ax": "ax",
+        "brew-api": "brew-api",
+        "brew-nix": "brew-nix",
         "cbhook": "cbhook",
         "ccsession": "ccsession",
         "cf-open": "cf-open",
