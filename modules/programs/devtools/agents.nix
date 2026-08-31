@@ -10,6 +10,18 @@ let
   llm-agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
   ccsession = inputs.ccsession.packages.${pkgs.stdenv.hostPlatform.system};
   nur-packages = inputs.nur-packages.packages.${pkgs.stdenv.hostPlatform.system};
+
+  # Swap a decorative glyph to keep the display consistent across platforms.
+  claude-code = llm-agents.claude-code.overrideAttrs (old: {
+    bulletFrom = ''"\u23FA":"\u25CF"'';
+    bulletTo = ''"\u25CF":"\u25CF"'';
+
+    postInstall = (old.postInstall or "") + ''
+      bin=$out/bin/claude
+      offset=$(grep -Fabo -m1 "$bulletFrom" "$bin" | cut -d: -f1)
+      printf %s "$bulletTo" | dd of="$bin" bs=1 seek="''${offset:?not found}" conv=notrunc
+    '';
+  });
 in
 
 delib.module {
@@ -27,7 +39,7 @@ delib.module {
 
     programs.claude-code = {
       enable = true;
-      package = llm-agents.claude-code;
+      package = claude-code;
 
       settings = {
         model = "claude-fable-5[1m]";
