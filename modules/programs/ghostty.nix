@@ -29,7 +29,7 @@ delib.module {
       ];
       font-size = 12;
       theme = "Harper";
-      window-decoration = "none";
+      window-decoration = if isDarwin then "auto" else "none";
       window-padding-x = 8;
       window-padding-y = 8;
       window-padding-balance = true;
