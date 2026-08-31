@@ -20,6 +20,7 @@ delib.module {
     enable = true;
     package = if isDarwin then pkgs.ghostty-bin else pkgs.ghostty;
     settings = {
+      command = if isDarwin then "/bin/zsh -lc '${pkgs.nushell}/bin/nu --login'" else null;
       font-family = [
         "UDEV Gothic NFLG"
         cjkFallback
