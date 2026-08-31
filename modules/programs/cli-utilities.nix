@@ -26,15 +26,15 @@ delib.module {
     pkgs.jnv
     pkgs.jq
     pkgs.mmv-go
+    pkgs.mo-viewer
     pkgs.tree
     pkgs.wget
+    ax.default
     serenity-emoji.cli
   ]
   ++ lib.optionals host.devFeatured [
-    ax.default
     cf-open.default
     nur-packages.gengo
-    pkgs.mo-viewer
   ]
   ++ lib.optionals host.iniadFeatured [ nur-packages.esa-cli ]
   ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [ pkgs.wl-clipboard ];
