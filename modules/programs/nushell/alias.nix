@@ -19,6 +19,18 @@ delib.module {
     l9 = "git log -9";
     l10 = "git log -10";
 
+    lo = "git log --oneline";
+    lo1 = "git log --oneline -1";
+    lo2 = "git log --oneline -2";
+    lo3 = "git log --oneline -3";
+    lo4 = "git log --oneline -4";
+    lo5 = "git log --oneline -5";
+    lo6 = "git log --oneline -6";
+    lo7 = "git log --oneline -7";
+    lo8 = "git log --oneline -8";
+    lo9 = "git log --oneline -9";
+    lo10 = "git log --oneline -10";
+
     sw = "git switch";
     swc = "git switch -c";
 
