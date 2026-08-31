@@ -7,17 +7,17 @@ delib.module {
     # git
     s = "git status";
 
-    l = "git log --oneline --graph --decorate";
-    l1 = "git log --oneline --graph --decorate -1";
-    l2 = "git log --oneline --graph --decorate -2";
-    l3 = "git log --oneline --graph --decorate -3";
-    l4 = "git log --oneline --graph --decorate -4";
-    l5 = "git log --oneline --graph --decorate -5";
-    l6 = "git log --oneline --graph --decorate -6";
-    l7 = "git log --oneline --graph --decorate -7";
-    l8 = "git log --oneline --graph --decorate -8";
-    l9 = "git log --oneline --graph --decorate -9";
-    l10 = "git log --oneline --graph --decorate -10";
+    l = "git log";
+    l1 = "git log -1";
+    l2 = "git log -2";
+    l3 = "git log -3";
+    l4 = "git log -4";
+    l5 = "git log -5";
+    l6 = "git log -6";
+    l7 = "git log -7";
+    l8 = "git log -8";
+    l9 = "git log -9";
+    l10 = "git log -10";
 
     sw = "git switch";
     swc = "git switch -c";
