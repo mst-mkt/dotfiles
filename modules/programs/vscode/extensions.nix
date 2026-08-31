@@ -32,6 +32,7 @@ delib.module {
           antfu.slidev
           charliermarsh.ruff
           github.copilot-chat
+          github.vscode-github-actions
           golang.go
           graphql.vscode-graphql-syntax
           ibm.output-colorizer
