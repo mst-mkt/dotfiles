@@ -11,5 +11,13 @@ delib.module {
       name = "mst-mkt";
       email = "mail@keito.dev";
     };
+    includes = [
+      {
+        condition = "gitdir:~/_/github.com/hatena/";
+        contents = {
+          user.email = "mst-mkt@hatena.com";
+        };
+      }
+    ];
   };
 }
