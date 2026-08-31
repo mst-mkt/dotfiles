@@ -10,4 +10,8 @@ delib.module {
     networkmanager.enable = true;
     firewall.enable = true;
   };
+
+  darwin.ifEnabled.networking = {
+    hostName = host.name;
+  };
 }
