@@ -135,6 +135,10 @@
       url = "github:sorafujitani/ccsession";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    pi = {
+      url = "github:lukasl-dev/pi.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     ax = {
       url = "github:yusukebe/ax";
       inputs.nixpkgs.follows = "nixpkgs";

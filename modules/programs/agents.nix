@@ -29,7 +29,10 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  home.always.imports = [ inputs.agent-skills.homeManagerModules.default ];
+  home.always.imports = [
+    inputs.agent-skills.homeManagerModules.default
+    inputs.pi.homeManagerModules.default
+  ];
 
   home.ifEnabled = {
     home.packages = [
@@ -65,6 +68,25 @@ delib.module {
       };
 
       outputStyles.japanese_writing = builtins.readFile "${inputs.claude-output-styles}/japanese-writing.md";
+    };
+
+    programs.pi.coding-agent = {
+      enable = true;
+      package = llm-agents.pi;
+
+      settings = {
+        defaultProvider = "opencode-go";
+        defaultThinkingLevel = "high";
+
+        tuiMode = "fullscreen";
+        editorPaddingX = 1;
+        outputPad = 1;
+        showHardwareCursor = true;
+
+        enableInstallTelemetry = false;
+      };
+
+      environment.PI_SKIP_VERSION_CHECK.value = "1";
     };
 
     programs.agent-skills = {

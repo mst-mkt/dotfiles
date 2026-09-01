@@ -7,6 +7,7 @@ let
     "https://moocs-collect-nix.cachix.org"
     "https://mst-mkt.cachix.org"
     "https://cache.numtide.com"
+    "https://pi.cachix.org"
   ];
 
   trusted-public-keys = [
@@ -15,6 +16,7 @@ let
     "moocs-collect-nix.cachix.org-1:MpREl4nnQpusRFLilrWt2S67SW1mLuqM6HvcirF/CjE="
     "mst-mkt.cachix.org-1:Ap1WSTd2tPEsFkNutQ7+X8OGtv7kOy9Q+xzvBvcL7FU="
     "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
+    "pi.cachix.org-1:lGeoGJaZ5ZDabuRzkcD5EBTNnDM4HJ1vqeOxlWk1Flk="
   ];
 in
 
