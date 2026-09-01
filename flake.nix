@@ -48,6 +48,7 @@
       nixOnDroidConfigurations = inputs.denix.lib.configurations {
         moduleSystem = "droid";
         paths = [
+          ./hosts/droid
           ./modules
           ./rices
         ];
