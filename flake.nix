@@ -4,6 +4,7 @@
     let
       forAllSystems = inputs.nixpkgs.lib.genAttrs [
         "x86_64-linux"
+        "aarch64-linux"
         "aarch64-darwin"
       ];
 
@@ -40,6 +41,17 @@
           ./rices
         ];
         exclude = [ ./modules/desktop/linux ];
+        specialArgs = { inherit inputs; };
+        inherit extensions;
+      };
+
+      nixOnDroidConfigurations = inputs.denix.lib.configurations {
+        moduleSystem = "droid";
+        paths = [
+          ./modules
+          ./rices
+        ];
+        exclude = [ ./modules/desktop ];
         specialArgs = { inherit inputs; };
         inherit extensions;
       };
