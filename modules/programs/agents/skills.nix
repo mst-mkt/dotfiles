@@ -1,6 +1,7 @@
 {
   delib,
   host,
+  lib,
   pkgs,
   inputs,
   ...
@@ -54,8 +55,16 @@ delib.module {
           ];
         };
         targets = {
-          claude.enable = myconfig.programs.agents.claude-code.enable;
-          pi.enable = myconfig.programs.agents.pi.enable;
+          claude = {
+            enable = myconfig.programs.agents.claude-code.enable;
+            structure = lib.mkIf host.isMobile "link";
+            dest = lib.mkIf host.isMobile ".claude/skills";
+          };
+          pi = {
+            enable = myconfig.programs.agents.pi.enable;
+            structure = lib.mkIf host.isMobile "link";
+            dest = lib.mkIf host.isMobile ".pi/agent/skills";
+          };
         };
       };
     };
