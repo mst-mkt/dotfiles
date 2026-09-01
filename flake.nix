@@ -183,7 +183,7 @@
       };
     };
     skills = {
-      url = "git+ssh://git@github.com/mst-mkt/skills";
+      url = "git+https://github.com/mst-mkt/skills";
       flake = false;
     };
     claude-output-styles = {

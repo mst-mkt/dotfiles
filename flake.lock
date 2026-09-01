@@ -1807,11 +1807,11 @@
         "rev": "67816bb22f1b23aaf5a6ae985f7f4b07909ae044",
         "revCount": 3,
         "type": "git",
-        "url": "ssh://git@github.com/mst-mkt/skills"
+        "url": "https://github.com/mst-mkt/skills"
       },
       "original": {
         "type": "git",
-        "url": "ssh://git@github.com/mst-mkt/skills"
+        "url": "https://github.com/mst-mkt/skills"
       }
     },
     "systems": {
