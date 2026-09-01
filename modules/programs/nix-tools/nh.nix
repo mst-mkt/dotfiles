@@ -22,7 +22,7 @@ in
 delib.module {
   name = "programs.nix-tools.nh";
 
-  options = delib.singleEnableOption host.cliFeatured;
+  options = delib.singleEnableOption (host.cliFeatured && !host.isMobile);
 
   home.ifEnabled.programs.nh = {
     enable = true;
