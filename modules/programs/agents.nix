@@ -121,7 +121,10 @@ delib.module {
           "hunk-review"
         ];
       };
-      targets.claude.enable = true;
+      targets = {
+        claude.enable = true;
+        pi.enable = true;
+      };
     };
   };
 }
