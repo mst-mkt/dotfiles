@@ -8,4 +8,5 @@
     features = import ./features.nix;
     extraSubmodules = import ./extraSubmodules.nix;
   };
+  rices.extraSubmodules = import ./riceSubmodules.nix;
 }

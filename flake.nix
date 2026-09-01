@@ -18,6 +18,7 @@
         paths = [
           ./hosts/nixos
           ./modules
+          ./rices
         ];
         exclude = [ ./modules/desktop/macos ];
         specialArgs = { inherit inputs; };
@@ -29,6 +30,7 @@
         paths = [
           ./hosts/darwin
           ./modules
+          ./rices
         ];
         exclude = [ ./modules/desktop/linux ];
         specialArgs = { inherit inputs; };

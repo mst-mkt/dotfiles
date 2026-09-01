@@ -1,4 +1,4 @@
-{ delib, ... }:
+{ delib, rice, ... }:
 
 delib.module {
   name = "desktop.niri";
@@ -6,7 +6,7 @@ delib.module {
   home.ifEnabled.wayland.windowManager.niri.settings.layout = {
     gaps = 16;
     center-focused-column = "never";
-    background-color = "#f8c706";
+    background-color = rice.colors.background;
 
     default-column-width.proportion = 1.0;
     preset-column-widths._children = [
@@ -17,16 +17,16 @@ delib.module {
 
     focus-ring = {
       width = 4;
-      active-color = "#daa520";
-      inactive-color = "#505050";
+      active-color = rice.colors.accent;
+      inactive-color = rice.colors.inactive;
     };
 
     border = {
       off = { };
       width = 4;
-      active-color = "#ffc87f";
-      inactive-color = "#505050";
-      urgent-color = "#9b0000";
+      active-color = rice.colors.accentSoft;
+      inactive-color = rice.colors.inactive;
+      urgent-color = rice.colors.urgent;
     };
   };
 }

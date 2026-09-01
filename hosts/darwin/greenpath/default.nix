@@ -10,6 +10,7 @@ delib.host {
     "dev"
     "gui"
   ];
+  rice = "default";
 
   darwin.system.stateVersion = 7;
   home.home.stateVersion = "25.11";

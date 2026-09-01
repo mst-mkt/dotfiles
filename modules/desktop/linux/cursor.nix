@@ -1,7 +1,7 @@
 {
   delib,
   host,
-  pkgs,
+  rice,
   ...
 }:
 
@@ -12,9 +12,7 @@ delib.module {
 
   home.ifEnabled.home.pointerCursor = {
     enable = true;
-    name = "Breeze_Light";
-    package = pkgs.kdePackages.breeze;
-    size = 24;
+    inherit (rice.cursor) name package size;
     gtk.enable = true;
     x11.enable = true;
   };

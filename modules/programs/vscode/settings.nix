@@ -3,6 +3,7 @@
   homeConfig,
   host,
   pkgs,
+  rice,
   ...
 }:
 
@@ -110,7 +111,7 @@ delib.module {
         "window.dialogStyle" = "custom";
 
         # workbench.*
-        "workbench.colorTheme" = "Dark Modern";
+        "workbench.colorTheme" = rice.vscode.colorTheme;
         "workbench.iconTheme" = "flow-deep";
         "workbench.startupEditor" = "none";
         "workbench.tips.enabled" = false;

@@ -2,6 +2,7 @@
   delib,
   host,
   pkgs,
+  rice,
   ...
 }:
 
@@ -30,7 +31,7 @@ delib.module {
         emojiFallback
       ];
       font-size = 12;
-      theme = "Harper";
+      theme = rice.ghostty.theme;
       window-decoration = if isDarwin then "auto" else "none";
       window-padding-x = 8;
       window-padding-y = 8;

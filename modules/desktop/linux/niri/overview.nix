@@ -1,10 +1,10 @@
-{ delib, ... }:
+{ delib, rice, ... }:
 
 delib.module {
   name = "desktop.niri";
 
   home.ifEnabled.wayland.windowManager.niri.settings.overview = {
-    backdrop-color = "#ffd200";
+    backdrop-color = rice.colors.backdrop;
     zoom = 0.7;
     workspace-shadow = {
       softness = 60;

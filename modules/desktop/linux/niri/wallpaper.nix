@@ -2,13 +2,14 @@
   delib,
   lib,
   pkgs,
+  rice,
   ...
 }:
 
 let
   setWallpaper = pkgs.writeShellScript "awww-set-wallpaper" ''
     until ${lib.getExe pkgs.awww} query >/dev/null 2>&1; do sleep 0.1; done
-    exec ${lib.getExe pkgs.awww} img ${../../../../wallpapers/default.png}
+    exec ${lib.getExe pkgs.awww} img ${rice.wallpaper}
   '';
 in
 delib.module {

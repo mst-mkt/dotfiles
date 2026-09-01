@@ -1,7 +1,7 @@
 {
   delib,
   host,
-  pkgs,
+  rice,
   ...
 }:
 
@@ -13,8 +13,7 @@ delib.module {
   home.ifEnabled.gtk = {
     enable = true;
     iconTheme = {
-      name = "Colloid";
-      package = pkgs.colloid-icon-theme;
+      inherit (rice.iconTheme) name package;
     };
   };
 }
