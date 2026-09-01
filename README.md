@@ -1,12 +1,13 @@
 # mst-mkt/dotfiles
 
-Declarative [NixOS](https://github.com/NixOS/nixpkgs) and [nix-darwin](https://github.com/nix-darwin/nix-darwin) configurations with [Home Manager](https://github.com/nix-community/home-manager), structured with [Denix](https://github.com/yunfachi/denix).
+Declarative [NixOS](https://github.com/NixOS/nixpkgs), [nix-darwin](https://github.com/nix-darwin/nix-darwin), and [Nix-on-Droid](https://github.com/nix-community/nix-on-droid) configurations with [Home Manager](https://github.com/nix-community/home-manager), structured with [Denix](https://github.com/yunfachi/denix).
 
 | Host       | Machine                    | System         | Type   | Usage    | Status |
 | ---------- | -------------------------- | -------------- | ------ | -------- | ------ |
 | dirtmouth  | ASUS Zenbook 14 (UX3405MA) | x86_64-linux   | laptop | personal | active |
 | crossroads | GMKtec NucBox G3 Plus      | x86_64-linux   | server | personal | active |
 | greenpath  | MacBook Pro (M2 Pro)       | aarch64-darwin | laptop | work     | active |
+| fogcanyon  | Nothing Phone (3)          | aarch64-linux  | mobile | personal | active |
 
 ## Usage
 
@@ -18,12 +19,17 @@ nh os switch ~/dotfiles
 nh darwin switch ~/dotfiles
 ```
 
+```sh
+nix-on-droid switch --flake ~/dotfiles#<host>
+```
+
 ## Structure
 
 - `denix/` denix extensions (host submodules, features)
 - `hosts/` host definitions
   - `nixos/` NixOS hosts
   - `darwin/` nix-darwin hosts
+  - `droid/` Nix-on-Droid hosts
 - `modules/` configuration modules
   - `core/` base system (nix, boot, users, ...)
   - `desktop/` desktop environments
@@ -92,4 +98,24 @@ Activate the system with nix-darwin.
 
 ```sh
 sudo nix run --extra-experimental-features "nix-command flakes" nix-darwin/master#darwin-rebuild -- switch --flake ~/dotfiles#<host>
+```
+
+### Android (Nix-on-Droid)
+
+Install the [Nix-on-Droid app](https://f-droid.org/packages/com.termux.nix/), complete the initial bootstrap with flakes, and clone this repository.
+
+```sh
+nix run nixpkgs#git -- clone https://github.com/mst-mkt/dotfiles ~/dotfiles
+```
+
+Define the host in `hosts/droid/<host>/` (`default.nix`), following the existing hosts, and stage it.
+
+```sh
+git -C ~/dotfiles add hosts/droid/<host>
+```
+
+Activate the environment with nix-on-droid.
+
+```sh
+nix-on-droid switch --flake ~/dotfiles#<host>
 ```
