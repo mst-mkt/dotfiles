@@ -76,12 +76,20 @@
       url = "github:nix-darwin/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-on-droid = {
+      url = "github:nix-community/nix-on-droid";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+        home-manager.follows = "home-manager";
+      };
+    };
     denix = {
-      url = "github:yunfachi/denix";
+      url = "github:mst-mkt/denix/feat/nix-on-droid";
       inputs = {
         nixpkgs.follows = "nixpkgs";
         home-manager.follows = "home-manager";
         nix-darwin.follows = "nix-darwin";
+        nix-on-droid.follows = "nix-on-droid";
       };
     };
 
