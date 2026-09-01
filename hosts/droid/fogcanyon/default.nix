@@ -6,6 +6,7 @@ delib.host {
   usage = "personal";
   owner = "mst-mkt";
   system = "aarch64-linux";
+  features = [ "dev" ];
   rice = "default";
 
   droid = {
