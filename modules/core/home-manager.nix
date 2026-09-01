@@ -10,8 +10,9 @@ delib.module {
 
   options = delib.singleEnableOption true;
 
-  myconfig.always.args.shared = {
-    homeConfig = config.home-manager.users.${homeManagerUser};
+  myconfig.always.args = {
+    nixos.homeConfig = config.home-manager.users.${homeManagerUser};
+    darwin.homeConfig = config.home-manager.users.${homeManagerUser};
   };
 
   nixos.ifEnabled.home-manager = {
