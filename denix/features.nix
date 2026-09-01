@@ -14,5 +14,8 @@
     server = [
       "cli"
     ];
+    mobile = [
+      "cli"
+    ];
   };
 }
