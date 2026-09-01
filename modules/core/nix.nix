@@ -1,4 +1,4 @@
-{ delib, ... }:
+{ delib, inputs, ... }:
 
 let
   substituters = [
@@ -77,5 +77,18 @@ delib.module {
     nix.optimise.automatic = true;
 
     nixpkgs.config.allowUnfree = true;
+  };
+
+  droid.ifEnabled = {
+    nix = {
+      inherit substituters;
+      trustedPublicKeys = trusted-public-keys;
+      extraOptions = ''
+        experimental-features = nix-command flakes
+        warn-dirty = false
+        accept-flake-config = true
+      '';
+      registry.nixpkgs.flake = inputs.nixpkgs;
+    };
   };
 }

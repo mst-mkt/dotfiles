@@ -13,6 +13,7 @@ delib.module {
   myconfig.always.args = {
     nixos.homeConfig = config.home-manager.users.${homeManagerUser};
     darwin.homeConfig = config.home-manager.users.${homeManagerUser};
+    droid.homeConfig = config.home-manager.config;
   };
 
   nixos.ifEnabled.home-manager = {
@@ -24,6 +25,11 @@ delib.module {
   darwin.ifEnabled.home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
+    backupFileExtension = "hm-bak";
+  };
+
+  droid.ifEnabled.home-manager = {
+    useGlobalPkgs = true;
     backupFileExtension = "hm-bak";
   };
 }

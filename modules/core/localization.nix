@@ -19,4 +19,6 @@ delib.module {
   };
 
   darwin.ifEnabled.time.timeZone = "Asia/Tokyo";
+
+  droid.ifEnabled.time.timeZone = "Asia/Tokyo";
 }
