@@ -1,6 +1,7 @@
 {
   delib,
   host,
+  lib,
   pkgs,
   ...
 }:
@@ -31,4 +32,6 @@ delib.module {
 
     users.users.${host.owner}.home = "/Users/${host.owner}";
   };
+
+  droid.ifEnabled.user.shell = lib.getExe pkgs.nushell;
 }
