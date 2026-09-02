@@ -20,42 +20,49 @@ $env.PROMPT_COMMAND = {||
 
   let cwd = $"(ansi green)(pwd | str replace $env.HOME "~")(ansi reset)"
 
-  let stat = try { gstat } catch { null }
-  let git_str = if $stat == null or $stat.repo_name == "no_repository" {
+  let branch = try { git rev-parse --abbrev-ref HEAD } catch { null }
+  let git_str = if $branch == null {
     ""
+  } else if ($env.DISABLE_GIT_STATUS? | default false | into bool) {
+    $" (ansi yellow_bold)($branch)(ansi reset)"
   } else {
-    let staged = (
-      ($stat.idx_added_staged? | default 0) +
-      ($stat.idx_modified_staged? | default 0) +
-      ($stat.idx_deleted_staged? | default 0) +
-      ($stat.idx_renamed? | default 0) +
-      ($stat.idx_type_changed? | default 0)
-    )
-    let modified = ($stat.wt_modified? | default 0)
-    let deleted = ($stat.wt_deleted? | default 0)
-    let renamed = ($stat.wt_renamed? | default 0)
-    let untracked = ($stat.wt_untracked? | default 0)
-    let conflicts = ($stat.conflicts? | default 0)
-    let stashes = ($stat.stashes? | default 0)
-    let ahead = ($stat.ahead? | default 0)
-    let behind = ($stat.behind? | default 0)
+    let stat = try { gstat } catch { null }
+    if $stat == null {
+      $" (ansi yellow_bold)($branch)(ansi reset)"
+    } else {
+      let staged = (
+        ($stat.idx_added_staged? | default 0) +
+        ($stat.idx_modified_staged? | default 0) +
+        ($stat.idx_deleted_staged? | default 0) +
+        ($stat.idx_renamed? | default 0) +
+        ($stat.idx_type_changed? | default 0)
+      )
+      let modified = ($stat.wt_modified? | default 0)
+      let deleted = ($stat.wt_deleted? | default 0)
+      let renamed = ($stat.wt_renamed? | default 0)
+      let untracked = ($stat.wt_untracked? | default 0)
+      let conflicts = ($stat.conflicts? | default 0)
+      let stashes = ($stat.stashes? | default 0)
+      let ahead = ($stat.ahead? | default 0)
+      let behind = ($stat.behind? | default 0)
 
-    let parts = (
-      [
-        (if $conflicts > 0 { "=" } else { null })
-        (if $staged > 0 { "+" } else { null })
-        (if $modified > 0 { "!" } else { null })
-        (if $deleted > 0 { "×" } else { null })
-        (if $renamed > 0 { "»" } else { null })
-        (if $untracked > 0 { "?" } else { null })
-        (if $stashes > 0 { "$" } else { null })
-        (if $ahead > 0 { "↑" } else { null })
-        (if $behind > 0 { "↓" } else { null })
-      ] | compact
-    )
+      let parts = (
+        [
+          (if $conflicts > 0 { "=" } else { null })
+          (if $staged > 0 { "+" } else { null })
+          (if $modified > 0 { "!" } else { null })
+          (if $deleted > 0 { "×" } else { null })
+          (if $renamed > 0 { "»" } else { null })
+          (if $untracked > 0 { "?" } else { null })
+          (if $stashes > 0 { "$" } else { null })
+          (if $ahead > 0 { "↑" } else { null })
+          (if $behind > 0 { "↓" } else { null })
+        ] | compact
+      )
 
-    let status_str = if ($parts | is-empty) { "" } else { $" [($parts | str join '')]" }
-    $" (ansi yellow_bold)($stat.branch)(ansi reset)($status_str)"
+      let status_str = if ($parts | is-empty) { "" } else { $" [($parts | str join '')]" }
+      $" (ansi yellow_bold)($branch)(ansi reset)($status_str)"
+    }
   }
 
   $"($host_str)($cwd)($git_str)\n"
