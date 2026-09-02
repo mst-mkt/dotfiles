@@ -44,6 +44,20 @@ def --env ghget [] {
   }
 }
 
+# gplom: origin のデフォルトブランチを pull
+# deps: git
+def gplom [] {
+  let branch = (git symbolic-ref refs/remotes/origin/HEAD | str replace "refs/remotes/origin/" "")
+  git pull origin $branch
+}
+
+# gpsom: origin のデフォルトブランチに push
+# deps: git
+def gpsom [] {
+  let branch = (git symbolic-ref refs/remotes/origin/HEAD | str replace "refs/remotes/origin/" "")
+  git push origin $branch
+}
+
 # ghsw: ローカルブランチを fuzzy find して switch
 # deps: git
 def ghsw [] {

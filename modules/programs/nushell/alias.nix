@@ -69,11 +69,9 @@ delib.module {
 
     gpl = "git pull";
     gplo = "git pull origin";
-    gplom = "git pull origin main";
 
     gps = "git push";
     gpso = "git push origin";
-    gpsom = "git push origin main";
 
     grb = "git rebase";
     grba = "git rebase --abort";
