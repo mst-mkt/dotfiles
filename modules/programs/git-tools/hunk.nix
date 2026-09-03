@@ -27,6 +27,7 @@ delib.module {
       transparent_background = true;
       menu_bar = false;
       tab_width = 2;
+      wrap_lines = true;
       color_moved = true;
       agent_notes = true;
       watch = true;
