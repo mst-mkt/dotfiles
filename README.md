@@ -2,11 +2,11 @@
 
 Declarative [NixOS](https://github.com/NixOS/nixpkgs) and [nix-darwin](https://github.com/nix-darwin/nix-darwin) configurations with [Home Manager](https://github.com/nix-community/home-manager), structured with [Denix](https://github.com/yunfachi/denix).
 
-| Host       | System         | Type   | Usage    | Status |
-| ---------- | -------------- | ------ | -------- | ------ |
-| dirtmouth  | x86_64-linux   | laptop | personal | active |
-| crossroads | x86_64-linux   | server | personal | active |
-| greenpath  | aarch64-darwin | laptop | work     | active |
+| Host       | Machine                    | System         | Type   | Usage    | Status |
+| ---------- | -------------------------- | -------------- | ------ | -------- | ------ |
+| dirtmouth  | ASUS Zenbook 14 (UX3405MA) | x86_64-linux   | laptop | personal | active |
+| crossroads | GMKtec NucBox G3 Plus      | x86_64-linux   | server | personal | active |
+| greenpath  | MacBook Pro (M2 Pro)       | aarch64-darwin | laptop | work     | active |
 
 ## Usage
 
