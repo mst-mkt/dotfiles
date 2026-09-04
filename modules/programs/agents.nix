@@ -45,7 +45,7 @@ delib.module {
       package = claude-code;
 
       settings = {
-        model = "claude-fable-5-1[1m]";
+        model = if host.name == "greenpath" then "claude-opus-4-6[1m]" else "claude-fable-5-1[1m]";
         effortLevel = "high";
 
         language = "日本語 (Japanese)";
