@@ -42,6 +42,7 @@ delib.module {
       skipAutoPermissionPrompt = true;
 
       cleanupPeriodDays = 9999;
+      autoMemoryEnabled = false;
 
       tui = "fullscreen";
       spinnerTipsEnabled = false;
