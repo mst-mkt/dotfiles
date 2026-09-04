@@ -55,7 +55,7 @@ delib.module {
         ++ lib.optionals (host.name == "greenpath") [
           pkgs.vscode-extensions.dbaeumer.vscode-eslint
           pkgs.vscode-extensions.esbenp.prettier-vscode
-          extensions.vscode-marketplace-release-universal.kaktus.perltidy-more
+          extensions.vscode-marketplace-release-universal.jkillian.custom-local-formatters
           extensions.vscode-marketplace-release-universal.kfly8.test2-subtest-filter
           extensions.vscode-marketplace-release-universal.orta.vscode-jest
           extensions.vscode-marketplace-release-universal.richterger.perl
