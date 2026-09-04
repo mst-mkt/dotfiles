@@ -20,6 +20,8 @@ delib.module {
     system.activationScripts.postActivation.text = ''
       # disable ctrl+space (input source switch)
       ${plistBuddy "Set :AppleSymbolicHotKeys:60:enabled false"}
+      # disable ctrl+option+space (next input source)
+      ${plistBuddy "Set :AppleSymbolicHotKeys:61:enabled false"}
       # disable cmd+space (spotlight)
       ${plistBuddy "Set :AppleSymbolicHotKeys:64:enabled false"}
     '';
