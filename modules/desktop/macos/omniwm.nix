@@ -65,6 +65,12 @@ delib.module {
         historyEnabled = true;
       };
 
+      gestures = {
+        workspaceSwipeEnabled = true;
+        workspaceSwipeFingerCount = 3;
+        workspaceSwipeAxis = "vertical";
+      };
+
       appearance = {
         mode = "automatic";
       };
