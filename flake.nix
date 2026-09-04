@@ -7,6 +7,13 @@
         "aarch64-darwin"
       ];
 
+      treefmtFor =
+        system:
+        let
+          pkgs = inputs.nixpkgs.legacyPackages.${system};
+        in
+        (inputs.treefmt-nix.lib.evalModule pkgs ./treefmt.nix).config.build.wrapper;
+
       extensions = with inputs.denix.lib.extensions; [
         args
         (base.withConfig (import ./denix/config.nix))
@@ -37,13 +44,24 @@
         inherit extensions;
       };
 
-      formatter = forAllSystems (
-        system:
-        let
-          pkgs = inputs.nixpkgs.legacyPackages.${system};
-        in
-        (inputs.treefmt-nix.lib.evalModule pkgs ./treefmt.nix).config.build.wrapper
-      );
+      formatter = forAllSystems treefmtFor;
+
+      checks = forAllSystems (system: {
+        pre-commit = inputs.git-hooks.lib.${system}.run {
+          src = ./.;
+          hooks.treefmt = {
+            enable = true;
+            package = treefmtFor system;
+          };
+        };
+      });
+
+      devShells = forAllSystems (system: {
+        default = inputs.nixpkgs.legacyPackages.${system}.mkShell {
+          inherit (inputs.self.checks.${system}.pre-commit) shellHook;
+          buildInputs = inputs.self.checks.${system}.pre-commit.enabledPackages;
+        };
+      });
     };
 
   inputs = {
@@ -83,6 +101,10 @@
     };
     treefmt-nix = {
       url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
