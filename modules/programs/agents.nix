@@ -58,6 +58,7 @@ delib.module {
 
         tui = "fullscreen";
         spinnerTipsEnabled = false;
+        feedbackDrafts = "off";
         statusLine = {
           type = "command";
           command = "ccusage statusline";
