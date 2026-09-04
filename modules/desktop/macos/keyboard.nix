@@ -2,7 +2,8 @@
 
 let
   user = host.owner;
-  plistBuddy = cmd:
+  plistBuddy =
+    cmd:
     ''launchctl asuser "$(id -u -- ${user})" sudo --user=${user} -- /usr/libexec/PlistBuddy -c "${cmd}" /Users/${user}/Library/Preferences/com.apple.symbolichotkeys.plist'';
 in
 
