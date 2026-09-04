@@ -13,5 +13,11 @@ delib.module {
     trackpad = {
       Clicking = false;
     };
+
+    CustomUserPreferences = {
+      "com.apple.AppleMultitouchTrackpad" = {
+        TrackpadThreeFingerVertSwipeGesture = 0;
+      };
+    };
   };
 }
