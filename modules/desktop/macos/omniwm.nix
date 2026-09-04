@@ -2,26 +2,9 @@
   delib,
   host,
   inputs,
-  lib,
   pkgs,
-  rice,
   ...
 }:
-
-let
-  hexToRgba =
-    hex:
-    let
-      str = lib.toLower (builtins.substring 1 6 hex);
-      ch = n: lib.fromHexString (builtins.substring n 2 str) * 1.0 / 255.0;
-    in
-    {
-      red = ch 0;
-      green = ch 2;
-      blue = ch 4;
-      alpha = 1.0;
-    };
-in
 
 delib.module {
   name = "desktop.omniwm";
@@ -61,9 +44,7 @@ delib.module {
       };
 
       borders = {
-        enabled = true;
-        width = 4.0;
-        color = hexToRgba rice.colors.accent;
+        enabled = false;
       };
 
       workspaceBar = {
