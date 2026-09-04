@@ -102,6 +102,10 @@
     nur-packages = {
       url = "github:mst-mkt/nur-packages";
     };
+    omniwm = {
+      url = "github:mst-mkt/omniwm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     moocs-collect-nix = {
       url = "github:mst-mkt/moocs-collect-nix";
     };

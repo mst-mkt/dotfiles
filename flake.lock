@@ -1417,6 +1417,26 @@
         "type": "github"
       }
     },
+    "omniwm": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1788497573,
+        "narHash": "sha256-IO3GenaK5fXtUxLA8BYdYsdsd3K5ZJeQmHNNU96GPao=",
+        "owner": "mst-mkt",
+        "repo": "omniwm.nix",
+        "rev": "b354074f30c67d574dc3980c66b216e488bdee2f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "mst-mkt",
+        "repo": "omniwm.nix",
+        "type": "github"
+      }
+    },
     "pgbackup": {
       "inputs": {
         "nixpkgs": "nixpkgs_12"
@@ -1529,6 +1549,7 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs_10",
         "nur-packages": "nur-packages",
+        "omniwm": "omniwm",
         "pgbackup": "pgbackup",
         "pi": "pi",
         "ragenix": "ragenix",

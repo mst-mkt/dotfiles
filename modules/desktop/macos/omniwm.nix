@@ -9,8 +9,6 @@
 }:
 
 let
-  nur-packages = inputs.nur-packages.packages.${pkgs.stdenv.hostPlatform.system};
-
   hexToRgba =
     hex:
     let
@@ -30,15 +28,12 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  home.always.imports = [ inputs.nur-packages.homeModules.omniwm ];
+  home.always.imports = [ inputs.omniwm.homeManagerModules.default ];
 
   home.ifEnabled.programs.omniwm = {
     enable = true;
-    package = nur-packages.omniwm;
 
     settings = {
-      schemaVersion = 1;
-
       general = {
         defaultLayoutType = "niri";
         ipcEnabled = true;
