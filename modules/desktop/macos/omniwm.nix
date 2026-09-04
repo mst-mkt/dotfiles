@@ -40,6 +40,7 @@ delib.module {
       niri = {
         visibleContainerCount = 1;
         centerFocusedColumn = "never";
+        infiniteLoop = true;
         containerPrimarySpanPresets = [
           0.333
           0.5
