@@ -23,6 +23,10 @@ delib.module {
         animationsEnabled = true;
       };
 
+      focus = {
+        followsMouse = true;
+      };
+
       gaps = {
         size = 16.0;
         outer = {
