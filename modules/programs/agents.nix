@@ -45,7 +45,7 @@ delib.module {
       package = claude-code;
 
       settings = {
-        model = "claude-fable-5[1m]";
+        model = "claude-fable-5-1[1m]";
         effortLevel = "high";
 
         language = "日本語 (Japanese)";
