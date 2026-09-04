@@ -2,7 +2,6 @@
   delib,
   host,
   inputs,
-  pkgs,
   ...
 }:
 
