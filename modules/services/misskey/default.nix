@@ -19,7 +19,7 @@ delib.module {
       enable = true;
 
       package = pkgs.misskey.overrideAttrs (prev: {
-        version = (lib.importJSON "${inputs.misskey}/package.json").version;
+        inherit ((lib.importJSON "${inputs.misskey}/package.json")) version;
         src = inputs.misskey;
         buildPhase =
           builtins.replaceStrings [ "pnpm run install" ] [ "pnpm run --if-present install" ]
