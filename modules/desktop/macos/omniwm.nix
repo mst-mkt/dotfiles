@@ -6,6 +6,10 @@
   ...
 }:
 
+let
+  omniwmLib = inputs.omniwm.lib;
+in
+
 delib.module {
   name = "desktop.omniwm";
 
@@ -51,6 +55,12 @@ delib.module {
       borders = {
         enabled = false;
       };
+
+      workspaces = [
+        (omniwmLib.workspace "1" { displayName = "browse"; })
+        (omniwmLib.workspace "2" { displayName = "code"; })
+        (omniwmLib.workspace "3" { displayName = "chat"; })
+      ];
 
       workspaceBar = {
         enabled = true;
