@@ -13,7 +13,7 @@ in
 delib.module {
   name = "programs.agents.pi";
 
-  options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
+  options = delib.singleEnableOption (host.cliFeatured && host.devFeatured && host.isPersonal);
 
   home.always.imports = [ inputs.pi.homeManagerModules.default ];
 
