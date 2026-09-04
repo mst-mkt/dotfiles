@@ -56,10 +56,10 @@ delib.module {
         enabled = false;
       };
 
-      workspaces = [
-        (omniwmLib.workspace "1" { displayName = "browse"; })
-        (omniwmLib.workspace "2" { displayName = "code"; })
-        (omniwmLib.workspace "3" { displayName = "chat"; })
+      workspaces = omniwmLib.workspaces [
+        { displayName = "browse"; }
+        { displayName = "code"; }
+        { displayName = "chat"; }
       ];
 
       workspaceBar = {
