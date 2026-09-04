@@ -59,6 +59,7 @@ delib.module {
         tui = "fullscreen";
         spinnerTipsEnabled = false;
         feedbackDrafts = "off";
+        awaySummaryEnabled = false;
         statusLine = {
           type = "command";
           command = "ccusage statusline";
