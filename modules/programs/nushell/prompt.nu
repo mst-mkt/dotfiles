@@ -20,7 +20,8 @@ $env.PROMPT_COMMAND = {||
 
   let cwd = $"(ansi green)(pwd | str replace $env.HOME "~")(ansi reset)"
 
-  let branch = try { git rev-parse --abbrev-ref HEAD } catch { null }
+  let git_result = (git rev-parse --abbrev-ref HEAD | complete)
+  let branch = if $git_result.exit_code == 0 { $git_result.stdout | str trim } else { null }
   let git_str = if $branch == null {
     ""
   } else if ($env.DISABLE_GIT_STATUS? | default false | into bool) {
