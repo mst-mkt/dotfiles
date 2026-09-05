@@ -5,6 +5,10 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
+  nixos.ifEnabled = {
+    environment.variables.EDITOR = "nvim";
+  };
+
   home.ifEnabled.programs.neovim = {
     enable = true;
     defaultEditor = true;
