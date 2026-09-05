@@ -44,6 +44,13 @@ def --env ghget [] {
   }
 }
 
+# gfom: origin のデフォルトブランチを fetch
+# deps: git
+def gfom [] {
+  let branch = (git symbolic-ref refs/remotes/origin/HEAD | str replace "refs/remotes/origin/" "")
+  git fetch origin $branch
+}
+
 # gplom: origin のデフォルトブランチを pull
 # deps: git
 def gplom [] {
