@@ -7,6 +7,7 @@ delib.module {
 
   nixos.ifEnabled = {
     environment.variables.EDITOR = "nvim";
+    programs.nano.enable = false;
   };
 
   home.ifEnabled.programs.neovim = {
