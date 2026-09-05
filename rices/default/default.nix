@@ -12,7 +12,10 @@ delib.rice {
     urgent = "#9b0000";
   };
 
-  wallpaper = ../../wallpapers/default.png;
+  wallpaper = {
+    url = "https://wallpapers.keito.dev/akamikarubi.fanbox.cc/8038488/3840x2160.png";
+    hash = "sha256-ZtQjtzKbbrP33nBuf6wEoWunjCkxMQbsEFskXd3G5Ys=";
+  };
 
   cursor = {
     name = "Breeze_Light";
