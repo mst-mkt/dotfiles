@@ -47,6 +47,8 @@ delib.module {
           "ENTER"
         ]
       ];
+
+      terminal-margin-horizontal = 8;
     };
   };
 
