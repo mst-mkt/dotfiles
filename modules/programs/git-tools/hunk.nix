@@ -20,7 +20,6 @@ delib.module {
   home.ifEnabled.programs.hunk = {
     enable = true;
     package = llm-agents.hunk;
-    enableGitIntegration = true;
 
     settings = {
       theme = "github-dark-high-contrast";
