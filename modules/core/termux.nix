@@ -13,6 +13,7 @@ delib.module {
 
   home.ifEnabled = {
     home.file.".termux/termux.properties".text = lib.generators.toKeyValue { } {
+      disable-terminal-session-change-toast = true;
       enforce-char-based-input = true;
 
       extra-keys = builtins.toJSON [
