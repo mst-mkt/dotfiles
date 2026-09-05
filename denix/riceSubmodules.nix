@@ -12,7 +12,16 @@
           "urgent"
         ] (_: lib.mkOption { type = lib.types.str; });
 
-        wallpaper = lib.mkOption { type = lib.types.path; };
+        wallpaper = lib.mkOption {
+          type = lib.types.either lib.types.path (
+            lib.types.submodule {
+              options = {
+                url = lib.mkOption { type = lib.types.str; };
+                hash = lib.mkOption { type = lib.types.str; };
+              };
+            }
+          );
+        };
 
         cursor = {
           name = lib.mkOption { type = lib.types.str; };
