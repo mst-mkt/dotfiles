@@ -26,6 +26,7 @@ nix-on-droid switch --flake ~/dotfiles#<host>
 ## Structure
 
 - `denix/` denix extensions (host submodules, features)
+- `rices/` appearance presets selected per host
 - `hosts/` host definitions
   - `nixos/` NixOS hosts
   - `darwin/` nix-darwin hosts
@@ -38,7 +39,6 @@ nix-on-droid switch --flake ~/dotfiles#<host>
   - `programs/` applications (ghostty, neovim, git, ...)
   - `services/` system services (pipewire, openssh, ...)
 - `secrets/` age-encrypted secrets
-- `wallpapers/` wallpaper images
 
 ## Setup
 
