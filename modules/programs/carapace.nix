@@ -8,6 +8,6 @@ delib.module {
   home.ifEnabled.programs.carapace = {
     enable = true;
     enableNushellIntegration = true;
-    ignoreCase = true;
+    environment.CARAPACE_MATCH = true;
   };
 }
