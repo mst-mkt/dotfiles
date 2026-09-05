@@ -14,6 +14,39 @@ delib.module {
   home.ifEnabled = {
     home.file.".termux/termux.properties".text = lib.generators.toKeyValue { } {
       enforce-char-based-input = true;
+
+      extra-keys = builtins.toJSON [
+        [
+          "ESC"
+          "/"
+          ":"
+          ";"
+          "-"
+          "_"
+          "KEYBOARD"
+          "PASTE"
+        ]
+        [
+          "TAB"
+          "HOME"
+          "END"
+          "PGUP"
+          "PGDN"
+          "UP"
+          "|"
+          "~"
+        ]
+        [
+          "CTRL"
+          "ALT"
+          "SHIFT"
+          "BKSP"
+          "LEFT"
+          "DOWN"
+          "RIGHT"
+          "ENTER"
+        ]
+      ];
     };
   };
 
