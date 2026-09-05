@@ -52,9 +52,9 @@ delib.module {
     gcpc = "git cherry-pick --continue";
     gcps = "git cherry-pick --skip";
 
-    gd = "git diff";
-    gdh = "git diff HEAD";
-    gds = "git diff --staged";
+    gd = "hunk diff";
+    gdh = "hunk diff HEAD";
+    gds = "hunk diff --staged";
 
     gf = "git fetch";
     gfo = "git fetch origin";
