@@ -13,7 +13,7 @@ in
 delib.module {
   name = "programs.git-tools.hunk";
 
-  options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
+  options = delib.singleEnableOption (host.cliFeatured && host.devFeatured && !host.isMobile);
 
   home.always.imports = [ inputs.hunk.homeManagerModules.hunk ];
 

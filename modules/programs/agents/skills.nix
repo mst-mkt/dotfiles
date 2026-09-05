@@ -21,6 +21,9 @@ delib.module {
 
   home.ifEnabled =
     { myconfig, ... }:
+    let
+      hunkEnabled = myconfig.programs.git-tools.hunk.enable;
+    in
     {
       programs.agent-skills = {
         enable = true;
@@ -38,11 +41,13 @@ delib.module {
             path = llm-agents.herdr.src.outPath;
             subdir = "skills/herdr";
           };
+          skills.path = inputs.skills.outPath;
+        }
+        // lib.optionalAttrs hunkEnabled {
           hunk-review = {
             path = llm-agents.hunk.outPath;
             subdir = "skills/hunk-review";
           };
-          skills.path = inputs.skills.outPath;
         };
         skills = {
           enableAll = [ "skills" ];
@@ -51,8 +56,8 @@ delib.module {
             "gh-stack"
             "git-hunk"
             "herdr"
-            "hunk-review"
-          ];
+          ]
+          ++ lib.optional hunkEnabled "hunk-review";
         };
         targets = {
           claude = {
