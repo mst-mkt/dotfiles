@@ -50,6 +50,7 @@ delib.module {
 
       terminal-cursor-style = "bar";
       terminal-margin-horizontal = 8;
+      terminal-onclick-url-open = true;
     };
   };
 
