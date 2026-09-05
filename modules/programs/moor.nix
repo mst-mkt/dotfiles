@@ -15,7 +15,7 @@ let
   };
 
   env = {
-    MOOR = lib.cli.toGNUCommandLineShell { } moorOptions;
+    MOOR = lib.concatStringsSep " " (lib.cli.toCommandLineGNU { } moorOptions);
     PAGER = "moor --no-linenumbers";
   };
 in
