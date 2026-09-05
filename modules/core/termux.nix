@@ -48,6 +48,7 @@ delib.module {
         ]
       ];
 
+      terminal-cursor-style = "bar";
       terminal-margin-horizontal = 8;
     };
   };
