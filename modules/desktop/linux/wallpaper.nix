@@ -59,7 +59,7 @@ delib.module {
       After = [ sessionTarget ];
     };
     Service = {
-      ExecStart = "${lib.getExe pkgs.wbg} ${wallpaper}";
+      ExecStart = "${lib.getExe pkgs.wbg} --stretch ${wallpaper}";
       Restart = "on-failure";
     };
     Install.WantedBy = [ sessionTarget ];
