@@ -13,6 +13,8 @@ delib.module {
 
   home.ifEnabled = {
     home.file.".termux/termux.properties".text = lib.generators.toKeyValue { } {
+      disable-file-share-receiver = true;
+      disable-file-view-receiver = true;
       disable-terminal-session-change-toast = true;
       enforce-char-based-input = true;
 
