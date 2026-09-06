@@ -10,6 +10,8 @@ delib.host {
   nixos = {
     age.secrets.cloudflared-credentials.file = ../../../secrets/cloudflared-credentials.json.age;
 
+    systemd.services.cloudflared-tunnel-flestudio.restartIfChanged = false;
+
     services.cloudflared = {
       enable = true;
       tunnels."flestudio" = {
