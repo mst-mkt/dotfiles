@@ -54,7 +54,10 @@ delib.module {
         padding = 0;
       };
 
-      env.CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY = "1";
+      env = {
+        CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY = "1";
+        CLAUDE_CODE_THRIFTY_SONIC = "false";
+      };
     };
 
     outputStyles.japanese_writing = builtins.readFile "${inputs.claude-output-styles}/japanese-writing.md";
