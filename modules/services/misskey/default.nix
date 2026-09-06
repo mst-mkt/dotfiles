@@ -43,13 +43,18 @@ delib.module {
     };
 
     systemd.services.misskey = {
-      serviceConfig.LoadCredential = [
-        "sentry-dsn:${config.age.secrets.misskey-sentry-dsn.path}"
-      ];
-      preStart = lib.mkAfter ''
-        ${pkgs.replace-secret}/bin/replace-secret '@SENTRY_DSN@' "$CREDENTIALS_DIRECTORY/sentry-dsn" /run/misskey/default.yml
-        ${pkgs.replace-secret}/bin/replace-secret '@SENTRY_DSN@' "$CREDENTIALS_DIRECTORY/sentry-dsn" /run/misskey/default.json
-      '';
+      serviceConfig = {
+        LoadCredential = [
+          "sentry-dsn:${config.age.secrets.misskey-sentry-dsn.path}"
+        ];
+        ExecStartPre = lib.mkAfter [
+          (pkgs.writeShellScript "misskey-replace-sentry-dsn" ''
+            set -euo pipefail
+            ${pkgs.replace-secret}/bin/replace-secret '@SENTRY_DSN@' "$CREDENTIALS_DIRECTORY/sentry-dsn" /run/misskey/default.yml
+            ${pkgs.replace-secret}/bin/replace-secret '@SENTRY_DSN@' "$CREDENTIALS_DIRECTORY/sentry-dsn" /run/misskey/default.json
+          '')
+        ];
+      };
     };
   };
 }
