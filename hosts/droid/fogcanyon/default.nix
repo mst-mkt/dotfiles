@@ -7,7 +7,7 @@ delib.host {
   owner = "mst-mkt";
   system = "aarch64-linux";
   features = [ "dev" ];
-  rice = "default";
+  rice = "flst";
 
   droid = {
     system.stateVersion = "24.05";

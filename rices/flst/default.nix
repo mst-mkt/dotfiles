@@ -1,7 +1,7 @@
 { delib, pkgs, ... }:
 
 delib.rice {
-  name = "default";
+  name = "flst";
 
   colors = {
     background = "#f8c706";
