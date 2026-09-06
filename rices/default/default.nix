@@ -13,8 +13,8 @@ delib.rice {
   };
 
   wallpaper = {
-    url = "https://wallpapers.keito.dev/akamikarubi.fanbox.cc/8038488/3840x2160.png";
-    hash = "sha256-ZtQjtzKbbrP33nBuf6wEoWunjCkxMQbsEFskXd3G5Ys=";
+    url = "https://wallpapers.keito.dev/_/mountain.png";
+    hash = "sha256-lRlHCbRLuD6pvlQK2slaVme9P+jP/DqFftzviXIvUXQ=";
   };
 
   cursor = {
