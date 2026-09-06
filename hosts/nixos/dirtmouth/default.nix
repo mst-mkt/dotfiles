@@ -11,7 +11,7 @@ delib.host {
     "game"
     "iniad"
   ];
-  rice = "flst";
+  rice = "krb";
 
   nixos.system.stateVersion = "25.11";
   home.home.stateVersion = "25.11";
