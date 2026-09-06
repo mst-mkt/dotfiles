@@ -914,11 +914,11 @@
     "misskey": {
       "flake": false,
       "locked": {
-        "lastModified": 1785484081,
-        "narHash": "sha256-fzLV3rkUzCLZ7StXULMmxztGIGRqPmdT7YThTZMA+HU=",
+        "lastModified": 1788693581,
+        "narHash": "sha256-txLvWwhpfLxy7hYPtA70ZjX8ckbzWoYW17/gvrQ5leY=",
         "owner": "flestudio",
         "repo": "flestudio",
-        "rev": "00f66349766dc61298c66129ded5fdeb29e93f41",
+        "rev": "c7b8cdca97fcac6cae3bb2047483797888d32f0d",
         "type": "github"
       },
       "original": {
