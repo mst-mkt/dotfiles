@@ -106,6 +106,15 @@
       };
     };
 
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    treefmt-nix = {
+      url = "github:numtide/treefmt-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -113,68 +122,11 @@
     nixos-hardware = {
       url = "github:NixOS/nixos-hardware";
     };
-    nix-homebrew = {
-      url = "github:zhaofengli/nix-homebrew";
-    };
     ragenix = {
       url = "github:yaxitech/ragenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    treefmt-nix = {
-      url = "github:numtide/treefmt-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    git-hooks = {
-      url = "github:cachix/git-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
 
-    nix-hazkey = {
-      url = "github:aster-void/nix-hazkey";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    widgets = {
-      url = "github:mst-mkt/widgets";
-    };
-    cf-open = {
-      url = "github:mst-mkt/cf-open";
-    };
-
-    nix-index-database = {
-      url = "github:nix-community/nix-index-database";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-vscode-extensions = {
-      url = "github:nix-community/nix-vscode-extensions";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nix-vite-plus = {
-      url = "github:ryoppippi/nix-vite-plus";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    nur-packages = {
-      url = "github:mst-mkt/nur-packages";
-    };
-    omniwm = {
-      url = "github:mst-mkt/omniwm.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    moocs-collect-nix = {
-      url = "github:mst-mkt/moocs-collect-nix";
-    };
-    cbhook = {
-      url = "github:mst-mkt/cbhook";
-    };
-    autopair-nu = {
-      url = "github:mst-mkt/autopair.nu";
-    };
-    serenity-emoji = {
-      url = "github:mst-mkt/serenity-emoji";
-    };
-
-    llm-agents = {
-      url = "github:numtide/llm-agents.nix";
-    };
     agent-skills = {
       url = "github:Kyure-A/agent-skills-nix";
       inputs = {
@@ -182,31 +134,10 @@
         home-manager.follows = "home-manager";
       };
     };
-    skills = {
-      url = "git+https://github.com/mst-mkt/skills";
+    brew-api = {
+      url = "github:BatteredBunny/brew-api";
       flake = false;
     };
-    claude-output-styles = {
-      url = "git+https://gist.github.com/mst-mkt/591493bb7c12c8a5774b0ffe3d80d5cf";
-      flake = false;
-    };
-    ccsession = {
-      url = "github:sorafujitani/ccsession";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    pi = {
-      url = "github:lukasl-dev/pi.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    ax = {
-      url = "github:yusukebe/ax";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    hunk = {
-      url = "github:modem-dev/hunk";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     brew-nix = {
       url = "github:BatteredBunny/brew-nix";
       inputs = {
@@ -215,16 +146,85 @@
         nixpkgs.follows = "nixpkgs";
       };
     };
-    brew-api = {
-      url = "github:BatteredBunny/brew-api";
-      flake = false;
+    llm-agents = {
+      url = "github:numtide/llm-agents.nix";
+    };
+    nix-homebrew = {
+      url = "github:zhaofengli/nix-homebrew";
+    };
+    nix-vscode-extensions = {
+      url = "github:nix-community/nix-vscode-extensions";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nur-packages = {
+      url = "github:mst-mkt/nur-packages";
     };
 
+    nix-hazkey = {
+      url = "github:aster-void/nix-hazkey";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    omniwm = {
+      url = "github:mst-mkt/omniwm.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    widgets = {
+      url = "github:mst-mkt/widgets";
+    };
+
+    autopair-nu = {
+      url = "github:mst-mkt/autopair.nu";
+    };
+    ax = {
+      url = "github:yusukebe/ax";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    cbhook = {
+      url = "github:mst-mkt/cbhook";
+    };
+    ccsession = {
+      url = "github:sorafujitani/ccsession";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    cf-open = {
+      url = "github:mst-mkt/cf-open";
+    };
+    hunk = {
+      url = "github:modem-dev/hunk";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    moocs-collect-nix = {
+      url = "github:mst-mkt/moocs-collect-nix";
+    };
+    nix-index-database = {
+      url = "github:nix-community/nix-index-database";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    nix-vite-plus = {
+      url = "github:ryoppippi/nix-vite-plus";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     pgbackup = {
       url = "github:flestudio/pgbackup";
     };
+    pi = {
+      url = "github:lukasl-dev/pi.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    serenity-emoji = {
+      url = "github:mst-mkt/serenity-emoji";
+    };
+
+    claude-output-styles = {
+      url = "git+https://gist.github.com/mst-mkt/591493bb7c12c8a5774b0ffe3d80d5cf";
+      flake = false;
+    };
     misskey = {
       url = "github:flestudio/flestudio";
+      flake = false;
+    };
+    skills = {
+      url = "git+https://github.com/mst-mkt/skills";
       flake = false;
     };
   };
