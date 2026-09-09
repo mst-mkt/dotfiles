@@ -45,6 +45,10 @@ delib.module {
       selection-word-chars = "\" \\t'\\\"│`|:;,()[]{}<>$　、。，．・「」『』（）【】〔〕［］｛｝〈〉《》：；？！\"";
       confirm-close-surface = false;
       macos-option-as-alt = true;
+      macos-icon = "custom-style";
+      macos-icon-frame = "plastic";
+      macos-icon-ghost-color = "#000000";
+      macos-icon-screen-color = "#ffffff";
       keybind = [
         # tabs: passed through to herdr keybinds
         "ctrl+shift+t=unbind"
