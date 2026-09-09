@@ -44,6 +44,7 @@ delib.module {
       copy-on-select = "clipboard";
       selection-word-chars = "\" \\t'\\\"│`|:;,()[]{}<>$　、。，．・「」『』（）【】〔〕［］｛｝〈〉《》：；？！\"";
       confirm-close-surface = false;
+      macos-option-as-alt = true;
       keybind = [
         # tabs: passed through to herdr keybinds
         "ctrl+shift+t=unbind"
