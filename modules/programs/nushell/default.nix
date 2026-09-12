@@ -43,6 +43,7 @@ delib.module {
         rm.always_trash = true;
         highlight_resolved_externals = true;
         use_kitty_protocol = true;
+        shell_integration.osc9_9 = true;
       };
 
       extraConfig = builtins.concatStringsSep "\n\n" (
