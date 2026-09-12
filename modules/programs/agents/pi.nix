@@ -17,22 +17,30 @@ delib.module {
 
   home.always.imports = [ inputs.pi.homeManagerModules.default ];
 
-  home.ifEnabled.programs.pi.coding-agent = {
-    enable = true;
-    package = llm-agents.pi;
+  home.ifEnabled = {
+    programs.pi.coding-agent = {
+      enable = true;
+      package = llm-agents.pi;
 
-    settings = {
-      defaultProvider = "opencode-go";
-      defaultThinkingLevel = "high";
+      settings = {
+        defaultProvider = "opencode-go";
+        defaultThinkingLevel = "high";
 
-      tuiMode = "fullscreen";
-      editorPaddingX = 1;
-      outputPad = 1;
-      showHardwareCursor = true;
+        tuiMode = "fullscreen";
+        editorPaddingX = 1;
+        outputPad = 1;
+        showHardwareCursor = true;
 
-      enableInstallTelemetry = false;
+        enableInstallTelemetry = false;
+      };
+
+      environment.PI_SKIP_VERSION_CHECK.value = "1";
     };
 
-    environment.PI_SKIP_VERSION_CHECK.value = "1";
+    home.file = {
+      ".pi/agent/extensions/herdr-agent-state.ts" = {
+        source = "${llm-agents.herdr}/share/herdr/integrations/pi/herdr-agent-state.ts";
+      };
+    };
   };
 }

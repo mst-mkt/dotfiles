@@ -1,6 +1,7 @@
 {
   delib,
   host,
+  lib,
   pkgs,
   inputs,
   ...
@@ -8,6 +9,13 @@
 
 let
   llm-agents = inputs.llm-agents.packages.${pkgs.stdenv.hostPlatform.system};
+  herdr-hook-script = "${llm-agents.herdr}/share/herdr/integrations/claude/herdr-agent-state.sh";
+
+  herdr-hook = pkgs.writeShellApplication {
+    name = "claude-herdr-agent-state";
+    runtimeInputs = [ pkgs.python3Minimal ];
+    text = ''exec sh ${herdr-hook-script} "$@"'';
+  };
 
   # Swap a decorative glyph to keep the display consistent across platforms.
   claude-code = llm-agents.claude-code.overrideAttrs (old: {
@@ -58,6 +66,25 @@ delib.module {
         CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY = "1";
         CLAUDE_CODE_THRIFTY_SONIC = "false";
       };
+
+      hooks = {
+        SessionStart = [
+          {
+            matcher = "*";
+            hooks = [
+              {
+                type = "command";
+                command = "${lib.getExe herdr-hook} session";
+                timeout = 10;
+              }
+            ];
+          }
+        ];
+      };
+    };
+
+    hooks = {
+      "herdr-agent-state.sh" = herdr-hook-script;
     };
 
     outputStyles.japanese_writing = builtins.readFile "${inputs.claude-output-styles}/japanese-writing.md";
