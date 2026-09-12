@@ -31,6 +31,7 @@ delib.module {
         outputPad = 1;
         showHardwareCursor = true;
 
+        collapseChangelog = true;
         enableInstallTelemetry = false;
       };
 
