@@ -44,25 +44,38 @@ def --env ghget [] {
   }
 }
 
+# git-origin-default-branch: origin のデフォルトブランチ名を返す
+# deps: git
+def git-origin-default-branch [] {
+  let head = (git symbolic-ref -q refs/remotes/origin/HEAD | complete)
+  if $head.exit_code == 0 {
+    return ($head.stdout | str trim | str replace "refs/remotes/origin/" "")
+  }
+
+  let set_head = (git remote set-head origin --auto | complete)
+  if $set_head.exit_code == 0 {
+    return (git symbolic-ref refs/remotes/origin/HEAD | str trim | str replace "refs/remotes/origin/" "")
+  }
+
+  git branch --show-current | str trim
+}
+
 # gfom: origin のデフォルトブランチを fetch
 # deps: git
 def gfom [] {
-  let branch = (git symbolic-ref refs/remotes/origin/HEAD | str replace "refs/remotes/origin/" "")
-  git fetch origin $branch
+  git fetch origin (git-origin-default-branch)
 }
 
 # gplom: origin のデフォルトブランチを pull
 # deps: git
 def gplom [] {
-  let branch = (git symbolic-ref refs/remotes/origin/HEAD | str replace "refs/remotes/origin/" "")
-  git pull origin $branch
+  git pull origin (git-origin-default-branch)
 }
 
 # gpsom: origin のデフォルトブランチに push
 # deps: git
 def gpsom [] {
-  let branch = (git symbolic-ref refs/remotes/origin/HEAD | str replace "refs/remotes/origin/" "")
-  git push origin $branch
+  git push origin (git-origin-default-branch)
 }
 
 # ghsw: ローカルブランチを fuzzy find して switch
