@@ -24,7 +24,7 @@ delib.module {
 
       settings = {
         defaultProvider = "opencode-go";
-        defaultThinkingLevel = "high";
+        defaultThinkingLevel = "medium";
 
         tuiMode = "fullscreen";
         editorPaddingX = 1;
