@@ -1801,17 +1801,17 @@
     "skills": {
       "flake": false,
       "locked": {
-        "lastModified": 1788321085,
-        "narHash": "sha256-iPFeI7Jla/z2j9wRL0yJ+PyxhStzQArlC2mdZpYg75w=",
-        "ref": "refs/heads/main",
-        "rev": "aa77be16961b76b46d7f800f1229504a57157245",
-        "revCount": 4,
-        "type": "git",
-        "url": "https://github.com/mst-mkt/skills"
+        "lastModified": 1789581917,
+        "narHash": "sha256-AmTfo3Osl1/mYu9Uir8M8MhzZUoNN9YArk7T9btPmck=",
+        "owner": "mst-mkt",
+        "repo": "skills",
+        "rev": "fffc9bf8e066d4b9a2d7dddbb958d010e6912cc8",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "https://github.com/mst-mkt/skills"
+        "owner": "mst-mkt",
+        "repo": "skills",
+        "type": "github"
       }
     },
     "systems": {

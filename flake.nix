@@ -224,7 +224,7 @@
       flake = false;
     };
     skills = {
-      url = "git+https://github.com/mst-mkt/skills";
+      url = "github:mst-mkt/skills";
       flake = false;
     };
   };
