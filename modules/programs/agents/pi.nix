@@ -24,6 +24,7 @@ delib.module {
 
       settings = {
         defaultProvider = "opencode-go";
+        defaultModel = "glm-5.3";
         defaultThinkingLevel = "medium";
         hideThinkingBlock = true;
         treeFilterMode = "no-tools";
