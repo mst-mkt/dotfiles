@@ -86,6 +86,25 @@ delib.module {
             "prefix+b"
             "ctrl+shift+b"
           ];
+
+          command = [
+            {
+              key = "prefix+d";
+              type = "popup";
+              command = "hunk diff --watch";
+              description = "Hunk";
+              width = "80%";
+              height = "80%";
+            }
+            {
+              key = "prefix+enter";
+              type = "popup";
+              command = lib.getExe pkgs.nushell;
+              description = "Shell";
+              width = "50%";
+              height = "50%";
+            }
+          ];
         };
 
         ui = {
