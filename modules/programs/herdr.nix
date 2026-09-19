@@ -104,6 +104,14 @@ delib.module {
               width = "50%";
               height = "50%";
             }
+            {
+              key = "prefix+y";
+              type = "popup";
+              command = "yazi";
+              description = "Yazi";
+              width = "80%";
+              height = "80%";
+            }
           ];
         };
 
