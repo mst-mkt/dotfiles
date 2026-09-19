@@ -52,6 +52,11 @@ delib.module {
       cleanupPeriodDays = 9999;
       autoMemoryEnabled = false;
 
+      attribution = {
+        commit = lib.mkIf host.isPersonal "";
+        pr = "";
+      };
+
       tui = "fullscreen";
       spinnerTipsEnabled = false;
       feedbackDrafts = "off";
