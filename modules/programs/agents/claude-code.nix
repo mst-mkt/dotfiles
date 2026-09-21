@@ -55,6 +55,7 @@ delib.module {
       attribution = {
         commit = lib.mkIf host.isPersonal "";
         pr = "";
+        sessionUrl = false;
       };
 
       tui = "fullscreen";
