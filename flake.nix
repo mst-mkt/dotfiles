@@ -129,10 +129,7 @@
 
     agent-skills = {
       url = "github:Kyure-A/agent-skills-nix";
-      inputs = {
-        nixpkgs.follows = "nixpkgs";
-        home-manager.follows = "home-manager";
-      };
+      inputs.nixpkgs.follows = "nixpkgs";
     };
     brew-api = {
       url = "github:BatteredBunny/brew-api";
