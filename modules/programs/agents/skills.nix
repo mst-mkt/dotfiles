@@ -46,7 +46,7 @@ delib.module {
         // lib.optionalAttrs hunkEnabled {
           hunk-review = {
             path = llm-agents.hunk.outPath;
-            subdir = "skills/hunk-review";
+            subdir = "share/hunk/skills/hunk-review";
           };
         };
         skills = {
