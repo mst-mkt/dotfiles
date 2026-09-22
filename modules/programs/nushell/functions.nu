@@ -62,20 +62,20 @@ def git-origin-default-branch [] {
 
 # gfom: origin のデフォルトブランチを fetch
 # deps: git
-def gfom [] {
-  git fetch origin (git-origin-default-branch)
+def --wrapped gfom [...args] {
+  git fetch ...$args origin (git-origin-default-branch)
 }
 
 # gplom: origin のデフォルトブランチを pull
 # deps: git
-def gplom [] {
-  git pull origin (git-origin-default-branch)
+def --wrapped gplom [...args] {
+  git pull ...$args origin (git-origin-default-branch)
 }
 
 # gpsom: origin のデフォルトブランチに push
 # deps: git
-def gpsom [] {
-  git push origin (git-origin-default-branch)
+def --wrapped gpsom [...args] {
+  git push ...$args origin (git-origin-default-branch)
 }
 
 # ghsw: ローカルブランチを fuzzy find して switch
