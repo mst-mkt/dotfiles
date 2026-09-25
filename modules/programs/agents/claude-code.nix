@@ -16,18 +16,6 @@ let
     runtimeInputs = [ pkgs.python3Minimal ];
     text = ''exec sh ${herdr-hook-script} "$@"'';
   };
-
-  # Swap a decorative glyph to keep the display consistent across platforms.
-  claude-code = llm-agents.claude-code.overrideAttrs (old: {
-    bulletFrom = ''"\u23FA":"\u25CF"'';
-    bulletTo = ''"\u25CF":"\u25CF"'';
-
-    postInstall = (old.postInstall or "") + ''
-      bin=$out/bin/claude
-      offset=$(grep -Fabo -m1 "$bulletFrom" "$bin" | cut -d: -f1)
-      printf %s "$bulletTo" | dd of="$bin" bs=1 seek="''${offset:?not found}" conv=notrunc
-    '';
-  });
 in
 
 delib.module {
@@ -37,7 +25,7 @@ delib.module {
 
   home.ifEnabled.programs.claude-code = {
     enable = true;
-    package = claude-code;
+    package = llm-agents.claude-code;
 
     settings = {
       model = if host.name == "greenpath" then "claude-opus-4-6[1m]" else "claude-opus-5-5[1m]";
