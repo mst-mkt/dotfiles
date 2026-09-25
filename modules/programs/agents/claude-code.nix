@@ -82,6 +82,14 @@ delib.module {
       "herdr-agent-state.sh" = herdr-hook-script;
     };
 
+    mcpServers = {
+      nushell = {
+        command = lib.getExe pkgs.nushell;
+        args = [ "--mcp" ];
+        env.GIT_EDITOR = "true";
+      };
+    };
+
     outputStyles.japanese_writing = builtins.readFile "${inputs.claude-output-styles}/japanese-writing.md";
   };
 }
