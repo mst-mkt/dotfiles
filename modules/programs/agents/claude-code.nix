@@ -28,7 +28,7 @@ delib.module {
     package = llm-agents.claude-code;
 
     settings = {
-      model = if host.name == "greenpath" then "claude-opus-4-6[1m]" else "claude-opus-5-5[1m]";
+      model = "claude-opus-5-5[1m]";
       effortLevel = "high";
 
       language = "日本語 (Japanese)";
