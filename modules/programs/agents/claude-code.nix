@@ -50,11 +50,6 @@ delib.module {
       spinnerTipsEnabled = false;
       feedbackDrafts = "off";
       awaySummaryEnabled = false;
-      statusLine = {
-        type = "command";
-        command = "ccusage statusline";
-        padding = 0;
-      };
 
       env = {
         CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY = "1";
