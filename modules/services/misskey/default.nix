@@ -25,7 +25,7 @@ delib.module {
           builtins.replaceStrings [ "pnpm run install" ] [ "pnpm run --if-present install" ]
             prev.buildPhase;
         pnpmDeps = prev.pnpmDeps.overrideAttrs {
-          outputHash = "sha256-F9ktAmVIJwFtrelNGFrhGEXnRIifnYP1VPLg6qGoQ+w=";
+          outputHash = "sha256-GL07yamj66pTwN4eu1U3e1sVDwIR33D3SlQCSA1HKyw=";
         };
       });
 
