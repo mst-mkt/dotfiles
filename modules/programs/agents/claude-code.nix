@@ -39,6 +39,7 @@ delib.module {
 
       cleanupPeriodDays = 9999;
       autoMemoryEnabled = false;
+      disableClaudeAiConnectors = true;
 
       attribution = {
         commit = lib.mkIf host.isPersonal "";
