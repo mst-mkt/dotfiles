@@ -56,6 +56,7 @@ delib.module {
         CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY = "1";
         CLAUDE_CODE_THRIFTY_SONIC = "false";
         CLAUDE_CODE_ENABLE_CFC = "false";
+        ENABLE_TOOL_SEARCH = "auto";
       };
 
       hooks = {
