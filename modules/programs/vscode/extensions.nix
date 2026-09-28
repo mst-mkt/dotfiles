@@ -9,6 +9,7 @@
 
 let
   extensions = inputs.nix-vscode-extensions.extensions.${pkgs.stdenv.hostPlatform.system};
+  nuten = inputs.nuten.packages.${pkgs.stdenv.hostPlatform.system};
 in
 
 delib.module {
@@ -52,6 +53,7 @@ delib.module {
         typespec.typespec-vscode
         ubugeeei.vize
       ])
+      ++ [ nuten.vscode-extension ]
       ++ lib.optionals (host.name == "greenpath") [
         pkgs.vscode-extensions.dbaeumer.vscode-eslint
         pkgs.vscode-extensions.esbenp.prettier-vscode

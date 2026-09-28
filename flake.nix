@@ -201,6 +201,10 @@
       url = "github:ryoppippi/nix-vite-plus";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nuten = {
+      url = "git+ssh://git@github.com/mst-mkt/nuten";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     pgbackup = {
       url = "github:flestudio/pgbackup";
     };
