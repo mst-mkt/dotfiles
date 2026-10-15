@@ -51,6 +51,8 @@ delib.module {
       dates = [ "weekly" ];
     };
 
+    nix.daemonCPUSchedPolicy = "idle";
+
     nixpkgs.config.allowUnfree = true;
   };
 
