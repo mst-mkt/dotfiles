@@ -16,21 +16,25 @@ delib.module {
       enable = true;
       useNautilus = false;
     };
-    environment.sessionVariables.NIXOS_OZONE_WL = "1";
+    environment.sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
   };
 
-  home.ifEnabled.wayland.windowManager.niri = {
-    enable = true;
-    portalPackage = null;
-    xwaylandSatellitePackage = null;
+  home.ifEnabled = {
+    wayland.windowManager.niri = {
+      enable = true;
+      portalPackage = null;
+      xwaylandSatellitePackage = null;
 
-    settings = {
-      prefer-no-csd = { };
-      hotkey-overlay.skip-at-startup = { };
-      screenshot-path = "~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png";
-      xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
+      settings = {
+        prefer-no-csd = { };
+        hotkey-overlay.skip-at-startup = { };
+        screenshot-path = "~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png";
+        xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
-      _children = [ { spawn-at-startup._args = [ "widgets" ]; } ];
+        _children = [ { spawn-at-startup._args = [ "widgets" ]; } ];
+      };
     };
   };
 }

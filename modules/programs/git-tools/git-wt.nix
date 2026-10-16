@@ -10,5 +10,7 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  home.ifEnabled.home.packages = [ pkgs.git-wt ];
+  home.ifEnabled = {
+    home.packages = [ pkgs.git-wt ];
+  };
 }

@@ -13,6 +13,11 @@ delib.host {
   ];
   rice = "krb";
 
-  nixos.system.stateVersion = "25.11";
-  home.home.stateVersion = "25.11";
+  nixos = {
+    system.stateVersion = "25.11";
+  };
+
+  home = {
+    home.stateVersion = "25.11";
+  };
 }

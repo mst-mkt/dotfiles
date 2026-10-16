@@ -5,5 +5,7 @@ delib.module {
 
   options = delib.singleEnableOption host.isLaptop;
 
-  nixos.ifEnabled.services.tlp.enable = true;
+  nixos.ifEnabled = {
+    services.tlp.enable = true;
+  };
 }

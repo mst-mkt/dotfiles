@@ -6,12 +6,14 @@ delib.module {
   options = delib.singleEnableOption true;
 
   nixos.ifEnabled = {
-    boot.loader.systemd-boot = {
-      enable = true;
-      configurationLimit = 20;
-      consoleMode = "max";
+    boot.loader = {
+      systemd-boot = {
+        enable = true;
+        configurationLimit = 20;
+        consoleMode = "max";
+      };
+      timeout = 0;
+      efi.canTouchEfiVariables = true;
     };
-    boot.loader.timeout = 0;
-    boot.loader.efi.canTouchEfiVariables = true;
   };
 }

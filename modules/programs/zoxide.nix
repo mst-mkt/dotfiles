@@ -5,8 +5,10 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.ifEnabled.programs.zoxide = {
-    enable = true;
-    enableNushellIntegration = true;
+  home.ifEnabled = {
+    programs.zoxide = {
+      enable = true;
+      enableNushellIntegration = true;
+    };
   };
 }

@@ -24,9 +24,11 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && !host.isMobile);
 
-  home.ifEnabled.programs.nh = {
-    enable = true;
-    package = pkgs.nh.override { inherit nix-output-monitor; };
-    flake = "${homeConfig.home.homeDirectory}/dotfiles";
+  home.ifEnabled = {
+    programs.nh = {
+      enable = true;
+      package = pkgs.nh.override { inherit nix-output-monitor; };
+      flake = "${homeConfig.home.homeDirectory}/dotfiles";
+    };
   };
 }

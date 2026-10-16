@@ -62,9 +62,11 @@
       checks = forAllSystems (system: {
         pre-commit = inputs.git-hooks.lib.${system}.run {
           src = ./.;
-          hooks.treefmt = {
-            enable = true;
-            package = treefmtFor system;
+          hooks = {
+            treefmt = {
+              enable = true;
+              package = treefmtFor system;
+            };
           };
         };
       });

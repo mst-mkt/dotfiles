@@ -11,7 +11,9 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.always.imports = [ inputs.autopair-nu.homeModules.default ];
+  home.always = {
+    imports = [ inputs.autopair-nu.homeModules.default ];
+  };
 
   home.ifEnabled = {
     programs.autopair-nu.enable = true;

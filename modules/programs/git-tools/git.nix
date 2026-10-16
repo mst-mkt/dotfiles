@@ -5,19 +5,21 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.ifEnabled.programs.git = {
-    enable = true;
-    settings.user = {
-      name = "mst-mkt";
-      email = "mail@keito.dev";
+  home.ifEnabled = {
+    programs.git = {
+      enable = true;
+      settings.user = {
+        name = "mst-mkt";
+        email = "mail@keito.dev";
+      };
+      includes = [
+        {
+          condition = "gitdir:~/_/github.com/hatena/";
+          contents = {
+            user.email = "mst-mkt@hatena.com";
+          };
+        }
+      ];
     };
-    includes = [
-      {
-        condition = "gitdir:~/_/github.com/hatena/";
-        contents = {
-          user.email = "mst-mkt@hatena.com";
-        };
-      }
-    ];
   };
 }

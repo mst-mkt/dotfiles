@@ -15,14 +15,18 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  home.ifEnabled.programs.gh = {
-    enable = true;
-    settings.git_protocol = "ssh";
-    extensions = [
-      pkgs.gh-markdown-preview
-      pkgs.gh-poi
-      nur-packages.gh-pr-reviews
-      pkgs.gh-stack
-    ];
+  home.ifEnabled = {
+    programs.gh = {
+      enable = true;
+      settings = {
+        git_protocol = "ssh";
+      };
+      extensions = [
+        pkgs.gh-markdown-preview
+        pkgs.gh-poi
+        nur-packages.gh-pr-reviews
+        pkgs.gh-stack
+      ];
+    };
   };
 }

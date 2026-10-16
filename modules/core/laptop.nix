@@ -11,10 +11,12 @@ delib.module {
 
   options = delib.singleEnableOption host.isLaptop;
 
-  nixos.always.imports = [
-    inputs.nixos-hardware.nixosModules.common-pc-laptop
-    inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
-  ];
+  nixos.always = {
+    imports = [
+      inputs.nixos-hardware.nixosModules.common-pc-laptop
+      inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
+    ];
+  };
 
   nixos.ifEnabled = {
     services.fstrim.enable = true;

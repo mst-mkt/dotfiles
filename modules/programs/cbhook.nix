@@ -10,7 +10,9 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  home.always.imports = [ inputs.cbhook.homeManagerModules.default ];
+  home.always = {
+    imports = [ inputs.cbhook.homeManagerModules.default ];
+  };
 
   home.ifEnabled = {
     programs.cbhook = {

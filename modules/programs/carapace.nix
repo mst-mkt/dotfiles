@@ -5,9 +5,13 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.ifEnabled.programs.carapace = {
-    enable = true;
-    enableNushellIntegration = true;
-    environment.CARAPACE_MATCH = true;
+  home.ifEnabled = {
+    programs.carapace = {
+      enable = true;
+      enableNushellIntegration = true;
+      environment = {
+        CARAPACE_MATCH = true;
+      };
+    };
   };
 }

@@ -17,7 +17,9 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  home.always.imports = [ inputs.agent-skills.homeManagerModules.default ];
+  home.always = {
+    imports = [ inputs.agent-skills.homeManagerModules.default ];
+  };
 
   home.ifEnabled =
     { myconfig, ... }:

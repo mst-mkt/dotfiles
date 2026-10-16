@@ -5,8 +5,10 @@ delib.module {
 
   options = delib.singleEnableOption (host.guiFeatured && host.devFeatured);
 
-  home.ifEnabled.programs.vscode = {
-    enable = true;
-    mutableExtensionsDir = false;
+  home.ifEnabled = {
+    programs.vscode = {
+      enable = true;
+      mutableExtensionsDir = false;
+    };
   };
 }

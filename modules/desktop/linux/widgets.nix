@@ -15,5 +15,7 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  home.ifEnabled.home.packages = [ widgets.default ];
+  home.ifEnabled = {
+    home.packages = [ widgets.default ];
+  };
 }

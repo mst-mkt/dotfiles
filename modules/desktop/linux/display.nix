@@ -6,7 +6,9 @@ delib.module {
   options = delib.singleEnableOption host.guiFeatured;
 
   nixos.ifEnabled = {
-    services.libinput.enable = true;
-    services.displayManager.ly.enable = true;
+    services = {
+      libinput.enable = true;
+      displayManager.ly.enable = true;
+    };
   };
 }

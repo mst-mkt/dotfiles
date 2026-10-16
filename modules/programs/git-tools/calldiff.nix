@@ -15,5 +15,7 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  home.ifEnabled.home.packages = [ nur-packages.calldiff ];
+  home.ifEnabled = {
+    home.packages = [ nur-packages.calldiff ];
+  };
 }

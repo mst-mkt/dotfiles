@@ -25,94 +25,96 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.ifEnabled.programs.fastfetch = {
-    enable = true;
-    package = fastfetch-wrapped;
-    settings = {
-      general.detectVersion = false;
-      logo.padding = {
-        top = 2;
-        left = 5;
-        right = 6;
-      };
-      display = {
-        separator = " ";
-        key.width = 14;
-        color.keys = "90";
-        percent.color = {
-          green = "90";
-          yellow = "90";
-          red = "90";
+  home.ifEnabled = {
+    programs.fastfetch = {
+      enable = true;
+      package = fastfetch-wrapped;
+      settings = {
+        general.detectVersion = false;
+        logo.padding = {
+          top = 2;
+          left = 5;
+          right = 6;
         };
+        display = {
+          separator = " ";
+          key.width = 14;
+          color.keys = "90";
+          percent.color = {
+            green = "90";
+            yellow = "90";
+            red = "90";
+          };
+        };
+        modules = [
+          {
+            type = "title";
+            format = "{#90}▌  {#39}{user-name}@{host-name}";
+          }
+          {
+            type = "custom";
+            format = "{#90}▌";
+          }
+          {
+            type = "title";
+            key = "▌  user";
+            format = "{user-name}";
+          }
+          {
+            type = "title";
+            key = "▌  host";
+            format = "{host-name}";
+          }
+          {
+            type = "os";
+            key = "▌  distro";
+            format = "{name} {version-id}";
+          }
+          {
+            type = "kernel";
+            key = "▌  kernel";
+            format = "{release}";
+          }
+          {
+            type = "packages";
+            key = "▌  packages";
+          }
+          {
+            type = "shell";
+            key = "▌  shell";
+            format = "{pretty-name}";
+          }
+          {
+            type = "wm";
+            key = "▌  wm";
+            format = "{pretty-name}";
+          }
+          {
+            type = "terminal";
+            key = "▌  terminal";
+            format = "{pretty-name}";
+          }
+          {
+            type = "cpu";
+            key = "▌  cpu";
+            format = "{name}";
+          }
+          {
+            type = "memory";
+            key = "▌  memory";
+          }
+          {
+            type = "disk";
+            key = "▌  disk";
+            format = "{size-used} / {size-total} ({size-percentage})";
+          }
+          {
+            type = "datetime";
+            key = "▌  time";
+            format = "{year}-{month-pretty}-{day-in-month} {hour-pretty}:{minute-pretty}";
+          }
+        ];
       };
-      modules = [
-        {
-          type = "title";
-          format = "{#90}▌  {#39}{user-name}@{host-name}";
-        }
-        {
-          type = "custom";
-          format = "{#90}▌";
-        }
-        {
-          type = "title";
-          key = "▌  user";
-          format = "{user-name}";
-        }
-        {
-          type = "title";
-          key = "▌  host";
-          format = "{host-name}";
-        }
-        {
-          type = "os";
-          key = "▌  distro";
-          format = "{name} {version-id}";
-        }
-        {
-          type = "kernel";
-          key = "▌  kernel";
-          format = "{release}";
-        }
-        {
-          type = "packages";
-          key = "▌  packages";
-        }
-        {
-          type = "shell";
-          key = "▌  shell";
-          format = "{pretty-name}";
-        }
-        {
-          type = "wm";
-          key = "▌  wm";
-          format = "{pretty-name}";
-        }
-        {
-          type = "terminal";
-          key = "▌  terminal";
-          format = "{pretty-name}";
-        }
-        {
-          type = "cpu";
-          key = "▌  cpu";
-          format = "{name}";
-        }
-        {
-          type = "memory";
-          key = "▌  memory";
-        }
-        {
-          type = "disk";
-          key = "▌  disk";
-          format = "{size-used} / {size-total} ({size-percentage})";
-        }
-        {
-          type = "datetime";
-          key = "▌  time";
-          format = "{year}-{month-pretty}-{day-in-month} {hour-pretty}:{minute-pretty}";
-        }
-      ];
     };
   };
 }

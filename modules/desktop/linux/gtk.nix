@@ -10,10 +10,12 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  home.ifEnabled.gtk = {
-    enable = true;
-    iconTheme = {
-      inherit (rice.iconTheme) name package;
+  home.ifEnabled = {
+    gtk = {
+      enable = true;
+      iconTheme = {
+        inherit (rice.iconTheme) name package;
+      };
     };
   };
 }

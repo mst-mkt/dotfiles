@@ -17,12 +17,14 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  home.ifEnabled.home.packages =
-    with pkgs;
-    [
-      slack
-      vivaldi
-    ]
-    ++ lib.optionals host.isPersonal [ discord ]
-    ++ lib.optionals host.iniadFeatured [ mattermost-desktop ];
+  home.ifEnabled = {
+    home.packages =
+      with pkgs;
+      [
+        slack
+        vivaldi
+      ]
+      ++ lib.optionals host.isPersonal [ discord ]
+      ++ lib.optionals host.iniadFeatured [ mattermost-desktop ];
+  };
 }

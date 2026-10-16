@@ -15,5 +15,7 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  home.ifEnabled.home.packages = [ vite-plus.default ];
+  home.ifEnabled = {
+    home.packages = [ vite-plus.default ];
+  };
 }

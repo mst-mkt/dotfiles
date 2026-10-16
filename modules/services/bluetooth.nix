@@ -5,8 +5,10 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  nixos.ifEnabled.hardware.bluetooth = {
-    enable = true;
-    powerOnBoot = true;
+  nixos.ifEnabled = {
+    hardware.bluetooth = {
+      enable = true;
+      powerOnBoot = true;
+    };
   };
 }

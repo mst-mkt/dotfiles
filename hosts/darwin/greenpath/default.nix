@@ -12,6 +12,11 @@ delib.host {
   ];
   rice = "flst";
 
-  darwin.system.stateVersion = 7;
-  home.home.stateVersion = "25.11";
+  darwin = {
+    system.stateVersion = 7;
+  };
+
+  home = {
+    home.stateVersion = "25.11";
+  };
 }

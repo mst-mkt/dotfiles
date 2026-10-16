@@ -15,7 +15,9 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured && host.isPersonal);
 
-  home.always.imports = [ inputs.pi.homeManagerModules.default ];
+  home.always = {
+    imports = [ inputs.pi.homeManagerModules.default ];
+  };
 
   home.ifEnabled = {
     programs.pi.coding-agent = {
@@ -38,7 +40,9 @@ delib.module {
         enableInstallTelemetry = false;
       };
 
-      environment.PI_SKIP_VERSION_CHECK.value = "1";
+      environment = {
+        PI_SKIP_VERSION_CHECK.value = "1";
+      };
     };
 
     home.file = {

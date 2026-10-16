@@ -12,12 +12,16 @@ delib.host {
     via = "cloudflared";
   };
 
-  myconfig.services.misskey.enable = true;
+  myconfig = {
+    services.misskey.enable = true;
+  };
 
   nixos = {
     system.stateVersion = "25.05";
     boot.kernelPackages = pkgs.linuxPackages_zen;
   };
 
-  home.home.stateVersion = "24.11";
+  home = {
+    home.stateVersion = "24.11";
+  };
 }

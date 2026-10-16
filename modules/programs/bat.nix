@@ -5,8 +5,12 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.ifEnabled.programs.bat = {
-    enable = true;
-    config.theme = "ansi";
+  home.ifEnabled = {
+    programs.bat = {
+      enable = true;
+      config = {
+        theme = "ansi";
+      };
+    };
   };
 }

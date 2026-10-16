@@ -15,5 +15,7 @@ delib.module {
 
   options = delib.singleEnableOption (host.name == "greenpath");
 
-  home.ifEnabled.home.packages = [ brew-casks.orbstack ];
+  home.ifEnabled = {
+    home.packages = [ brew-casks.orbstack ];
+  };
 }

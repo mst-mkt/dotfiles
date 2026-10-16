@@ -6,16 +6,20 @@ delib.module {
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
   nixos.ifEnabled = {
-    environment.variables.EDITOR = "nvim";
+    environment.variables = {
+      EDITOR = "nvim";
+    };
     programs.nano.enable = false;
   };
 
-  home.ifEnabled.programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
-    withRuby = false;
-    withPython3 = false;
+  home.ifEnabled = {
+    programs.neovim = {
+      enable = true;
+      defaultEditor = true;
+      viAlias = true;
+      vimAlias = true;
+      withRuby = false;
+      withPython3 = false;
+    };
   };
 }

@@ -14,5 +14,7 @@ delib.host {
     environment.etcBackupExtension = ".bak";
   };
 
-  home.home.stateVersion = "26.05";
+  home = {
+    home.stateVersion = "26.05";
+  };
 }

@@ -10,7 +10,9 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  darwin.always.imports = [ inputs.nix-homebrew.darwinModules.nix-homebrew ];
+  darwin.always = {
+    imports = [ inputs.nix-homebrew.darwinModules.nix-homebrew ];
+  };
 
   darwin.ifEnabled = {
     homebrew.enable = true;

@@ -5,5 +5,7 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  darwin.ifEnabled.homebrew.casks = [ "azookey" ];
+  darwin.ifEnabled = {
+    homebrew.casks = [ "azookey" ];
+  };
 }

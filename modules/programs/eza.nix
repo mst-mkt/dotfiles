@@ -5,9 +5,11 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.ifEnabled.programs.eza = {
-    enable = true;
-    enableNushellIntegration = true;
-    extraOptions = [ "--group-directories-first" ];
+  home.ifEnabled = {
+    programs.eza = {
+      enable = true;
+      enableNushellIntegration = true;
+      extraOptions = [ "--group-directories-first" ];
+    };
   };
 }

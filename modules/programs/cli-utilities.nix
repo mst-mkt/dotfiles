@@ -19,23 +19,25 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.ifEnabled.home.packages = [
-    pkgs.bottom
-    pkgs.ffmpeg
-    pkgs.fzf
-    pkgs.jnv
-    pkgs.jq
-    pkgs.mmv-go
-    pkgs.mo-viewer
-    pkgs.tree
-    pkgs.wget
-    ax.default
-    serenity-emoji.cli
-  ]
-  ++ lib.optionals host.devFeatured [
-    cf-open.default
-    nur-packages.gengo
-  ]
-  ++ lib.optionals host.iniadFeatured [ nur-packages.esa-cli ]
-  ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [ pkgs.wl-clipboard ];
+  home.ifEnabled = {
+    home.packages = [
+      pkgs.bottom
+      pkgs.ffmpeg
+      pkgs.fzf
+      pkgs.jnv
+      pkgs.jq
+      pkgs.mmv-go
+      pkgs.mo-viewer
+      pkgs.tree
+      pkgs.wget
+      ax.default
+      serenity-emoji.cli
+    ]
+    ++ lib.optionals host.devFeatured [
+      cf-open.default
+      nur-packages.gengo
+    ]
+    ++ lib.optionals host.iniadFeatured [ nur-packages.esa-cli ]
+    ++ lib.optionals pkgs.stdenv.hostPlatform.isLinux [ pkgs.wl-clipboard ];
+  };
 }

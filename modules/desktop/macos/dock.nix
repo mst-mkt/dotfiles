@@ -5,7 +5,9 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  darwin.ifEnabled.system.defaults.dock = {
-    autohide = true;
+  darwin.ifEnabled = {
+    system.defaults.dock = {
+      autohide = true;
+    };
   };
 }

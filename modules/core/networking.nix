@@ -5,13 +5,17 @@ delib.module {
 
   options = delib.singleEnableOption true;
 
-  nixos.ifEnabled.networking = {
-    hostName = host.name;
-    networkmanager.enable = true;
-    firewall.enable = true;
+  nixos.ifEnabled = {
+    networking = {
+      hostName = host.name;
+      networkmanager.enable = true;
+      firewall.enable = true;
+    };
   };
 
-  darwin.ifEnabled.networking = {
-    hostName = host.name;
+  darwin.ifEnabled = {
+    networking = {
+      hostName = host.name;
+    };
   };
 }

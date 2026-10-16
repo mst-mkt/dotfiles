@@ -10,10 +10,12 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  home.ifEnabled.home.pointerCursor = {
-    enable = true;
-    inherit (rice.cursor) name package size;
-    gtk.enable = true;
-    x11.enable = true;
+  home.ifEnabled = {
+    home.pointerCursor = {
+      enable = true;
+      inherit (rice.cursor) name package size;
+      gtk.enable = true;
+      x11.enable = true;
+    };
   };
 }

@@ -52,16 +52,18 @@ delib.module {
     nix.settings.extra-sandbox-paths = [ "${secretPath}?" ];
   };
 
-  home.ifEnabled.systemd.user.services.wallpaper = {
-    Unit = {
-      Description = "Set the wallpaper";
-      PartOf = [ sessionTarget ];
-      After = [ sessionTarget ];
+  home.ifEnabled = {
+    systemd.user.services.wallpaper = {
+      Unit = {
+        Description = "Set the wallpaper";
+        PartOf = [ sessionTarget ];
+        After = [ sessionTarget ];
+      };
+      Service = {
+        ExecStart = "${lib.getExe pkgs.wbg} --stretch ${wallpaper}";
+        Restart = "on-failure";
+      };
+      Install.WantedBy = [ sessionTarget ];
     };
-    Service = {
-      ExecStart = "${lib.getExe pkgs.wbg} --stretch ${wallpaper}";
-      Restart = "on-failure";
-    };
-    Install.WantedBy = [ sessionTarget ];
   };
 }

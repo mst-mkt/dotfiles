@@ -5,18 +5,20 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  darwin.ifEnabled.system.defaults = {
-    NSGlobalDomain = {
-      "com.apple.trackpad.forceClick" = false;
-    };
+  darwin.ifEnabled = {
+    system.defaults = {
+      NSGlobalDomain = {
+        "com.apple.trackpad.forceClick" = false;
+      };
 
-    trackpad = {
-      Clicking = false;
-    };
+      trackpad = {
+        Clicking = false;
+      };
 
-    CustomUserPreferences = {
-      "com.apple.AppleMultitouchTrackpad" = {
-        TrackpadThreeFingerVertSwipeGesture = 0;
+      CustomUserPreferences = {
+        "com.apple.AppleMultitouchTrackpad" = {
+          TrackpadThreeFingerVertSwipeGesture = 0;
+        };
       };
     };
   };

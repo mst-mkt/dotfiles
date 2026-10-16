@@ -5,5 +5,7 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  nixos.ifEnabled.security.soteria.enable = true;
+  nixos.ifEnabled = {
+    security.soteria.enable = true;
+  };
 }

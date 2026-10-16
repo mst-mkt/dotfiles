@@ -5,5 +5,7 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  nixos.ifEnabled.programs.nix-ld.enable = true;
+  nixos.ifEnabled = {
+    programs.nix-ld.enable = true;
+  };
 }

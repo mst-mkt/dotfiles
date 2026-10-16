@@ -23,70 +23,78 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  home.ifEnabled.programs.claude-code = {
-    enable = true;
-    package = llm-agents.claude-code;
+  home.ifEnabled = {
+    programs.claude-code = {
+      enable = true;
+      package = llm-agents.claude-code;
 
-    settings = {
-      model = "claude-opus-5-5[1m]";
-      effortLevel = "high";
+      settings = {
+        model = "claude-opus-5-5[1m]";
+        effortLevel = "high";
 
-      language = "日本語 (Japanese)";
-      outputStyle = "Japanese writing";
+        language = "日本語 (Japanese)";
+        outputStyle = "Japanese writing";
 
-      permissions.defaultMode = "auto";
-      skipAutoPermissionPrompt = true;
+        permissions = {
+          defaultMode = "auto";
+        };
+        skipAutoPermissionPrompt = true;
 
-      cleanupPeriodDays = 9999;
-      autoMemoryEnabled = false;
-      disableClaudeAiConnectors = true;
+        cleanupPeriodDays = 9999;
+        autoMemoryEnabled = false;
+        disableClaudeAiConnectors = true;
 
-      attribution = {
-        commit = lib.mkIf host.isPersonal "";
-        pr = "";
-        sessionUrl = false;
-      };
+        attribution = {
+          commit = lib.mkIf host.isPersonal "";
+          pr = "";
+          sessionUrl = false;
+        };
 
-      tui = "fullscreen";
-      spinnerTipsEnabled = false;
-      feedbackDrafts = "off";
-      awaySummaryEnabled = false;
+        tui = "fullscreen";
+        spinnerTipsEnabled = false;
+        feedbackDrafts = "off";
+        awaySummaryEnabled = false;
 
-      env = {
-        CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY = "1";
-        CLAUDE_CODE_THRIFTY_SONIC = "false";
-        CLAUDE_CODE_ENABLE_CFC = "false";
-        ENABLE_TOOL_SEARCH = "auto";
+        env = {
+          CLAUDE_CODE_DISABLE_FEEDBACK_SURVEY = "1";
+          CLAUDE_CODE_THRIFTY_SONIC = "false";
+          CLAUDE_CODE_ENABLE_CFC = "false";
+          ENABLE_TOOL_SEARCH = "auto";
+        };
+
+        hooks = {
+          SessionStart = [
+            {
+              matcher = "*";
+              hooks = [
+                {
+                  type = "command";
+                  command = "${lib.getExe herdr-hook} session";
+                  timeout = 10;
+                }
+              ];
+            }
+          ];
+        };
       };
 
       hooks = {
-        SessionStart = [
-          {
-            matcher = "*";
-            hooks = [
-              {
-                type = "command";
-                command = "${lib.getExe herdr-hook} session";
-                timeout = 10;
-              }
-            ];
-          }
-        ];
+        "herdr-agent-state.sh" = herdr-hook-script;
+      };
+
+      mcpServers = {
+        nushell = {
+          command = lib.getExe pkgs.nushell;
+          args = [ "--mcp" ];
+          env = {
+            GIT_EDITOR = "true";
+          };
+        };
+      };
+
+      outputStyles = {
+        japanese_writing = builtins.readFile "${inputs.claude-output-styles}/japanese-writing.md";
       };
     };
-
-    hooks = {
-      "herdr-agent-state.sh" = herdr-hook-script;
-    };
-
-    mcpServers = {
-      nushell = {
-        command = lib.getExe pkgs.nushell;
-        args = [ "--mcp" ];
-        env.GIT_EDITOR = "true";
-      };
-    };
-
-    outputStyles.japanese_writing = builtins.readFile "${inputs.claude-output-styles}/japanese-writing.md";
   };
 }

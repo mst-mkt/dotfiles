@@ -9,9 +9,11 @@ delib.module {
 
   options = delib.singleEnableOption host.cliFeatured;
 
-  home.ifEnabled.programs.yazi = {
-    enable = true;
-    shellWrapperName = "y";
-    enableNushellIntegration = true;
+  home.ifEnabled = {
+    programs.yazi = {
+      enable = true;
+      shellWrapperName = "y";
+      enableNushellIntegration = true;
+    };
   };
 }

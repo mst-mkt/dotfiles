@@ -26,59 +26,67 @@ delib.module {
   options = delib.singleEnableOption true;
 
   nixos.ifEnabled = {
-    nix.settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      warn-dirty = false;
-      accept-flake-config = true;
-      trusted-users = [
-        "root"
-        "@wheel"
-      ];
-      inherit substituters trusted-public-keys;
+    nix = {
+      settings = {
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+        warn-dirty = false;
+        accept-flake-config = true;
+        trusted-users = [
+          "root"
+          "@wheel"
+        ];
+        inherit substituters trusted-public-keys;
+      };
+
+      gc = {
+        automatic = true;
+        dates = "weekly";
+        options = "--delete-older-than 30d";
+      };
+
+      optimise = {
+        automatic = true;
+        dates = [ "weekly" ];
+      };
+
+      daemonCPUSchedPolicy = "idle";
     };
 
-    nix.gc = {
-      automatic = true;
-      dates = "weekly";
-      options = "--delete-older-than 30d";
+    nixpkgs = {
+      config.allowUnfree = true;
     };
-
-    nix.optimise = {
-      automatic = true;
-      dates = [ "weekly" ];
-    };
-
-    nix.daemonCPUSchedPolicy = "idle";
-
-    nixpkgs.config.allowUnfree = true;
   };
 
   darwin.ifEnabled = {
-    nix.settings = {
-      experimental-features = [
-        "nix-command"
-        "flakes"
-      ];
-      warn-dirty = false;
-      accept-flake-config = true;
-      trusted-users = [
-        "root"
-        "@admin"
-      ];
-      inherit substituters trusted-public-keys;
+    nix = {
+      settings = {
+        experimental-features = [
+          "nix-command"
+          "flakes"
+        ];
+        warn-dirty = false;
+        accept-flake-config = true;
+        trusted-users = [
+          "root"
+          "@admin"
+        ];
+        inherit substituters trusted-public-keys;
+      };
+
+      gc = {
+        automatic = true;
+        options = "--delete-older-than 30d";
+      };
+
+      optimise.automatic = true;
     };
 
-    nix.gc = {
-      automatic = true;
-      options = "--delete-older-than 30d";
+    nixpkgs = {
+      config.allowUnfree = true;
     };
-
-    nix.optimise.automatic = true;
-
-    nixpkgs.config.allowUnfree = true;
   };
 
   droid.ifEnabled = {

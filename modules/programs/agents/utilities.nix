@@ -16,8 +16,10 @@ delib.module {
 
   options = delib.singleEnableOption (host.cliFeatured && host.devFeatured);
 
-  home.ifEnabled.home.packages = [
-    llm-agents.ccusage
-    ccsession.default
-  ];
+  home.ifEnabled = {
+    home.packages = [
+      llm-agents.ccusage
+      ccsession.default
+    ];
+  };
 }

@@ -10,7 +10,9 @@ delib.module {
 
   options = delib.singleEnableOption host.guiFeatured;
 
-  home.always.imports = [ inputs.nix-hazkey.homeModules.hazkey ];
+  home.always = {
+    imports = [ inputs.nix-hazkey.homeModules.hazkey ];
+  };
 
   home.ifEnabled = {
     services.hazkey.enable = true;
