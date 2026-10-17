@@ -1,4 +1,14 @@
-{ delib, host, ... }:
+{
+  delib,
+  host,
+  pkgs,
+  ...
+}:
+
+let
+  keys = import ../../../secrets/keys.nix;
+  signingKey = builtins.head keys.users.${host.owner};
+in
 
 delib.module {
   name = "programs.git-tools.git";
@@ -8,9 +18,22 @@ delib.module {
   home.ifEnabled = {
     programs.git = {
       enable = true;
-      settings.user = {
-        name = "mst-mkt";
-        email = "mail@keito.dev";
+      signing = {
+        format = "ssh";
+        key = "~/.ssh/id_ed25519.pub";
+        signByDefault = true;
+      };
+      settings = {
+        user = {
+          name = "mst-mkt";
+          email = "mail@keito.dev";
+        };
+        gpg.ssh.allowedSignersFile = toString (
+          pkgs.writeText "allowed_signers" ''
+            mail@keito.dev ${signingKey}
+            mst-mkt@hatena.com ${signingKey}
+          ''
+        );
       };
       includes = [
         {
