@@ -37,6 +37,28 @@ delib.module {
 
         permissions = {
           defaultMode = "auto";
+          ask = [
+            "Bash(gh issue create *)"
+            "Bash(gh issue comment *)"
+            "Bash(gh issue edit *)"
+            "Bash(gh issue close *)"
+            "Bash(gh issue reopen *)"
+            "Bash(gh pr create *)"
+            "Bash(gh pr comment *)"
+            "Bash(gh pr review *)"
+            "Bash(gh pr edit *)"
+            "Bash(gh pr merge *)"
+            "Bash(gh pr close *)"
+            "Bash(gh pr reopen *)"
+            "Bash(gh api * -X*)"
+            "Bash(gh api * --method*)"
+            "Bash(gh api *repos/* -f *)"
+            "Bash(gh api *repos/* -F *)"
+            "Bash(gh api *repos/* --field *)"
+            "Bash(gh api *repos/* --raw-field *)"
+            "Bash(gh api *repos/* --input *)"
+            "Bash(gh api graphql *mutation*)"
+          ];
         };
         skipAutoPermissionPrompt = true;
 
