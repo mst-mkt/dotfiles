@@ -28,7 +28,14 @@ delib.module {
         enable = true;
         enableDefaultConfig = false;
         settings = lib.mapAttrs' (
-          _: h: lib.nameValuePair h.ssh.hostname ({ User = h.owner; } // reachVia.${h.ssh.via})
+          name: h:
+          lib.nameValuePair "${name} ${h.ssh.hostname}" (
+            {
+              HostName = h.ssh.hostname;
+              User = h.owner;
+            }
+            // reachVia.${h.ssh.via}
+          )
         ) reachableHosts;
       };
     };
