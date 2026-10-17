@@ -2,8 +2,13 @@
   delib,
   host,
   pkgs,
+  inputs,
   ...
 }:
+
+let
+  nur-packages = inputs.nur-packages.packages.${pkgs.stdenv.hostPlatform.system};
+in
 
 delib.module {
   name = "programs.git-tools.gh";
@@ -17,6 +22,7 @@ delib.module {
         git_protocol = "ssh";
       };
       extensions = [
+        nur-packages.gh-actions-lock
         pkgs.gh-markdown-preview
         pkgs.gh-poi
         pkgs.gh-stack
