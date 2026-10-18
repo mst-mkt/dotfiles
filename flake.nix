@@ -204,7 +204,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     nuten = {
-      url = "git+ssh://git@github.com/mst-mkt/nuten";
+      url = "github:mst-mkt/nuten";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     pgbackup = {
