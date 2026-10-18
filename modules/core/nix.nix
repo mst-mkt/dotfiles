@@ -8,6 +8,7 @@ let
     "https://mst-mkt.cachix.org"
     "https://cache.numtide.com"
     "https://pi.cachix.org"
+    "https://nuten.cachix.org"
   ];
 
   trusted-public-keys = [
@@ -17,6 +18,7 @@ let
     "mst-mkt.cachix.org-1:Ap1WSTd2tPEsFkNutQ7+X8OGtv7kOy9Q+xzvBvcL7FU="
     "niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="
     "pi.cachix.org-1:lGeoGJaZ5ZDabuRzkcD5EBTNnDM4HJ1vqeOxlWk1Flk="
+    "nuten.cachix.org-1:UQhrCY0F6u/dOjkl0oySJqXRlG0gbYXl8o7AQ4bmcDs="
   ];
 in
 
