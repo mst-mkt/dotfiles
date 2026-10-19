@@ -24,6 +24,7 @@ delib.module {
             charliermarsh.ruff
             github.copilot-chat
             github.vscode-github-actions
+            gleam.gleam
             golang.go
             graphql.vscode-graphql-syntax
             ibm.output-colorizer
