@@ -45,6 +45,8 @@ delib.module {
     systemd.services.misskey = {
       environment.HOME = "/var/lib/misskey";
       serviceConfig = {
+        Restart = "on-failure";
+        RestartSec = "5s";
         LoadCredential = [
           "sentry-dsn:${config.age.secrets.misskey-sentry-dsn.path}"
         ];
