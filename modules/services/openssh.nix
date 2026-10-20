@@ -18,6 +18,16 @@ delib.module {
     services.openssh = {
       enable = true;
       openFirewall = lib.mkDefault false;
+      listenAddresses = [
+        {
+          addr = "127.0.0.1";
+          port = 22;
+        }
+        {
+          addr = "[::1]";
+          port = 22;
+        }
+      ];
       authorizedKeysInHomedir = false;
       settings = {
         PasswordAuthentication = false;
