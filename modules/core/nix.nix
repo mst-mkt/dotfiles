@@ -35,11 +35,7 @@ delib.module {
           "flakes"
         ];
         warn-dirty = false;
-        accept-flake-config = true;
-        trusted-users = [
-          "root"
-          "@wheel"
-        ];
+        trusted-users = [ "root" ];
         inherit substituters trusted-public-keys;
       };
 
@@ -70,11 +66,7 @@ delib.module {
           "flakes"
         ];
         warn-dirty = false;
-        accept-flake-config = true;
-        trusted-users = [
-          "root"
-          "@admin"
-        ];
+        trusted-users = [ "root" ];
         inherit substituters trusted-public-keys;
       };
 
