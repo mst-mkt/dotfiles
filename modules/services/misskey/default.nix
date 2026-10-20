@@ -47,6 +47,9 @@ delib.module {
       serviceConfig = {
         Restart = "on-failure";
         RestartSec = "5s";
+        RestrictNamespaces = true;
+        SystemCallFilter = [ "@system-service" ];
+        SystemCallErrorNumber = "EPERM";
         LoadCredential = [
           "sentry-dsn:${config.age.secrets.misskey-sentry-dsn.path}"
         ];
