@@ -11,6 +11,7 @@ delib.module {
         enable = true;
         configurationLimit = 20;
         consoleMode = "max";
+        editor = false;
       };
       timeout = 0;
       efi.canTouchEfiVariables = true;
