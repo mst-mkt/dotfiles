@@ -18,6 +18,12 @@ delib.module {
     services.openssh = {
       enable = true;
       openFirewall = lib.mkDefault false;
+      authorizedKeysInHomedir = false;
+      settings = {
+        PasswordAuthentication = false;
+        KbdInteractiveAuthentication = false;
+        PermitRootLogin = "no";
+      };
     };
 
     users.users.${host.owner}.openssh.authorizedKeys.keys = lib.concatLists (lib.attrValues keys.users);
