@@ -953,11 +953,11 @@
     "misskey": {
       "flake": false,
       "locked": {
-        "lastModified": 1790151807,
-        "narHash": "sha256-ptLfy5YzOENmx0wp8zm/K3y/Adp2SaLxftvaVYIyoWg=",
+        "lastModified": 1790847341,
+        "narHash": "sha256-GRJcqCItqQJToxnJGxlTOnBSiaIq8uxQNAFLEW1KJy0=",
         "owner": "flestudio",
         "repo": "flestudio",
-        "rev": "7f05994f003a1d84e80aa89aef7de4925880f408",
+        "rev": "de89118a225fbe0833e42ab94e8d5af1e5211208",
         "type": "github"
       },
       "original": {
