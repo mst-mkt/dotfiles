@@ -199,10 +199,6 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    nix-vite-plus = {
-      url = "github:ryoppippi/nix-vite-plus";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     nuten = {
       url = "github:mst-mkt/nuten";
       inputs.nixpkgs.follows = "nixpkgs";
