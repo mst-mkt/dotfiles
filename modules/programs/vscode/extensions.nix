@@ -21,6 +21,7 @@ delib.module {
         extensions =
           (with pkgs.vscode-extensions; [
             antfu.slidev
+            bradlc.vscode-tailwindcss
             charliermarsh.ruff
             github.copilot-chat
             github.vscode-github-actions
