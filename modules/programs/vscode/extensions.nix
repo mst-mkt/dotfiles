@@ -47,6 +47,7 @@ delib.module {
             yoavbls.pretty-ts-errors
           ])
           ++ (with extensions.vscode-marketplace-release-universal; [
+            "3w36zj6".textlint
             antfu.array-index-inlay
             antfu.unocss
             ionutvmi.path-autocomplete
