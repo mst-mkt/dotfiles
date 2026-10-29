@@ -41,6 +41,7 @@ delib.module {
             sumneko.lua
             tamasfe.even-better-toml
             thenuprojectcontributors.vscode-nushell-lang
+            unifiedjs.vscode-mdx
             usernamehw.errorlens
             vitest.explorer
             yoavbls.pretty-ts-errors
