@@ -47,7 +47,7 @@ delib.module {
             yoavbls.pretty-ts-errors
           ])
           ++ (with extensions.vscode-marketplace-release-universal; [
-            "3w36zj6".textlint
+            extensions.vscode-marketplace-release-universal."3w36zj6".textlint # full path: digit-leading names don't resolve via `with`
             antfu.array-index-inlay
             antfu.unocss
             ionutvmi.path-autocomplete
