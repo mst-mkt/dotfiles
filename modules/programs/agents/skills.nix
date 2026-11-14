@@ -30,6 +30,10 @@ delib.module {
       programs.agent-skills = {
         enable = true;
         sources = {
+          agent-browser = {
+            path = llm-agents.agent-browser.outPath;
+            subdir = "share/agent-browser/skills/agent-browser";
+          };
           ax = {
             path = inputs.ax.outPath;
             subdir = "skills/ax";
@@ -61,6 +65,7 @@ delib.module {
             "skills"
           ];
           enable = [
+            "agent-browser"
             "ax"
             "gh-stack"
             "git-hunk"

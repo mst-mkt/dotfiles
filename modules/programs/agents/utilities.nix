@@ -18,6 +18,7 @@ delib.module {
 
   home.ifEnabled = {
     home.packages = [
+      llm-agents.agent-browser
       llm-agents.ccusage
       ccsession.default
     ];
