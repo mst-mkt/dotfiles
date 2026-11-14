@@ -20,6 +20,7 @@ delib.module {
     home.packages = [
       llm-agents.agent-browser
       llm-agents.ccusage
+      llm-agents.tgrab
       ccsession.default
     ];
   };
