@@ -43,6 +43,10 @@ delib.module {
             path = llm-agents.herdr.src.outPath;
             subdir = "skills/herdr";
           };
+          modern-web-guidance = {
+            path = inputs.modern-web-guidance.outPath;
+            subdir = "skills";
+          };
           skills.path = inputs.skills.outPath;
         }
         // lib.optionalAttrs hunkEnabled {
@@ -52,7 +56,10 @@ delib.module {
           };
         };
         skills = {
-          enableAll = [ "skills" ];
+          enableAll = [
+            "modern-web-guidance"
+            "skills"
+          ];
           enable = [
             "ax"
             "gh-stack"

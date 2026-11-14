@@ -222,6 +222,10 @@
       url = "github:flestudio/flestudio";
       flake = false;
     };
+    modern-web-guidance = {
+      url = "github:GoogleChrome/modern-web-guidance";
+      flake = false;
+    };
     skills = {
       url = "github:mst-mkt/skills";
       flake = false;
