@@ -18,14 +18,12 @@ delib.module {
     services.misskey = {
       enable = true;
 
-      package = pkgs.misskey.overrideAttrs (prev: {
+      package = (pkgs.misskey.override { nodejs = pkgs.nodejs_26; }).overrideAttrs (prev: {
         inherit ((lib.importJSON "${inputs.misskey}/package.json")) version;
         src = inputs.misskey;
-        buildPhase =
-          builtins.replaceStrings [ "pnpm run install" ] [ "pnpm run --if-present install" ]
-            prev.buildPhase;
+        postPatch = "";
         pnpmDeps = prev.pnpmDeps.overrideAttrs {
-          outputHash = "sha256-l19dCv7vid/6rbNLU0fjMAewMgo12JOdqGfN4IVh5DY=";
+          outputHash = "sha256-zm25NWE+NaklRK/vc8Ti28QdDINqFp17MkT1uWuDF0M=";
         };
       });
 
@@ -57,7 +55,6 @@ delib.module {
           (pkgs.writeShellScript "misskey-replace-sentry-dsn" ''
             set -euo pipefail
             ${pkgs.replace-secret}/bin/replace-secret '@SENTRY_DSN@' "$CREDENTIALS_DIRECTORY/sentry-dsn" /run/misskey/default.yml
-            ${pkgs.replace-secret}/bin/replace-secret '@SENTRY_DSN@' "$CREDENTIALS_DIRECTORY/sentry-dsn" /run/misskey/default.json
           '')
         ];
       };
