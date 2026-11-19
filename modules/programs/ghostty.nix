@@ -1,6 +1,7 @@
 {
   delib,
   host,
+  lib,
   pkgs,
   rice,
   ...
@@ -10,8 +11,6 @@ let
   isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
   cjkFallback = if isDarwin then "Hiragino Sans" else "Noto Sans CJK JP";
   emojiFallback = if isDarwin then "Apple Color Emoji" else "Noto Color Emoji";
-  nu = "${pkgs.nushell}/bin/nu";
-  shellCommand = if isDarwin then "/bin/zsh -lc '${nu} --login'" else nu;
 in
 
 delib.module {
@@ -24,7 +23,7 @@ delib.module {
       enable = true;
       package = if isDarwin then pkgs.ghostty-bin else pkgs.ghostty;
       settings = {
-        command = shellCommand;
+        command = lib.getExe pkgs.nushell;
         font-family = [
           "UDEV Gothic NFLG"
           cjkFallback
