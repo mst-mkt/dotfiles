@@ -33,6 +33,21 @@ delib.module {
         screenshot-path = "~/Pictures/screenshots/%Y-%m-%d_%H-%M-%S.png";
         xwayland-satellite.path = lib.getExe pkgs.xwayland-satellite;
 
+        switch-events = lib.mkIf host.isLaptop {
+          lid-close.spawn = [
+            "niri"
+            "msg"
+            "action"
+            "power-off-monitors"
+          ];
+          lid-open.spawn = [
+            "niri"
+            "msg"
+            "action"
+            "power-on-monitors"
+          ];
+        };
+
         _children = [ { spawn-at-startup._args = [ "widgets" ]; } ];
       };
     };

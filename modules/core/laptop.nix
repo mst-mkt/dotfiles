@@ -19,10 +19,14 @@ delib.module {
   };
 
   nixos.ifEnabled = {
-    services.fstrim.enable = true;
-    services.angrr.enable = true;
+    services = {
+      fstrim.enable = true;
+      angrr.enable = true;
+
+      logind.settings.Login.HandleLidSwitchExternalPower = "ignore";
+      udev.packages = [ pkgs.brightnessctl ];
+    };
 
     environment.systemPackages = [ pkgs.brightnessctl ];
-    services.udev.packages = [ pkgs.brightnessctl ];
   };
 }
