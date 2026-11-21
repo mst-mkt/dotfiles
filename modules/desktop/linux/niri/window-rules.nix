@@ -8,6 +8,12 @@ delib.module {
       settings = {
         _children = lib.mkBefore [
           {
+            layer-rule = {
+              match._props.namespace = "^wallpaper$";
+              place-within-backdrop = true;
+            };
+          }
+          {
             window-rule = {
               geometry-corner-radius._args = [
                 12
@@ -17,22 +23,11 @@ delib.module {
               ];
               clip-to-geometry = true;
               draw-border-with-background = false;
+              opacity = 0.6;
               background-effect = {
                 blur = true;
                 xray = false;
               };
-            };
-          }
-          {
-            window-rule = {
-              match._props.is-focused = true;
-              opacity = 0.8;
-            };
-          }
-          {
-            window-rule = {
-              match._props.is-focused = false;
-              opacity = 0.7;
             };
           }
           {
@@ -62,7 +57,6 @@ delib.module {
                 y = 16;
                 relative-to = "bottom-right";
               };
-              focus-ring.off = { };
             };
           }
         ];

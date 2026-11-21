@@ -9,7 +9,7 @@ delib.module {
         layout = {
           gaps = 16;
           center-focused-column = "never";
-          background-color = rice.colors.background;
+          background-color = "transparent";
 
           default-column-width.proportion = 1.0;
           preset-column-widths._children = [
@@ -19,6 +19,7 @@ delib.module {
           ];
 
           focus-ring = {
+            off = { };
             width = 4;
             active-color = rice.colors.accent;
             inactive-color = rice.colors.inactive;
