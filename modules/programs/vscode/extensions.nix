@@ -33,6 +33,7 @@ delib.module {
             mkhl.direnv
             ms-python.python
             ms-toolsai.jupyter
+            myriad-dreamin.tinymist
             nefrob.vscode-just-syntax
             oxc.oxc-vscode
             rust-lang.rust-analyzer
