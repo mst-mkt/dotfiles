@@ -23,7 +23,7 @@ delib.module {
         src = inputs.misskey;
         postPatch = "";
         pnpmDeps = prev.pnpmDeps.overrideAttrs {
-          outputHash = "sha256-zm25NWE+NaklRK/vc8Ti28QdDINqFp17MkT1uWuDF0M=";
+          outputHash = "sha256-gCjF2HRCIGgHAvfFTvOXuGyCXoJquIfjKCo6OchFKGo=";
         };
       });
 
